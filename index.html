@@ -1,0 +1,2294 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>이슈 &amp; 핫딜 모음 | 실시간 커뮤니티 큐레이션</title>
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --surface: #ffffff;
+      --surface-hover: #f9fafb;
+      --border: #e5e7eb;
+      --text: #111827;
+      --text-muted: #6b7280;
+      --text-visited: #9ca3af;
+      --accent: #ef4444;
+      --accent-soft: #fef2f2;
+      --deal: #2563eb;
+      --deal-soft: #eff6ff;
+      --chip-bg: #f3f4f6;
+      --chip-active-bg: #111827;
+      --chip-active-text: #ffffff;
+    }
+
+    html.dark {
+      --bg: #0f1115;
+      --surface: #181b21;
+      --surface-hover: #1f232b;
+      --border: #272b36;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-visited: #6b7280;
+      --accent: #f87171;
+      --accent-soft: rgba(248, 113, 113, 0.14);
+      --deal: #60a5fa;
+      --deal-soft: rgba(96, 165, 250, 0.14);
+      --chip-bg: #232732;
+      --chip-active-bg: #f3f4f6;
+      --chip-active-text: #111827;
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif;
+      line-height: 1.45;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 10px 14px 8px;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .updated-at {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .icon-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 5px 9px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      border: 1px solid var(--border);
+      background: var(--chip-bg);
+      color: var(--text);
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn.active {
+      background: var(--chip-active-bg);
+      color: var(--chip-active-text);
+      border-color: var(--chip-active-bg);
+    }
+
+    .controls-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 7px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 13px;
+      outline: none;
+    }
+
+    .sort-select {
+      padding: 7px 8px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .chips {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 8px 0 2px;
+      scrollbar-width: none;
+    }
+    .chips::-webkit-scrollbar { display: none; }
+
+    .chip {
+      white-space: nowrap;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .chip.active {
+      background: var(--chip-active-bg);
+      color: var(--chip-active-text);
+      border-color: var(--chip-active-bg);
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 10px auto 36px;
+      padding: 0 10px;
+    }
+
+    .feed-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .post-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.12s ease;
+    }
+
+    .post-row:last-child { border-bottom: none; }
+    .post-row:hover { background: var(--surface-hover); }
+
+    .post-row.visited .post-title {
+      color: var(--text-visited);
+    }
+
+    .rank-num {
+      min-width: 22px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-align: right;
+      padding-top: 2px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .post-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .post-title-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .post-title-line {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .src-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 5px;
+      flex-shrink: 0;
+    }
+
+    .src-clien { background: #e0f2fe; color: #0369a1; }
+    .src-bobae { background: #fee2e2; color: #b91c1c; }
+    .src-humoruniv { background: #fef3c7; color: #b45309; }
+    .src-ppomppu { background: #ede9fe; color: #6d28d9; }
+    .src-clien_deal { background: #dcfce7; color: #15803d; }
+    .src-damoang_deal { background: #ffedd5; color: #c2410c; }
+
+    html.dark .src-clien { background: rgba(14, 165, 233, 0.2); color: #7dd3fc; }
+    html.dark .src-bobae { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
+    html.dark .src-humoruniv { background: rgba(245, 158, 11, 0.2); color: #fcd34d; }
+    html.dark .src-ppomppu { background: rgba(139, 92, 246, 0.2); color: #c4b5fd; }
+    html.dark .src-clien_deal { background: rgba(34, 197, 94, 0.2); color: #86efac; }
+    html.dark .src-damoang_deal { background: rgba(249, 115, 22, 0.2); color: #fdba74; }
+
+    .post-title {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .cmt-badge {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .post-meta-row {
+      margin-top: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 10px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+      flex-wrap: wrap;
+    }
+
+    .comment-btn {
+      border: 1px solid var(--border);
+      background: var(--chip-bg);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .comment-btn.has-comments {
+      background: var(--deal-soft);
+      color: var(--deal);
+      border-color: transparent;
+    }
+
+    .empty-state {
+      padding: 40px 16px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .footer-note {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+
+    /* Comment Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 100;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    @media (min-width: 640px) {
+      .modal-backdrop {
+        align-items: center;
+        padding: 16px;
+      }
+    }
+
+    .modal-sheet {
+      width: 100%;
+      max-width: 560px;
+      max-height: 85dvh;
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 16px 16px 0 0;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    @media (min-width: 640px) {
+      .modal-sheet {
+        border-radius: 16px;
+      }
+    }
+
+    .modal-header {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .modal-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .modal-link {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--deal);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .modal-close {
+      border: none;
+      background: var(--chip-bg);
+      color: var(--text);
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      font-size: 15px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .comment-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 9px 11px;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .comment-author {
+      font-weight: 700;
+    }
+
+    .comment-time {
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    .comment-del {
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      font-size: 11px;
+      cursor: pointer;
+      margin-left: 6px;
+    }
+
+    .comment-text {
+      font-size: 13.5px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .comment-form {
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .comment-form-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .comment-input {
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 13px;
+      outline: none;
+    }
+
+    .nick-input { width: 110px; }
+    .body-input { flex: 1; }
+
+    .submit-btn {
+      border: none;
+      background: var(--deal);
+      color: #fff;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .comment-note {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-row">
+        <div class="brand">
+          <span>🔥 애객 스타일 모음</span>
+          <span class="brand-badge" id="totalBadge">0건</span>
+        </div>
+        <div class="top-actions">
+          <span class="updated-at" id="updatedAt">불러오는 중...</span>
+          <button class="icon-btn" id="themeToggle" type="button" title="다크모드 전환">🌙</button>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="issue" type="button">🔥 이슈·유머</button>
+        <button class="tab-btn" data-tab="deal" type="button">🛍️ 핫딜·쇼핑</button>
+        <button class="tab-btn" data-tab="all" type="button">📌 전체</button>
+      </div>
+
+      <div class="controls-row">
+        <div class="search-box">
+          <input id="searchInput" type="search" placeholder="키워드 검색 (예: 코스트코, 알리, 삼성...)" />
+        </div>
+        <select class="sort-select" id="sortSelect" aria-label="정렬">
+          <option value="default">최신/기본순</option>
+          <option value="views">조회수 높은순</option>
+          <option value="comments">원글 댓글 많은순</option>
+          <option value="likes">추천 많은순</option>
+        </select>
+      </div>
+
+      <div class="chips" id="sourceChips"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="feed-card" id="feedList">
+      <div class="empty-state">게시글을 불러오는 중입니다...</div>
+    </section>
+    <p class="footer-note">
+      각 커뮤니티의 공개 제목과 링크만 모아서 보여주며, 클릭 시 원문 페이지로 이동합니다.
+    </p>
+  </main>
+
+  <!-- Comment Modal -->
+  <div class="modal-backdrop" id="commentModal" aria-hidden="true">
+    <div class="modal-sheet" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title" id="modalTitle"></div>
+          <a class="modal-link" id="modalOriginLink" href="#" target="_blank" rel="noopener noreferrer">원문 글 보기 ↗</a>
+        </div>
+        <button class="modal-close" id="modalCloseBtn" type="button" aria-label="닫기">✕</button>
+      </div>
+      <div class="comment-list" id="commentList"></div>
+      <form class="comment-form" id="commentForm">
+        <div class="comment-form-row">
+          <input class="comment-input nick-input" id="nickInput" type="text" maxlength="16" placeholder="닉네임" />
+          <input class="comment-input body-input" id="bodyInput" type="text" maxlength="300" placeholder="여기에 댓글을 남겨보세요" required />
+          <button class="submit-btn" type="submit">등록</button>
+        </div>
+        <div class="comment-note">현재 댓글은 이 브라우저에 저장됩니다. (공용 서버 DB 연동 시 모든 사용자와 공유 가능)</div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const FALLBACK_DATA = {
+  "updated_at": "2026-11-27 23:40 KST",
+  "stats": {
+    "클리앙": 25,
+    "보배드림": 25,
+    "SLR클럽": 0,
+    "웃긴대학": 20,
+    "뽐뿌": 15,
+    "클리앙 알뜰": 25,
+    "다모앙 알뜰": 20
+  },
+  "items": [
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "김민석도 빨리 징계해야죠.",
+      "url": "https://www.clien.net/service/board/park/19299356",
+      "views": 1648,
+      "likes": 32,
+      "comments": 13,
+      "time_label": "2026-11-27 18:01:04"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "지금 민주당은 국민의 힘 급이 맞습니다.",
+      "url": "https://www.clien.net/service/board/park/19299412",
+      "views": 1805,
+      "likes": 26,
+      "comments": 12,
+      "time_label": "2026-11-27 19:56:00"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "집값이 너무 상승합니다 어떻게 해야 할까요?",
+      "url": "https://www.clien.net/service/board/park/19299105",
+      "views": 5370,
+      "likes": 26,
+      "comments": 10,
+      "time_label": "2026-11-27 08:44:47"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희건 본격적으로 시작하네요",
+      "url": "https://www.clien.net/service/board/park/19299438",
+      "views": 3500,
+      "likes": 25,
+      "comments": 30,
+      "time_label": "2026-11-27 20:50:23"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "조만간 김민석은 제명되겠군요.",
+      "url": "https://www.clien.net/service/board/park/19299413",
+      "views": 2284,
+      "likes": 25,
+      "comments": 10,
+      "time_label": "2026-11-27 19:57:41"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "민주당 간판만 달려있지 제가 알던 민주당이 아니네요",
+      "url": "https://www.clien.net/service/board/park/19299423",
+      "views": 1616,
+      "likes": 24,
+      "comments": 24,
+      "time_label": "2026-11-27 20:25:42"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "손연재 부부 30억 연세의료원 기부",
+      "url": "https://www.clien.net/service/board/park/19299285",
+      "views": 5614,
+      "likes": 24,
+      "comments": 11,
+      "time_label": "2026-11-27 15:03:19"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희 의원 징계에 왜 그렇게 반발하냐고요??",
+      "url": "https://www.clien.net/service/board/park/19299385",
+      "views": 2485,
+      "likes": 23,
+      "comments": 24,
+      "time_label": "2026-11-27 18:57:23"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "겸손 뉴스공장 홍사훈기자가 제대로 진국이네요",
+      "url": "https://www.clien.net/service/board/park/19299128",
+      "views": 3773,
+      "likes": 23,
+      "comments": 16,
+      "time_label": "2026-11-27 09:34:10"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "김민석이 사라져야 민주당이산다.",
+      "url": "https://www.clien.net/service/board/park/19299312",
+      "views": 1509,
+      "likes": 22,
+      "comments": 11,
+      "time_label": "2026-11-27 16:11:33"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "이재명 같은 직장상사 끼고 있다고 생각하면 아찔하기는하네요",
+      "url": "https://www.clien.net/service/board/park/19299133",
+      "views": 3639,
+      "likes": 21,
+      "comments": 47,
+      "time_label": "2026-11-27 09:46:42"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "쫄려서 취임100일 기자회견도 못하는 주제에",
+      "url": "https://www.clien.net/service/board/park/19299451",
+      "views": 1949,
+      "likes": 19,
+      "comments": 14,
+      "time_label": "2026-11-27 21:38:37"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "망해간다는 스타벅스코리아",
+      "url": "https://www.clien.net/service/board/park/19299148",
+      "views": 7999,
+      "likes": 19,
+      "comments": 58,
+      "time_label": "2026-11-27 10:25:10"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희 당원권 2년 정지",
+      "url": "https://www.clien.net/service/board/park/19299358",
+      "views": 3749,
+      "likes": 17,
+      "comments": 59,
+      "time_label": "2026-11-27 18:06:49"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "저 잣대면 김민석 박선원도 징계감 아닌가요?",
+      "url": "https://www.clien.net/service/board/park/19299375",
+      "views": 1106,
+      "likes": 16,
+      "comments": 16,
+      "time_label": "2026-11-27 18:42:20"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희 중징계를 내린 윤리심판원에 문진석이 있네요 ㅎㅎㅎㅎ",
+      "url": "https://www.clien.net/service/board/park/19299472",
+      "views": 1507,
+      "likes": 15,
+      "comments": 16,
+      "time_label": "2026-11-27 22:21:00"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희 의원님 걱정말아요... 무소속으로 나와도 뽑아드립니다.",
+      "url": "https://www.clien.net/service/board/park/19299455",
+      "views": 1794,
+      "likes": 15,
+      "comments": 20,
+      "time_label": "2026-11-27 21:40:37"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희 중징계라는군요?",
+      "url": "https://www.clien.net/service/board/park/19299342",
+      "views": 3663,
+      "likes": 15,
+      "comments": 39,
+      "time_label": "2026-11-27 17:31:56"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "지방의회는 없애는 것이 답일 듯 하네요",
+      "url": "https://www.clien.net/service/board/park/19299224",
+      "views": 2822,
+      "likes": 15,
+      "comments": 21,
+      "time_label": "2026-11-27 13:03:49"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "민주당이나 국힘이나...",
+      "url": "https://www.clien.net/service/board/park/19299408",
+      "views": 976,
+      "likes": 14,
+      "comments": 9,
+      "time_label": "2026-11-27 19:43:57"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "부동산 문제로 그냥 웃음만 나오네요",
+      "url": "https://www.clien.net/service/board/park/19299344",
+      "views": 2610,
+      "likes": 14,
+      "comments": 14,
+      "time_label": "2026-11-27 17:40:36"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "민주당은 폭망의 길로 결국 가네요.",
+      "url": "https://www.clien.net/service/board/park/19299433",
+      "views": 3688,
+      "likes": 13,
+      "comments": 22,
+      "time_label": "2026-11-27 20:42:38"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희는 국회의원 제명감이지요",
+      "url": "https://www.clien.net/service/board/park/19299400",
+      "views": 2604,
+      "likes": 13,
+      "comments": 29,
+      "time_label": "2026-11-27 19:33:38"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "가는 길이 다르면 헤어지면 됩니다.",
+      "url": "https://www.clien.net/service/board/park/19299465",
+      "views": 2610,
+      "likes": 12,
+      "comments": 46,
+      "time_label": "2026-11-27 21:56:05"
+    },
+    {
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희 당원 2년 정지?",
+      "url": "https://www.clien.net/service/board/park/19299374",
+      "views": 1662,
+      "likes": 12,
+      "comments": 4,
+      "time_label": "2026-11-27 18:41:02"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "일본 AV 여배우 20명 한국에서 성매매",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050592&vdate=",
+      "views": 3551,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "21:02"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "병신 짭닉 새끼가 출현 espnk3 (내용 추가)",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050588&vdate=",
+      "views": 2348,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "20:49"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "요즘 유럽에서 일단 한국인이냐고 묻는 이유",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050591&vdate=",
+      "views": 3695,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "20:23"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "퇴근길 치킨 배달하고 왔네요",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050589&vdate=",
+      "views": 3547,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "18:37"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "김해 고교 텀블럼 사건",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050573&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "17:48"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "펌)학교 운동회 승패를 갈라야하나?jpg",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050585&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "17:45"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "지난번에 이어 치킨 후원 한 번 더 하고 왔습니다~",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050557&vdate=",
+      "views": 4991,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "17:29"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "뮤지컬판에서 대참사 난 사건",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050568&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "17:24"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "볼때마다 이해 안되는 사고",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050584&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "17:24"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "여러분들의 신고는 사랑입니다",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050576&vdate=",
+      "views": 3559,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "16:55"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "차문 안잠그는 캐나다 마을",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050586&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "16:47"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "일본 가출 청소년들 성병검사 해봄",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050572&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "16:36"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "신태일 2심 최종 형량입니다.",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050544&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "16:23"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "여성이 당한 성범죄를 고발하니 여성단체가 역으로 고발자를 비..",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050532&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "16:22"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "황홀했던 그해 바다",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050582&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "16:15"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "목숨건 장난",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050536&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "16:13"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "남경필 장남 출소 1년 만에 또 체포",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050590&vdate=",
+      "views": 3666,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "16:06"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "충격 '그 노래' 빌보드 1위 탈환 실패",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050543&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "16:05"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "중고거래 반말",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050524&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "16:02"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "청순한 그녀의 취향",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050567&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "15:57"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "한국 복싱 유망주 김이현 선수가 뺑소니 사고로 사망했네요",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050525&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "15:57"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "집 15채산 96년생",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050526&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "15:56"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "경찰이 실적에 미치면 생기는 일",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050570&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "15:53"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "게임했다고 플스 박살",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050569&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "15:53"
+    },
+    {
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "업소 가 본 사람들이 대부분 하는 말…",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050533&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "15:47"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "몃湲곗 鍮 留二쇱묠.jpg",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434213",
+      "views": 1596,
+      "likes": 59,
+      "comments": 9,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "쎌 踰 而⑦痢 李몄",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434212",
+      "views": 2056,
+      "likes": 66,
+      "comments": 10,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "멸 泥媛 留 멸愿怨 泥 諛 踰",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434211",
+      "views": 3289,
+      "likes": 94,
+      "comments": 20,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "紐몄 遺 遺 泥 二쎌닿硫 대寃 몄낀",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434210",
+      "views": 3674,
+      "likes": 137,
+      "comments": 9,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "ㅼ濡 議댁ы 媛 대.jpg",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434209",
+      "views": 4154,
+      "likes": 75,
+      "comments": 9,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "以援 대쇱ㅼ 臾댁痍⑥대由 援.jpg",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434208",
+      "views": 4768,
+      "likes": 108,
+      "comments": 15,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "怨 寃쎌같 媛",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434207",
+      "views": 4423,
+      "likes": 103,
+      "comments": 15,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "⑥ 留⑤ 대닿굅蹂대.jpg",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434205",
+      "views": 6769,
+      "likes": 111,
+      "comments": 25,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "(?) 룹 以",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434204",
+      "views": 8494,
+      "likes": 88,
+      "comments": 16,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "쇰낯 AV諛곗 20紐. 援 깅ℓ留 '媛 1,000留' [46] 듦異泥 +73",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434203",
+      "views": 8088,
+      "likes": 145,
+      "comments": 46,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "밸④갇ъ 愿湲곗 李 遺",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434202",
+      "views": 8716,
+      "likes": 140,
+      "comments": 35,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "곗명댁 洹 諛 怨 щ낫몄 .jpg",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434201",
+      "views": 6045,
+      "likes": 104,
+      "comments": 22,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "ADHD寃 異泥 諛⑹",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434200",
+      "views": 7455,
+      "likes": 113,
+      "comments": 28,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "諛깊 洹쇰Т蹂듭 誘쇱 ｌ 怨媛...洹 寃곌낵",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434199",
+      "views": 8142,
+      "likes": 100,
+      "comments": 12,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "쏀) 몃 ㅼ〈 鍮瑜댄 鍮.jpg",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434198",
+      "views": 9167,
+      "likes": 113,
+      "comments": 18,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "臾쇱 留 留.Manhwa [18] 듦異泥 +93",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434197",
+      "views": 6381,
+      "likes": 152,
+      "comments": 18,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "嫄곗 깃꺽 硫대 由 щ┛ .manhwa",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434196",
+      "views": 5676,
+      "likes": 100,
+      "comments": 6,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "P=NP 臾몄瑜 利紐 媛諛.insta",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434195",
+      "views": 9048,
+      "likes": 146,
+      "comments": 17,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "遺紐⑤몃 援듭ш",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434194",
+      "views": 14158,
+      "likes": 262,
+      "comments": 17,
+      "time_label": "오늘"
+    },
+    {
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "gta6ш 吏吏 ④ 二쎌닿 ㅻ",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434193",
+      "views": 11730,
+      "likes": 139,
+      "comments": 15,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[G마켓] 통영 제철 홍가리비 5kg 100미 내외",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752410",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 23:33"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[팔도감] 보온/보냉 접이식 롤링카트 85L (27,859원/무배)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752409",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 23:29"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[11번가] 노르웨이 생연어 딥스킨 필렛 1kg (31,020원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752408",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 23:09"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[G마켓] AHC 메이크업핏 마스터즈 톤업 선세럼 50ml 2개 (18,170원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752407",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:58"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[GS프레쉬]진라면 소컵6개 팝카드결제(2,980원/픽업)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752406",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:43"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[11번가] 송병장 대용량핫팩 150G 30개 (12,900원/무배)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752405",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:39"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[옥션] 샘표 토장찌개양념 등 7종 2+2개 골라담기+연두링 증정(11,990원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752404",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:28"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[롯데온] 김해뒷고기 1+등급 1kg (11840/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752403",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:13"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[11번가] 고시히카리 상등급 10kg (32,580원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752402",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:11"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[네이버]쑥콩떡 60g 32개+증정(초례청 약과40g 2개) (19,800원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752401",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:04"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[네이버] 애플 피치 엔부 사과 3kg~ (15,900원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752400",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:02"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[지마켓] 카타나스워드 포켓온 클래식 화이트 골프 반팔 폴로티셔츠 (5,380원~/무배)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752399",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 21:58"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[ssf] 브렌우드 워셔블 하프터틀넥 스웨터 (52,660원/무배)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752398",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 21:56"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[g마켓] 삼성 갤럭시 버즈4 프로 SM-R640 블루투스 무선 이어폰 화이트 블랙 (당일출고)(208,500원/무료배송)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752397",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 21:56"
+    },
+    {
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[무신사] 블랙야크키즈 롱 구스다운 패딩 (120,680원/무배)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752396",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 21:56"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "(11/27 신규 할인코드 공개) [알리익스프레스] 블랙프라이데이 정보 안내 (클리앙 전용",
+      "url": "https://www.clien.net/service/board/jirum/19294482",
+      "views": 17,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "2026-11-18 10:57:51"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[iOS] YouPlay 평생 IAP 일시 무료",
+      "url": "https://www.clien.net/service/board/jirum/19299082",
+      "views": 8303,
+      "likes": 0,
+      "comments": 26,
+      "time_label": "2026-11-27 07:55:45"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[MacOS] HTML to App 일시 무료",
+      "url": "https://www.clien.net/service/board/jirum/19298977",
+      "views": 4132,
+      "likes": 0,
+      "comments": 2,
+      "time_label": "2026-11-26 20:26:16"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[하이마트] 앤커 파워뱅크 20000mAh 87와트 A1118 43,610원/무배",
+      "url": "https://www.clien.net/service/board/jirum/19298969",
+      "views": 6160,
+      "likes": 0,
+      "comments": 3,
+      "time_label": "2026-11-26 20:01:32"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[플레이스토어] 스타듀밸리 50% 할인 2,950원",
+      "url": "https://www.clien.net/service/board/jirum/19298613",
+      "views": 7322,
+      "likes": 0,
+      "comments": 1,
+      "time_label": "2026-11-25 22:59:57"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[네이버] 인케이스 외 할인",
+      "url": "https://www.clien.net/service/board/jirum/19298517",
+      "views": 18,
+      "likes": 0,
+      "comments": 25,
+      "time_label": "2026-11-25 19:19:15"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[WearOS] SamWatch Digital Shu 2 2025 일시 무료",
+      "url": "https://www.clien.net/service/board/jirum/19298282",
+      "views": 5164,
+      "likes": 0,
+      "comments": 7,
+      "time_label": "2026-11-25 11:58:47"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[네이버페이+삼성페이] SK주유소 5만원 이상 주유시 3천포인트 지급(~12.31)",
+      "url": "https://www.clien.net/service/board/jirum/19298277",
+      "views": 13,
+      "likes": 0,
+      "comments": 3,
+      "time_label": "2026-11-25 11:51:15"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[카카오] 진주햄 천하장사 오리지날+콰트로치즈 28gX총48개 12,560원",
+      "url": "https://www.clien.net/service/board/jirum/19298007",
+      "views": 6761,
+      "likes": 0,
+      "comments": 2,
+      "time_label": "2026-11-24 19:28:33"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "도레이씨 안경닦이 안경수건 천 도레이 극세사 클리너 선물용",
+      "url": "https://www.clien.net/service/board/jirum/19297766",
+      "views": 9103,
+      "likes": 0,
+      "comments": 13,
+      "time_label": "2026-11-24 10:42:33"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[아미존] 2026 맥북에어 M5, 16GB / 512GB, MDHE4LL/A",
+      "url": "https://www.clien.net/service/board/jirum/19297493",
+      "views": 15,
+      "likes": 0,
+      "comments": 16,
+      "time_label": "2026-11-23 20:27:32"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[WearOS] AD TimeBar 일시 무료",
+      "url": "https://www.clien.net/service/board/jirum/19297426",
+      "views": 7422,
+      "likes": 0,
+      "comments": 5,
+      "time_label": "2026-11-23 17:08:44"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "프로스펙스 메타 넥워머 4,830원 (무배)",
+      "url": "https://www.clien.net/service/board/jirum/19296785",
+      "views": 15,
+      "likes": 0,
+      "comments": 1,
+      "time_label": "2026-11-22 10:35:46"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[네이버] 오디오테크니카 AT-SB727 휴대용 무선 블루투스 턴테이블 (139,000원)",
+      "url": "https://www.clien.net/service/board/jirum/19296761",
+      "views": 29,
+      "likes": 0,
+      "comments": 4,
+      "time_label": "2026-11-22 09:47:53"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[WearOS] HW Terramaster Mk III Hybrid 일시 무료",
+      "url": "https://www.clien.net/service/board/jirum/19296755",
+      "views": 9360,
+      "likes": 0,
+      "comments": 6,
+      "time_label": "2026-11-22 09:28:58"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[아마존] 필립스 소닉케어 파워플로서 5000 (=워터픽, $59.96/무배)",
+      "url": "https://www.clien.net/service/board/jirum/19296664",
+      "views": 12,
+      "likes": 0,
+      "comments": 18,
+      "time_label": "2026-11-21 22:36:27"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[아마존] Koss Porta Pro LE ($34.99)",
+      "url": "https://www.clien.net/service/board/jirum/19296583",
+      "views": 12,
+      "likes": 0,
+      "comments": 19,
+      "time_label": "2026-11-21 18:22:51"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "apple TV+ 6개월간 월 2900원씩 프로모션",
+      "url": "https://www.clien.net/service/board/jirum/19296182",
+      "views": 16,
+      "likes": 0,
+      "comments": 14,
+      "time_label": "2026-11-20 19:50:06"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[하이마트] 아이폰 17 & 에어팟 프로 3 세일",
+      "url": "https://www.clien.net/service/board/jirum/19296168",
+      "views": 16,
+      "likes": 0,
+      "comments": 1,
+      "time_label": "2026-11-20 19:19:46"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[WearOS] Zu0̸x5 Fit Digital Watch Face 일시 무료",
+      "url": "https://www.clien.net/service/board/jirum/19296066",
+      "views": 8658,
+      "likes": 0,
+      "comments": 6,
+      "time_label": "2026-11-20 16:16:20"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[에픽게임즈] Mark of the Deep 무료 외",
+      "url": "https://www.clien.net/service/board/jirum/19295737",
+      "views": 13,
+      "likes": 0,
+      "comments": 2,
+      "time_label": "2026-11-20 01:28:58"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[애플티비] 반지의 제왕, 호빗 확장판 할인",
+      "url": "https://www.clien.net/service/board/jirum/19294899",
+      "views": 15,
+      "likes": 0,
+      "comments": 9,
+      "time_label": "2026-11-19 01:18:37"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[레고] 연꽃 #40647 8,360원 (배송비 3,000원)",
+      "url": "https://www.clien.net/service/board/jirum/19294820",
+      "views": 16,
+      "likes": 0,
+      "comments": 1,
+      "time_label": "2026-11-18 21:12:17"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[아마존] Bowers & Wilkins Pi6 ($89.99)",
+      "url": "https://www.clien.net/service/board/jirum/19294762",
+      "views": 16,
+      "likes": 0,
+      "comments": 9,
+      "time_label": "2026-11-18 19:57:04"
+    },
+    {
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[WearOS] SamWatch Digital Harmony I 일시 무료",
+      "url": "https://www.clien.net/service/board/jirum/19294728",
+      "views": 11,
+      "likes": 0,
+      "comments": 1,
+      "time_label": "2026-11-18 18:08:32"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "[에픽게임즈] Bread & Fred, 파이어스톤 무료배포",
+      "url": "https://damoang.net/economy/83594",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "[네이버] 순대국밥 순댓국, 순대내장 1kg 찰순대 모둠 부속",
+      "url": "https://damoang.net/economy/83585",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "[네이버] 떡국떡 1kg(국산쌀), 떡국떡 2kg(외국산쌀)",
+      "url": "https://damoang.net/economy/83584",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "[네이버] 국산 생강가루 100% 생강분말 200g",
+      "url": "https://damoang.net/economy/83582",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "[네이버] 8켤레 42g 톡톡한 남자 무지 발냄새 소취 양말 M L 빅사이즈 중목 장목 정장 N배송, 8켤레 남자 발냄새소취 기능성 면양말 무지 골지 중목 흰 검정 양말 N배송",
+      "url": "https://damoang.net/economy/83581",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "자동네이버 유혜광돈까스 국내산 수제 통등심돈까스 260g (30%↓, 무료배송)",
+      "url": "https://damoang.net/economy/83577",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "55 네이버페이 2026-11-27 네이버페이 76원 + 랜덤 포인트",
+      "url": "https://damoang.net/economy/83562",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "[네이버] 비비고 만두세트 10봉(왕교자3,김치왕교자3,청양고기2,진한김치2) [10] 다모앙 11.26 1.9k 6 11.26 1.9k 다모앙",
+      "url": "https://damoang.net/economy/83548",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "[네이버] 김장비닐 절임 대형 두꺼운 비닐봉투 10매 다모앙 11.26 1.6k 1 11.26 1.6k 다모앙",
+      "url": "https://damoang.net/economy/83540",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "5 알뜰폰 [프리티 U+ 5G망] 15G+1M/300분/300건/ 평생 7,700원 [1] 주변인74 11.26 1.9k 5 11.26 1.9k 주변인74",
+      "url": "https://damoang.net/economy/83539",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "[네이버] 액상 알룰로스 설탕대용 대체재 천연 감미료 스테비아 나한과 1.3kg, 1개 다모앙 11.26 1.6k 2 11.26 1.6k 다모앙",
+      "url": "https://damoang.net/economy/83538",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "[네이버] 육개장 밀키트 소고기 국밥 건더기 폭탄 가마솥 우사골 1인분 혼밥 야식 간편식 다모앙 11.26 1.7k 2 11.26 1.7k 다모앙",
+      "url": "https://damoang.net/economy/83520",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "29 네이버페이 네이버페이 추가 [10] Hello_JK 11.26 3.9k 29 11.26 3.9k Hello_JK",
+      "url": "https://damoang.net/economy/83519",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "[네이버] 1등급 한우 국거리 (200g×2ea) 대구축산농협 [1] 다모앙 11.26 1.6k 3 11.26 1.6k 다모앙",
+      "url": "https://damoang.net/economy/83514",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "iOS 일시무료 SketchClub aconite 11.26 1.8k 8 11.26 1.8k aconite",
+      "url": "https://damoang.net/economy/83510",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "iOS 일시무료 Spatial Pro [1] aconite 11.26 1.7k 7 11.26 1.7k aconite",
+      "url": "https://damoang.net/economy/83509",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "iOS 일시무료 Cube Solver 3D [1] aconite 11.26 971 8 11.26 971 aconite",
+      "url": "https://damoang.net/economy/83508",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "iOS 일시무료 Plunge [1] aconite 11.26 1.1k 8 11.26 1.1k aconite",
+      "url": "https://damoang.net/economy/83507",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "costco 애플 제품들 블프 할인 풍차 11.26 2.6k 2 11.26 2.6k 풍차",
+      "url": "https://damoang.net/economy/83501",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    },
+    {
+      "category": "deal",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "57 네이버페이 2026-11-26 네이버페이 75원 + 랜덤 포인트 [23] 중무장 11.26 5.9k 57 11.26 5.9k 중무장",
+      "url": "https://damoang.net/economy/83500",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "오늘"
+    }
+  ]
+};
+
+    let state = {
+      items: [],
+      updatedAt: "",
+      tab: "issue",
+      source: "all",
+      query: "",
+      sort: "default",
+      visited: new Set(JSON.parse(localStorage.getItem("visited_urls") || "[]")),
+      comments: JSON.parse(localStorage.getItem("post_comments_v1") || "{}"),
+      activePostUrl: null,
+    };
+
+    const themeBtn = document.getElementById("themeToggle");
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+      themeBtn.textContent = "☀️";
+    }
+    themeBtn.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      themeBtn.textContent = isDark ? "☀️" : "🌙";
+    });
+
+    function formatNum(n) {
+      if (!n) return "0";
+      if (n >= 10000) return (n / 10000).toFixed(1).replace(/\.0$/, "") + "만";
+      return n.toLocaleString("ko-KR");
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function saveComments() {
+      localStorage.setItem("post_comments_v1", JSON.stringify(state.comments));
+    }
+
+    function getFilteredItems() {
+      let list = state.items.filter((it) => {
+        if (state.tab !== "all" && it.category !== state.tab) return false;
+        if (state.source !== "all" && it.source_id !== state.source) return false;
+        if (state.query) {
+          const q = state.query.toLowerCase();
+          if (!it.title.toLowerCase().includes(q) && !it.source.toLowerCase().includes(q)) return false;
+        }
+        return true;
+      });
+
+      if (state.sort === "views") {
+        list = [...list].sort((a, b) => (b.views || 0) - (a.views || 0));
+      } else if (state.sort === "comments") {
+        list = [...list].sort((a, b) => (b.comments || 0) - (a.comments || 0));
+      } else if (state.sort === "likes") {
+        list = [...list].sort((a, b) => (b.likes || 0) - (a.likes || 0));
+      }
+      return list;
+    }
+
+    function renderChips() {
+      const box = document.getElementById("sourceChips");
+      const base = state.items.filter((it) => state.tab === "all" || it.category === state.tab);
+      const map = new Map();
+      for (const it of base) {
+        if (!map.has(it.source_id)) map.set(it.source_id, { id: it.source_id, name: it.source, count: 0 });
+        map.get(it.source_id).count++;
+      }
+
+      const chips = [{ id: "all", name: "전체", count: base.length }, ...map.values()];
+      box.innerHTML = chips
+        .map(
+          (c) =>
+            `<button class="chip ${state.source === c.id ? "active" : ""}" data-src="${c.id}" type="button">${escapeHtml(c.name)} (${c.count})</button>`
+        )
+        .join("");
+
+      box.querySelectorAll(".chip").forEach((el) => {
+        el.addEventListener("click", () => {
+          state.source = el.dataset.src;
+          render();
+        });
+      });
+    }
+
+    function renderList() {
+      const container = document.getElementById("feedList");
+      const list = getFilteredItems();
+      document.getElementById("totalBadge").textContent = `${list.length}건`;
+
+      if (!list.length) {
+        container.innerHTML = `<div class="empty-state">조건에 맞는 게시글이 없습니다.</div>`;
+        return;
+      }
+
+      container.innerHTML = list
+        .map((it, idx) => {
+          const visited = state.visited.has(it.url) ? "visited" : "";
+          const metaParts = [];
+          if (it.views) metaParts.push(`조회 ${formatNum(it.views)}`);
+          if (it.likes) metaParts.push(`추천 ${formatNum(it.likes)}`);
+          if (it.time_label) metaParts.push(escapeHtml(it.time_label));
+          const cmtHtml = it.comments ? `<span class="cmt-badge">[${it.comments}]</span>` : "";
+          const localCmts = (state.comments[it.url] || []).length;
+
+          return `
+            <div class="post-row ${visited}" data-url="${escapeHtml(it.url)}">
+              <div class="rank-num">${idx + 1}</div>
+              <div class="post-body">
+                <a class="post-title-link" href="${escapeHtml(it.url)}" target="_blank" rel="noopener noreferrer">
+                  <div class="post-title-line">
+                    <span class="src-tag src-${escapeHtml(it.source_id)}">${escapeHtml(it.source)}</span>
+                    <span class="post-title">${escapeHtml(it.title)}</span>
+                    ${cmtHtml}
+                  </div>
+                </a>
+                <div class="post-meta-row">
+                  <div class="post-meta">${metaParts.join(" · ")}</div>
+                  <button class="comment-btn ${localCmts ? "has-comments" : ""}" type="button" data-open-comment="${escapeHtml(it.url)}">
+                    💬 댓글${localCmts ? ` ${localCmts}` : ""}
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+        })
+        .join("");
+
+      container.querySelectorAll(".post-title-link").forEach((el) => {
+        el.addEventListener("click", () => {
+          const row = el.closest(".post-row");
+          const u = row.dataset.url;
+          state.visited.add(u);
+          localStorage.setItem("visited_urls", JSON.stringify([...state.visited].slice(-300)));
+          row.classList.add("visited");
+        });
+      });
+
+      container.querySelectorAll("[data-open-comment]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          openCommentModal(btn.dataset.openComment);
+        });
+      });
+    }
+
+    function openCommentModal(url) {
+      const item = state.items.find((x) => x.url === url);
+      if (!item) return;
+      state.activePostUrl = url;
+      document.getElementById("modalTitle").textContent = `[${item.source}] ${item.title}`;
+      document.getElementById("modalOriginLink").href = item.url;
+      document.getElementById("nickInput").value = localStorage.getItem("comment_nick") || "익명";
+      renderModalComments();
+      document.getElementById("commentModal").classList.add("open");
+      document.getElementById("commentModal").setAttribute("aria-hidden", "false");
+    }
+
+    function closeCommentModal() {
+      document.getElementById("commentModal").classList.remove("open");
+      document.getElementById("commentModal").setAttribute("aria-hidden", "true");
+      state.activePostUrl = null;
+    }
+
+    function renderModalComments() {
+      const listEl = document.getElementById("commentList");
+      const list = state.comments[state.activePostUrl] || [];
+      if (!list.length) {
+        listEl.innerHTML = `<div class="empty-state" style="padding:24px 10px;">첫 댓글을 남겨보세요!</div>`;
+        return;
+      }
+      listEl.innerHTML = list
+        .map(
+          (c, idx) => `
+          <div class="comment-item">
+            <div class="comment-head">
+              <span class="comment-author">${escapeHtml(c.nick)}</span>
+              <span>
+                <span class="comment-time">${escapeHtml(c.time)}</span>
+                <button class="comment-del" type="button" data-del-idx="${idx}">삭제</button>
+              </span>
+            </div>
+            <div class="comment-text">${escapeHtml(c.text)}</div>
+          </div>
+        `
+        )
+        .join("");
+
+      listEl.querySelectorAll("[data-del-idx]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const i = Number(btn.dataset.delIdx);
+          state.comments[state.activePostUrl].splice(i, 1);
+          saveComments();
+          renderModalComments();
+          renderList();
+        });
+      });
+    }
+
+    document.getElementById("modalCloseBtn").addEventListener("click", closeCommentModal);
+    document.getElementById("commentModal").addEventListener("click", (e) => {
+      if (e.target.id === "commentModal") closeCommentModal();
+    });
+
+    document.getElementById("commentForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!state.activePostUrl) return;
+      const nick = document.getElementById("nickInput").value.trim() || "익명";
+      const bodyEl = document.getElementById("bodyInput");
+      const text = bodyEl.value.trim();
+      if (!text) return;
+
+      localStorage.setItem("comment_nick", nick);
+      const now = new Date();
+      const time = now.toLocaleTimeString("ko-KR", { hour: "2-digit", minute: "2-digit" });
+      if (!state.comments[state.activePostUrl]) state.comments[state.activePostUrl] = [];
+      state.comments[state.activePostUrl].push({ nick, text, time });
+      saveComments();
+      bodyEl.value = "";
+      renderModalComments();
+      renderList();
+    });
+
+    function render() {
+      renderChips();
+      renderList();
+    }
+
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        state.tab = btn.dataset.tab;
+        state.source = "all";
+        render();
+      });
+    });
+
+    document.getElementById("searchInput").addEventListener("input", (e) => {
+      state.query = e.target.value.trim();
+      renderList();
+    });
+
+    document.getElementById("sortSelect").addEventListener("change", (e) => {
+      state.sort = e.target.value;
+      renderList();
+    });
+
+    async function init() {
+      let data = FALLBACK_DATA;
+      try {
+        const res = await fetch("./data.json", { cache: "no-store" });
+        if (res.ok) {
+          const json = await res.json();
+          if (json && Array.isArray(json.items) && json.items.length) {
+            data = json;
+          }
+        }
+      } catch (_) {}
+
+      state.items = data.items || [];
+      state.updatedAt = data.updated_at || "";
+      document.getElementById("updatedAt").textContent = state.updatedAt ? `갱신 ${state.updatedAt}` : "";
+      render();
+    }
+
+    init();
+  </script>
+</body>
+</html>

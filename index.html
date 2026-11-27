@@ -105,6 +105,18 @@
       letter-spacing: -0.02em;
     }
 
+    .brand-logo {
+      height: 30px;
+      width: auto;
+      display: block;
+    }
+
+    html.dark .brand-logo {
+      background: rgba(255, 255, 255, 0.94);
+      padding: 3px 8px;
+      border-radius: 8px;
+    }
+
     .brand-badge {
       font-size: 11px;
       font-weight: 700;
@@ -656,7 +668,7 @@
     <div class="topbar-inner">
       <div class="brand-row">
         <div class="brand">
-          <span>🔥 피나케스</span>
+          <img src="assets/pinakes-logo.png" alt="피나케스" class="brand-logo" />
           <span class="brand-badge" id="totalBadge">0건</span>
         </div>
         <div class="top-actions">

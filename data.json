@@ -21,7 +21,10 @@
       "communities": [
         "웃긴대학"
       ],
-      "isSensitive": false
+      "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false
     },
     {
       "id": "a4f58b6601b4",
@@ -57,7 +60,10 @@
       "communities": [
         "웃긴대학"
       ],
-      "isSensitive": true
+      "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false
     },
     {
       "id": "e74a4d0a5986",
@@ -69,7 +75,10 @@
       "communities": [
         "웃긴대학"
       ],
-      "isSensitive": false
+      "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false
     },
     {
       "id": "752fee254f88",
@@ -105,7 +114,10 @@
       "communities": [
         "웃긴대학"
       ],
-      "isSensitive": false
+      "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false
     },
     {
       "id": "af14ef2e41b4",
@@ -129,7 +141,10 @@
       "communities": [
         "웃긴대학"
       ],
-      "isSensitive": false
+      "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false
     }
   ],
   "items": [
@@ -147,6 +162,10 @@
       "hotScore": 5865.5,
       "mood": "humor",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_5c26b546050c",
       "communities": [
         "웃긴대학"
@@ -154,6 +173,8 @@
       "crossCount": 1,
       "crossScore": 5865.5,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "인스타서 발견한 충격적 장면",
       "aiThreeLineSummary": [
         "인스타그램에서 우연히 발견한 게시물이 실화인지 의문을 제기",
@@ -175,6 +196,10 @@
       "hotScore": 5010.0,
       "mood": "life",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_a4f58b6601b4",
       "communities": [
         "웃긴대학"
@@ -182,6 +207,8 @@
       "crossCount": 1,
       "crossScore": 5010.0,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "신호대기 중 아빠와 마주친 사연",
       "aiThreeLineSummary": [
         "신호대기 중 우연히 아빠를 만난 상황",
@@ -203,6 +230,10 @@
       "hotScore": 4680.2,
       "mood": "life",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_dcf0ff16b9e9",
       "communities": [
         "웃긴대학"
@@ -210,6 +241,8 @@
       "crossCount": 1,
       "crossScore": 4680.2,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "이직 후 지뢰 같은 상사 피한 썰",
       "aiThreeLineSummary": [
         "이직 직후 만난 상사가 지뢰급 인물이었다는 경험담",
@@ -343,6 +376,10 @@
       "hotScore": 2907.1,
       "mood": "info",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_9474afc5ffc0",
       "communities": [
         "웃긴대학"
@@ -350,6 +387,8 @@
       "crossCount": 1,
       "crossScore": 2907.1,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "조선시대 공무원 인수인계 문화",
       "aiThreeLineSummary": [
         "조선시대 공무원들의 인수인계 방식을 소개",
@@ -595,6 +634,10 @@
       "hotScore": 1072.7,
       "mood": "politics_conflict",
       "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 789,
       "clusterId": "cl_e99f7129cb0e",
       "communities": [
         "클리앙",
@@ -823,6 +866,10 @@
       "hotScore": 1076.6,
       "mood": "politics_conflict",
       "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 626,
       "clusterId": "cl_aa1facdf07e6",
       "communities": [
         "클리앙"
@@ -830,6 +877,8 @@
       "crossCount": 1,
       "crossScore": 1076.6,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "최민희 징계 본격화",
       "aiThreeLineSummary": [
         "최민희 의원에 대한 징계 절차가 본격화됨",
@@ -935,6 +984,10 @@
       "hotScore": 886.1,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 1351,
       "clusterId": "cl_b84dce511e66",
       "communities": [
         "클리앙"
@@ -942,6 +995,8 @@
       "crossCount": 1,
       "crossScore": 886.1,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "집값 급등에 대한 고민",
       "aiThreeLineSummary": [
         "집값이 너무 올라 어떻게 해야 할지 고민하는 글",
@@ -963,6 +1018,10 @@
       "hotScore": 879.6,
       "mood": "life",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 973,
       "clusterId": "cl_40940de1a129",
       "communities": [
         "클리앙"
@@ -970,6 +1029,8 @@
       "crossCount": 1,
       "crossScore": 879.6,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "손연재 부부 30억 기부",
       "aiThreeLineSummary": [
         "손연재 부부가 연세의료원에 30억 원 기부",
@@ -991,6 +1052,10 @@
       "hotScore": 847.3,
       "mood": "politics_conflict",
       "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": true,
+      "isSports": false,
+      "ageMinutes": 824,
       "clusterId": "cl_d07d31f8213e",
       "communities": [
         "클리앙"
@@ -998,6 +1063,8 @@
       "crossCount": 1,
       "crossScore": 847.3,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "최민희 중징계 결정",
       "aiThreeLineSummary": [
         "최민희 의원이 중징계를 받았다는 소식",
@@ -1019,6 +1086,10 @@
       "hotScore": 816.6,
       "mood": "politics_conflict",
       "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": true,
+      "isSports": false,
+      "ageMinutes": 795,
       "clusterId": "cl_4dd449335bc0",
       "communities": [
         "클리앙"
@@ -1026,6 +1097,8 @@
       "crossCount": 1,
       "crossScore": 816.6,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "김민석도 징계해야 한다는 주장",
       "aiThreeLineSummary": [
         "김민석 의원도 징계해야 한다는 목소리",
@@ -1069,6 +1142,10 @@
       "hotScore": 797.9,
       "mood": "politics_conflict",
       "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 1302,
       "clusterId": "cl_5938c4e0c7e4",
       "communities": [
         "클리앙"
@@ -1076,6 +1153,8 @@
       "crossCount": 1,
       "crossScore": 797.9,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "홍사훈 기자 겸손한 진행 칭찬",
       "aiThreeLineSummary": [
         "뉴스공장 홍사훈 기자의 태도와 진행을 긍정 평가",
@@ -1097,6 +1176,10 @@
       "hotScore": 792.6,
       "mood": "politics_conflict",
       "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": true,
+      "isSports": false,
+      "ageMinutes": 739,
       "clusterId": "cl_c70d9748125a",
       "communities": [
         "클리앙"
@@ -1104,6 +1187,8 @@
       "crossCount": 1,
       "crossScore": 792.6,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "최민희 징계 반발 여론에 의문 제기",
       "aiThreeLineSummary": [
         "최민희 의원 징계를 두고 반발하는 이유를 되묻는 글",
@@ -1125,6 +1210,10 @@
       "hotScore": 767.3,
       "mood": "politics_conflict",
       "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": true,
+      "isSports": false,
+      "ageMinutes": 650,
       "clusterId": "cl_d1fb9a592574",
       "communities": [
         "클리앙"
@@ -1132,6 +1221,8 @@
       "crossCount": 1,
       "crossScore": 767.3,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "민주당 간판만 남았다는 비판",
       "aiThreeLineSummary": [
         "민주당이 예전과 다르다는 실망 섞인 비판",
@@ -1153,6 +1244,10 @@
       "hotScore": 750.3,
       "mood": "politics_conflict",
       "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 578,
       "clusterId": "cl_39ccf77df1a0",
       "communities": [
         "클리앙"
@@ -1160,6 +1255,8 @@
       "crossCount": 1,
       "crossScore": 750.3,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "취임 100일 기자회견 회피 비판",
       "aiThreeLineSummary": [
         "취임 100일 기자회견도 못 여는 상황을 비꼼",
@@ -1268,6 +1365,10 @@
       "hotScore": 692.6,
       "mood": "politics_conflict",
       "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": true,
+      "isSports": false,
+      "ageMinutes": 535,
       "clusterId": "cl_6516e0cc71f8",
       "communities": [
         "클리앙"
@@ -1275,6 +1376,8 @@
       "crossCount": 1,
       "crossScore": 692.6,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "윤리심판원에 문진석 있다는 지적",
       "aiThreeLineSummary": [
         "최민희 중징계 결정에 문진석 의원이 관여했다는 주장",
@@ -1396,6 +1499,10 @@
       "hotScore": 590.6,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 10980,
       "clusterId": "cl_dffc5923aac4",
       "communities": [
         "클리앙 알뜰"
@@ -1416,7 +1523,11 @@
           "time_label": "2026-11-20 16:16:20",
           "hotScore": 590.6,
           "mood": "it_econ",
-          "isSensitive": false
+          "isSensitive": false,
+          "isNsfw": false,
+          "isPolitics": false,
+          "isSports": false,
+          "ageMinutes": 10980
         },
         {
           "id": "b5a145ffd6a1",
@@ -1431,7 +1542,11 @@
           "time_label": "2026-11-25 11:58:47",
           "hotScore": 394.0,
           "mood": "it_econ",
-          "isSensitive": false
+          "isSensitive": false,
+          "isNsfw": false,
+          "isPolitics": false,
+          "isSports": false,
+          "ageMinutes": 4037
         },
         {
           "id": "3cad9c0948c2",
@@ -1446,8 +1561,48 @@
           "time_label": "2026-11-18 18:08:32",
           "hotScore": 9.7,
           "mood": "it_econ",
-          "isSensitive": false
+          "isSensitive": false,
+          "isNsfw": false,
+          "isPolitics": false,
+          "isSports": false,
+          "ageMinutes": 13748
         }
+      ],
+      "spreadMinutes": null,
+      "spreadLabel": ""
+    },
+    {
+      "id": "99badc0f90d6",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "김민석이 사라져야 민주당이산다.",
+      "url": "https://www.clien.net/service/board/park/19299312",
+      "views": 1580,
+      "likes": 22,
+      "comments": 11,
+      "time_label": "2026-11-27 16:11:33",
+      "hotScore": 589.8,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": true,
+      "isSports": false,
+      "ageMinutes": 905,
+      "clusterId": "cl_99badc0f90d6",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 589.8,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
+      "aiSummaryTitle": "김민석 사퇴해야 민주당 산다",
+      "aiThreeLineSummary": [
+        "김민석 의원이 사라져야 당이 산다는 주장",
+        "당 쇄신을 위한 인적 정리 요구",
+        "당내 책임론이 확대되는 흐름 반영"
       ]
     },
     {
@@ -1492,6 +1647,10 @@
       "hotScore": 557.0,
       "mood": "life",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 816,
       "clusterId": "cl_2520e55f7f61",
       "communities": [
         "클리앙"
@@ -1499,6 +1658,8 @@
       "crossCount": 1,
       "crossScore": 557.0,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "부동산 문제에 웃음만 나오는 현실",
       "aiThreeLineSummary": [
         "부동산 문제로 인한 허탈감과 좌절을 표현한 글",
@@ -1570,6 +1731,10 @@
       "hotScore": 477.3,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 3376,
       "clusterId": "cl_f1e3976b5ef9",
       "communities": [
         "클리앙 알뜰"
@@ -1592,6 +1757,10 @@
       "hotScore": 447.5,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 5028,
       "clusterId": "cl_646faef1bef7",
       "communities": [
         "클리앙 알뜰"
@@ -1614,6 +1783,10 @@
       "hotScore": 439.5,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 2115,
       "clusterId": "cl_1c98e82ad712",
       "communities": [
         "클리앙 알뜰"
@@ -1636,6 +1809,10 @@
       "hotScore": 401.4,
       "mood": "politics_conflict",
       "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": true,
+      "isSports": false,
+      "ageMinutes": 692,
       "clusterId": "cl_44250d35e5f8",
       "communities": [
         "클리앙"
@@ -1643,6 +1820,8 @@
       "crossCount": 1,
       "crossScore": 401.4,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "민주당과 국힘 모두 실망스럽다",
       "aiThreeLineSummary": [
         "여야 정치권 전반에 대한 불만과 냉소적 시각",
@@ -1664,6 +1843,10 @@
       "hotScore": 290.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 2090,
       "clusterId": "cl_b36d1b8ca05b",
       "communities": [
         "클리앙 알뜰"
@@ -1686,6 +1869,10 @@
       "hotScore": 281.2,
       "mood": "life",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_ed178c8be16c",
       "communities": [
         "보배드림"
@@ -1693,6 +1880,8 @@
       "crossCount": 1,
       "crossScore": 281.2,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "신고는 사랑입니다",
       "aiThreeLineSummary": [
         "불법·부적절 행위에 대한 신고 독려 메시지",
@@ -1742,13 +1931,19 @@
       "hotScore": 226.1,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 3597,
       "clusterId": "cl_7d59508895d4",
       "communities": [
         "클리앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 226.1,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "00a6be738470",
@@ -1792,6 +1987,10 @@
       "hotScore": 171.7,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 9413,
       "clusterId": "cl_3ee0bb178db0",
       "communities": [
         "클리앙 알뜰"
@@ -1814,6 +2013,10 @@
       "hotScore": 162.8,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 9160,
       "clusterId": "cl_7203a49f3fa6",
       "communities": [
         "클리앙 알뜰"
@@ -1836,13 +2039,19 @@
       "hotScore": 144.9,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 6409,
       "clusterId": "cl_bfec8c943d6e",
       "communities": [
         "클리앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 144.9,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "4361011ab8d8",
@@ -1858,13 +2067,53 @@
       "hotScore": 127.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 10766,
       "clusterId": "cl_4361011ab8d8",
       "communities": [
         "클리앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 127.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
+    },
+    {
+      "id": "34673be2a3fa",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "3829372917 병신새끼",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050598&vdate=",
+      "views": 2072,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 124.3,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_34673be2a3fa",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 124.3,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
+      "aiSummaryTitle": "욕설 포함된 비방 글",
+      "aiThreeLineSummary": [
+        "특정 대상을 향한 욕설과 비방이 포함된 게시물",
+        "커뮤니티 내 갈등을 유발할 수 있는 내용",
+        "주의가 필요한 언어 사용"
+      ]
     },
     {
       "id": "34673be2a3fa",
@@ -1908,13 +2157,19 @@
       "hotScore": 82.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 13639,
       "clusterId": "cl_e4140ca652fc",
       "communities": [
         "클리앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 82.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "a4db8b1a1311",
@@ -1930,13 +2185,317 @@
       "hotScore": 81.9,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 13318,
       "clusterId": "cl_a4db8b1a1311",
       "communities": [
         "클리앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 81.9,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
+    },
+    {
+      "id": "c6eebd764728",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "지오새끼",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050599&vdate=",
+      "views": 1300,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 78.0,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_c6eebd764728",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 78.0,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
+      "aiSummaryTitle": "지오 관련 비방 글",
+      "aiThreeLineSummary": [
+        "특정 인물을 지칭하는 비방성 게시물",
+        "커뮤니티 내에서의 갈등 요소",
+        "자극적인 표현 포함"
+      ]
+    },
+    {
+      "id": "9fd41993f836",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "최민희 중징계라니 이제야 민주당이 제대로 돌아가는 거 같습니..",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050604&vdate=",
+      "views": 1145,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 68.7,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": true,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_9fd41993f836",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 68.7,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
+      "aiSummaryTitle": "최민희 중징계에 대한 긍정적 평가",
+      "aiThreeLineSummary": [
+        "최민희 의원에 대한 중징계 결정을 긍정적으로 평가",
+        "민주당이 제대로 돌아가는 신호로 해석",
+        "정치적 갈등 속에서의 당내 징계에 대한 반응"
+      ]
+    },
+    {
+      "id": "5c3a5baa7027",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "사랑합니다 긁혔어? 왜그렇게 발작해? 미쳐 발광하는건 너뿐이..",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050597&vdate=",
+      "views": 1114,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 66.8,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_5c3a5baa7027",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 66.8,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
+      "aiSummaryTitle": "감정적 대응에 대한 비판",
+      "aiThreeLineSummary": [
+        "상대방의 과도한 반응을 비판하는 내용",
+        "커뮤니티 내 갈등 상황에서의 감정적 언사",
+        "논쟁이 격해지는 양상"
+      ]
+    },
+    {
+      "id": "2dab2b0bd580",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[11번가] 무주 반딧불 신동진쌀 10kg 상등급(26,970원/무배)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752428",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-28 07:12",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_2dab2b0bd580",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
+    },
+    {
+      "id": "b2faa961002d",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[헬로비전] 현대홈쇼핑 유심7gb 알뜰요금제 (월20,100/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752427",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-28 01:27",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_b2faa961002d",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
+    },
+    {
+      "id": "49071acc38a1",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[G마켓] 생연어회 딥스킨 슈페리얼등급 몸뱃살+꼬리살 1kg(33,900/무료배송)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752426",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-28 01:22",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_49071acc38a1",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
+    },
+    {
+      "id": "d80519e10c4e",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[팔도감] 노르웨이 딥스킨 생연어 1kg (31,375원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752425",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-28 01:22",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_d80519e10c4e",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
+    },
+    {
+      "id": "c8577935cbaa",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[옥션] 포스트 그래놀라 크랜베리 아몬드 시리얼 570g 3개 +크리치오 미니 에코백 (12,990원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752424",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-28 00:45",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_c8577935cbaa",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
+    },
+    {
+      "id": "7bda1c19f606",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[옥션] 포스트 시리얼바 4개 골라담기+치오 파우치키링 (30,640원/무배)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752423",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-28 00:39",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_7bda1c19f606",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
+    },
+    {
+      "id": "098cd5c8cf2e",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[지마켓]싱싱한 통영 생굴무침 330g 2팩(14,350원/무배)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752422",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-28 00:37",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_098cd5c8cf2e",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "c6eebd764728",
@@ -2168,13 +2727,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_4fafc71e00e8",
       "communities": [
         "뽐뿌"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "5dfab429f608",
@@ -2190,13 +2755,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_5dfab429f608",
       "communities": [
         "뽐뿌"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "2dd494c03ac8",
@@ -2212,13 +2783,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_2dd494c03ac8",
       "communities": [
         "뽐뿌"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "018c12218529",
@@ -2234,13 +2811,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_018c12218529",
       "communities": [
         "뽐뿌"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "4b3ba625a6c1",
@@ -2256,13 +2839,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_4b3ba625a6c1",
       "communities": [
         "뽐뿌"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "03f92baf58e0",
@@ -2278,13 +2867,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_03f92baf58e0",
       "communities": [
         "뽐뿌"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "fe0eb0c9a7cd",
@@ -2300,13 +2895,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_fe0eb0c9a7cd",
       "communities": [
         "뽐뿌"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "81527c79ffb8",
@@ -2322,31 +2923,41 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_81527c79ffb8",
       "communities": [
         "뽐뿌"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
-      "id": "e2cbdaac0f61",
+      "id": "cb6b6a199a80",
       "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[지마켓] 송월타월 뱀부 프리미엄 10매 (35,720원/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752413",
+      "source": "다모앙 알뜰",
+      "source_id": "damoang_deal",
+      "title": "10 네이버페이 2026-11-28 네이버페이 56원 + 랜덤 포인트",
+      "url": "https://damoang.net/economy/83598",
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "11-28 00:07",
+      "time_label": "오늘",
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
-      "clusterId": "cl_e2cbdaac0f61",
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_cb6b6a199a80",
       "communities": [
-        "뽐뿌"
+        "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
@@ -2419,13 +3030,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_d0760ddc8b43",
       "communities": [
         "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "49192100f122",
@@ -2441,13 +3058,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_49192100f122",
       "communities": [
         "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "dcae9483095a",
@@ -2463,13 +3086,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_dcae9483095a",
       "communities": [
         "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "a1c98fe32d99",
@@ -2485,13 +3114,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_a1c98fe32d99",
       "communities": [
         "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "aac5852e2fa9",
@@ -2507,13 +3142,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_aac5852e2fa9",
       "communities": [
         "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "96550211ae87",
@@ -2529,6 +3170,10 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_96550211ae87",
       "communities": [
         "다모앙 알뜰"
@@ -2551,13 +3196,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_108fc5f3a8eb",
       "communities": [
         "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "9240896c2437",
@@ -2573,13 +3224,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_9240896c2437",
       "communities": [
         "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "2eb4008e5d59",
@@ -2595,13 +3252,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_2eb4008e5d59",
       "communities": [
         "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "ea0fd1e895da",
@@ -2617,13 +3280,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_ea0fd1e895da",
       "communities": [
         "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "5798d28f08bb",
@@ -2639,13 +3308,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_5798d28f08bb",
       "communities": [
         "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "be1a9f263fb7",
@@ -2661,13 +3336,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_be1a9f263fb7",
       "communities": [
         "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "40aa03a88071",
@@ -2683,13 +3364,19 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_40aa03a88071",
       "communities": [
         "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "5583b254a7bb",
@@ -2705,6 +3392,10 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_5583b254a7bb",
       "communities": [
         "다모앙 알뜰"
@@ -2725,7 +3416,11 @@
           "time_label": "오늘",
           "hotScore": 50.0,
           "mood": "it_econ",
-          "isSensitive": false
+          "isSensitive": false,
+          "isNsfw": false,
+          "isPolitics": false,
+          "isSports": false,
+          "ageMinutes": null
         },
         {
           "id": "400575fae476",
@@ -2740,7 +3435,11 @@
           "time_label": "오늘",
           "hotScore": 50.0,
           "mood": "it_econ",
-          "isSensitive": false
+          "isSensitive": false,
+          "isNsfw": false,
+          "isPolitics": false,
+          "isSports": false,
+          "ageMinutes": null
         },
         {
           "id": "7c4615867724",
@@ -2755,7 +3454,11 @@
           "time_label": "오늘",
           "hotScore": 50.0,
           "mood": "it_econ",
-          "isSensitive": false
+          "isSensitive": false,
+          "isNsfw": false,
+          "isPolitics": false,
+          "isSports": false,
+          "ageMinutes": null
         },
         {
           "id": "0f3a76401bcb",
@@ -2770,9 +3473,15 @@
           "time_label": "오늘",
           "hotScore": 50.0,
           "mood": "it_econ",
-          "isSensitive": false
+          "isSensitive": false,
+          "isNsfw": false,
+          "isPolitics": false,
+          "isSports": false,
+          "ageMinutes": null
         }
-      ]
+      ],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "691c729bbf52",
@@ -2788,13 +3497,87 @@
       "hotScore": 50.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_691c729bbf52",
       "communities": [
         "다모앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 50.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
+    },
+    {
+      "id": "cccde56d855c",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "[단독] 민주, 최민희 \"당원 자격정지 2년\"",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050609&vdate=",
+      "views": 827,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 49.6,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_cccde56d855c",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 49.6,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
+      "aiSummaryTitle": "민주당 최민희 당원 자격정지 2년",
+      "aiThreeLineSummary": [
+        "최민희 의원에 대한 당원 자격정지 2년 징계 결정",
+        "민주당 내부의 징계와 관련된 단독 보도",
+        "정치적 파장에 대한 관심"
+      ]
+    },
+    {
+      "id": "194f8c3792e4",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "최민희 몰아내고 하나된 민주당이 되어야 합니다 그래야 이재명..",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050607&vdate=",
+      "views": 669,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 40.1,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": true,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_194f8c3792e4",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 40.1,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
+      "aiSummaryTitle": "최민희 몰아내고 민주당 하나되자",
+      "aiThreeLineSummary": [
+        "최민희 의원에 대한 비판과 함께 민주당의 단결 촉구",
+        "이재명 대표와의 관계 속에서의 당내 갈등",
+        "정치적 입장이 담긴 주장"
+      ]
     },
     {
       "id": "cccde56d855c",
@@ -2838,6 +3621,10 @@
       "hotScore": 37.8,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 8488,
       "clusterId": "cl_751287ffb425",
       "communities": [
         "클리앙 알뜰"
@@ -2888,13 +3675,19 @@
       "hotScore": 27.8,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 4045,
       "clusterId": "cl_0669e653d05e",
       "communities": [
         "클리앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 27.8,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "b85cc24dd8d7",
@@ -2910,13 +3703,53 @@
       "hotScore": 18.8,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 11867,
       "clusterId": "cl_b85cc24dd8d7",
       "communities": [
         "클리앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 18.8,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
+    },
+    {
+      "id": "e0a5cb7310b0",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "딴베 털천지들은 지들말 안들으면 민주당 박살이라고 해? 민주..",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050608&vdate=",
+      "views": 289,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 17.3,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": true,
+      "isSports": false,
+      "ageMinutes": null,
+      "clusterId": "cl_e0a5cb7310b0",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 17.3,
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
+      "aiSummaryTitle": "민주당 비판 세력에 대한 반박",
+      "aiThreeLineSummary": [
+        "민주당을 비판하는 세력에 대한 반박",
+        "당내 갈등과 관련된 논쟁적 발언",
+        "정치적 대립 구도 노출"
+      ]
     },
     {
       "id": "e0a5cb7310b0",
@@ -2960,13 +3793,19 @@
       "hotScore": 10.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 10796,
       "clusterId": "cl_6a710709de04",
       "communities": [
         "클리앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 10.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "472c1d62fea4",
@@ -2982,13 +3821,19 @@
       "hotScore": 10.0,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 13564,
       "clusterId": "cl_472c1d62fea4",
       "communities": [
         "클리앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 10.0,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "66890b574c03",
@@ -3004,13 +3849,19 @@
       "hotScore": 9.9,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 8440,
       "clusterId": "cl_66890b574c03",
       "communities": [
         "클리앙 알뜰"
       ],
       "crossCount": 1,
       "crossScore": 9.9,
-      "relatedItems": []
+      "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": ""
     },
     {
       "id": "6e9fe4b8c14b",
@@ -3026,6 +3877,10 @@
       "hotScore": 1.1,
       "mood": "it_econ",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": 14178,
       "clusterId": "cl_6e9fe4b8c14b",
       "communities": [
         "클리앙 알뜰"
@@ -3244,6 +4099,10 @@
       "hotScore": 0.0,
       "mood": "life",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_801f8ca84158",
       "communities": [
         "보배드림"
@@ -3251,6 +4110,8 @@
       "crossCount": 1,
       "crossScore": 0.0,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "유럽에서 한국인 확인하는 이유",
       "aiThreeLineSummary": [
         "유럽 여행 중 한국인 여부를 묻는 상황에 대한 분석",
@@ -3300,6 +4161,10 @@
       "hotScore": 0.0,
       "mood": "politics_conflict",
       "isSensitive": true,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_6b4ca8fba09f",
       "communities": [
         "보배드림"
@@ -3307,6 +4172,8 @@
       "crossCount": 1,
       "crossScore": 0.0,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "김해 고교 텀블러 사건 논란",
       "aiThreeLineSummary": [
         "김해 한 고등학교에서 발생한 텀블러 관련 사건",
@@ -3328,6 +4195,10 @@
       "hotScore": 0.0,
       "mood": "life",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_c061ac0dc56f",
       "communities": [
         "보배드림"
@@ -3335,6 +4206,8 @@
       "crossCount": 1,
       "crossScore": 0.0,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "학교 운동회 승패 논란",
       "aiThreeLineSummary": [
         "학교 운동회에서 승패를 나누는 것에 대한 갑론을박",
@@ -3356,6 +4229,10 @@
       "hotScore": 0.0,
       "mood": "life",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_0934d2b7670f",
       "communities": [
         "보배드림"
@@ -3363,6 +4240,8 @@
       "crossCount": 1,
       "crossScore": 0.0,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "치킨 후원 두 번째 나눔",
       "aiThreeLineSummary": [
         "치킨 후원 활동을 이어서 진행한 후기",
@@ -3384,6 +4263,10 @@
       "hotScore": 0.0,
       "mood": "humor",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": true,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_ff0af7823af6",
       "communities": [
         "보배드림"
@@ -3391,6 +4274,8 @@
       "crossCount": 1,
       "crossScore": 0.0,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "뮤지컬 공연 중 대참사 사건",
       "aiThreeLineSummary": [
         "뮤지컬 공연 중 발생한 돌발 상황이나 사고",
@@ -3412,6 +4297,10 @@
       "hotScore": 0.0,
       "mood": "life",
       "isSensitive": false,
+      "isNsfw": false,
+      "isPolitics": false,
+      "isSports": false,
+      "ageMinutes": null,
       "clusterId": "cl_dd7d33e49098",
       "communities": [
         "보배드림"
@@ -3419,6 +4308,8 @@
       "crossCount": 1,
       "crossScore": 0.0,
       "relatedItems": [],
+      "spreadMinutes": null,
+      "spreadLabel": "",
       "aiSummaryTitle": "이해 안 되는 교통사고 장면",
       "aiThreeLineSummary": [
         "도저히 이해할 수 없는 사고 영상이나 상황",

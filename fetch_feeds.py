@@ -22,13 +22,20 @@ HEADERS = {
     "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
 }
 
-SENSITIVE_KEYWORDS = [
+NSFW_KEYWORDS = [
+    "ㅇㅎ", "후방", "19금", "약혐", "극혐", "성매매", "성범죄", "성폭행",
+    "성인배우", "av배우", "야동", "노출", "몸매", "비키니", "속옷",
+]
+
+POLITICS_KEYWORDS = [
     "대통령", "국회", "의원", "정당", "민주당", "국민의힘", "국힘", "조국", "이재명",
     "윤석열", "한동훈", "탄핵", "총선", "대선", "정치", "여당", "야당", "국정",
     "비례", "공천", "징계", "윤리심판", "검찰", "특검", "계엄", "보수", "진보",
-    "페미", "한남", "이대남", "성범죄", "성폭행", "성매매", "혐오", "갈등", "살인",
-    "사망", "자살", "참사", "폭행", "학대", "마약", "음주운전", "체포", "구속",
-    "ㅇㅎ", "후방", "19금", "약혐", "극혐",
+    "페미", "한남", "이대남", "혐오", "갈등",
+]
+
+SENSITIVE_KEYWORDS = NSFW_KEYWORDS + POLITICS_KEYWORDS + [
+    "살인", "사망", "자살", "참사", "폭행", "학대", "마약", "음주운전", "체포", "구속",
 ]
 
 MOOD_RULES = {
@@ -336,16 +343,40 @@ def compute_hot_score(item: dict) -> float:
     return round(base, 1)
 
 
-def rule_classify(item: dict) -> tuple[str, bool]:
+def rule_classify(item: dict) -> tuple[str, bool, bool, bool, bool]:
     title_low = item["title"].lower()
-    is_sensitive = any(kw in title_low for kw in SENSITIVE_KEYWORDS)
+    is_nsfw = any(kw in title_low for kw in NSFW_KEYWORDS)
+    is_politics = any(kw in title_low for kw in POLITICS_KEYWORDS)
+    is_sensitive = is_nsfw or is_politics or any(kw in title_low for kw in SENSITIVE_KEYWORDS)
     if item.get("category") == "deal":
-        return "it_econ", is_sensitive
+        return "it_econ", is_sensitive, is_nsfw, is_politics, False
 
     for mood, kws in MOOD_RULES.items():
         if any(kw in title_low for kw in kws):
-            return mood, (is_sensitive or mood == "politics_conflict")
-    return "humor", is_sensitive
+            return mood, (is_sensitive or mood == "politics_conflict"), is_nsfw, is_politics, (mood == "sports")
+    return "humor", is_sensitive, is_nsfw, is_politics, False
+
+
+def parse_age_minutes(time_label: str) -> int | None:
+    if not time_label:
+        return None
+    s = time_label.strip()
+    m = re.match(r"^(\d+)\s*분\s*전$", s)
+    if m:
+        return int(m.group(1))
+    m = re.match(r"^(\d+)\s*시간\s*전$", s)
+    if m:
+        return int(m.group(1)) * 60
+    m = re.match(r"^(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}(?::\d{2})?)$", s)
+    if m:
+        fmt = "%Y-%m-%d %H:%M:%S" if len(s) == 19 else "%Y-%m-%d %H:%M"
+        try:
+            dt = datetime.strptime(s, fmt).replace(tzinfo=KST)
+            diff = (datetime.now(KST) - dt).total_seconds() / 60.0
+            return max(0, int(round(diff)))
+        except Exception:
+            return None
+    return None
 
 
 def extract_tokens(title: str) -> set[str]:
@@ -381,9 +412,13 @@ def is_similar(t1: set[str], t2: set[str]) -> bool:
 def cluster_items(items: list[dict]) -> list[dict]:
     for it in items:
         it["hotScore"] = compute_hot_score(it)
-        mood, is_sens = rule_classify(it)
+        mood, is_sens, is_nsfw, is_politics, is_sports = rule_classify(it)
         it["mood"] = mood
         it["isSensitive"] = is_sens
+        it["isNsfw"] = is_nsfw
+        it["isPolitics"] = is_politics
+        it["isSports"] = is_sports
+        it["ageMinutes"] = parse_age_minutes(it.get("time_label", ""))
         it["_tokens"] = extract_tokens(it["title"])
 
     # Sort descending by hotScore so strongest item becomes cluster representative
@@ -429,8 +464,28 @@ def cluster_items(items: list[dict]) -> list[dict]:
         rep["crossCount"] = cross_count
         rep["crossScore"] = round(rep["hotScore"] + (cross_count - 1) * 600, 1)
         rep["relatedItems"] = members if len(members) > 1 else []
-        # If any member is marked sensitive, cluster inherits sensitivity
         rep["isSensitive"] = any(m["isSensitive"] for m in members)
+        rep["isNsfw"] = any(m.get("isNsfw") for m in members)
+        rep["isPolitics"] = any(m.get("isPolitics") for m in members) or rep.get("mood") == "politics_conflict"
+        rep["isSports"] = any(m.get("isSports") for m in members) or rep.get("mood") == "sports"
+
+        ages = [m["ageMinutes"] for m in members if isinstance(m.get("ageMinutes"), int)]
+        if cross_count >= 2 and len(ages) >= 2:
+            spread = max(ages) - min(ages)
+            rep["spreadMinutes"] = spread
+            if spread < 60:
+                rep["spreadLabel"] = f"⚡ {max(5, spread)}분 만에 {cross_count}곳"
+            elif spread <= 720:
+                rep["spreadLabel"] = f"⚡ {max(1, round(spread / 60))}시간 내 {cross_count}곳"
+            else:
+                rep["spreadLabel"] = f"🔥 {cross_count}곳 동시 화제"
+        elif cross_count >= 2:
+            rep["spreadMinutes"] = None
+            rep["spreadLabel"] = f"🔥 {cross_count}곳 동시 화제"
+        else:
+            rep["spreadMinutes"] = None
+            rep["spreadLabel"] = ""
+
         result.append(rep)
 
     result.sort(key=lambda x: x["crossScore"], reverse=True)
@@ -588,6 +643,9 @@ def enrich_with_ai(items: list[dict], out_path: Path, api_key: str) -> tuple[lis
                     "url": src["url"],
                     "communities": src.get("communities", [src["source"]]),
                     "isSensitive": src.get("isSensitive", False),
+                    "isNsfw": src.get("isNsfw", False),
+                    "isPolitics": src.get("isPolitics", False),
+                    "isSports": src.get("isSports", False),
                 })
         except Exception as exc:
             print("AI briefing skipped:", exc)
@@ -603,6 +661,9 @@ def enrich_with_ai(items: list[dict], out_path: Path, api_key: str) -> tuple[lis
                 "url": it["url"],
                 "communities": it.get("communities", [it["source"]]),
                 "isSensitive": it.get("isSensitive", False),
+                "isNsfw": it.get("isNsfw", False),
+                "isPolitics": it.get("isPolitics", False),
+                "isSports": it.get("isSports", False),
             })
 
     return items, briefing

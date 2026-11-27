@@ -141,7 +141,7 @@ def fetch_slrclub(limit: int = 20) -> list[dict]:
 
 def fetch_humoruniv(limit: int = 20) -> list[dict]:
     url = "https://web.humoruniv.com/board/humor/list.html?table=pds"
-    doc = html.fromstring(fetch_bytes(url).decode("euc-kr", "ignore"))
+    doc = html.fromstring(fetch_bytes(url).decode("utf-8", "ignore"))
     items = []
     for row in doc.xpath("//tr[starts-with(@id,'li_chk_pds-')]"):
         a = row.xpath(".//td[contains(@class,'li_sbj')]//a")

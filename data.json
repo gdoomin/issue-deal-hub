@@ -1,5 +1,6 @@
 {
-  "updated_at": "2026-11-28 00:04 KST",
+  "updated_at": "2026-11-28 00:08 KST",
+  "ai_enabled": true,
   "stats": {
     "클리앙": 25,
     "보배드림": 25,
@@ -9,129 +10,781 @@
     "클리앙 알뜰": 25,
     "다모앙 알뜰": 20
   },
+  "briefing": [
+    {
+      "id": "0e9518ad585d",
+      "clusterId": "cl_0e9518ad585d",
+      "tag": "사회",
+      "headline": "일본 AV배우 20명, 한국 성매매",
+      "summary": "시간당 1000만원 성매매 논란으로 큰 충격을 주고 있습니다.",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434203",
+      "communities": [
+        "웃긴대학",
+        "보배드림"
+      ],
+      "isSensitive": true
+    },
+    {
+      "id": "9e5afe3dd387",
+      "clusterId": "cl_9e5afe3dd387",
+      "tag": "유머",
+      "headline": "당뇨갤러의 광기 어린 분노",
+      "summary": "당뇨 갤러리의 폭발적인 반응이 웃음을 유발합니다.",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434202",
+      "communities": [
+        "웃긴대학"
+      ],
+      "isSensitive": false
+    },
+    {
+      "id": "964f632b74dc",
+      "clusterId": "cl_964f632b74dc",
+      "tag": "감동",
+      "headline": "눈물 많은 엄마, 감동 만화",
+      "summary": "엄마의 눈물 많은 성격을 그린 만화가 감동을 줍니다.",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434197",
+      "communities": [
+        "웃긴대학"
+      ],
+      "isSensitive": false
+    },
+    {
+      "id": "8a93f4d34945",
+      "clusterId": "cl_8a93f4d34945",
+      "tag": "사회",
+      "headline": "자신의 몸에 불 붙인 청년의 외침",
+      "summary": "청년의 극단적 선택과 외침이 사회적 충격을 안겼습니다.",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434210",
+      "communities": [
+        "웃긴대학"
+      ],
+      "isSensitive": true
+    },
+    {
+      "id": "9cd3c5c84ffa",
+      "clusterId": "cl_9cd3c5c84ffa",
+      "tag": "연애",
+      "headline": "전남친이 보낸 이상한 메시지들",
+      "summary": "전남친의 황당한 메시지들이 공감과 웃음을 자아냅니다.",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434205",
+      "communities": [
+        "웃긴대학"
+      ],
+      "isSensitive": false
+    },
+    {
+      "id": "029b88b25a12",
+      "clusterId": "cl_029b88b25a12",
+      "tag": "건강",
+      "headline": "ADHD 팀을 위한 생활방식 추천",
+      "summary": "ADHD 팀에게 유용한 생활 팁이 주목받고 있습니다.",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434200",
+      "communities": [
+        "웃긴대학"
+      ],
+      "isSensitive": false
+    },
+    {
+      "id": "b1733e8cbf37",
+      "clusterId": "cl_b1733e8cbf37",
+      "tag": "정보",
+      "headline": "실존하는 빌렌도르프의 비너스 조각상",
+      "summary": "의외로 실존하는 조각상 사진이 흥미를 끕니다.",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434198",
+      "communities": [
+        "웃긴대학"
+      ],
+      "isSensitive": false
+    },
+    {
+      "id": "b90f849d43e7",
+      "clusterId": "cl_b90f849d43e7",
+      "tag": "사회",
+      "headline": "중국 하이디라오서 무전취식한 한국인",
+      "summary": "중국 식당에서 무전취식한 한국인 사연이 논란입니다.",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434208",
+      "communities": [
+        "웃긴대학"
+      ],
+      "isSensitive": true
+    },
+    {
+      "id": "46faab25a140",
+      "clusterId": "cl_46faab25a140",
+      "tag": "유머",
+      "headline": "우울할 때 귀에 발 대고 여보세요",
+      "summary": "우울할 때 벌어진 황당한 상황이 웃음을 줍니다.",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434201",
+      "communities": [
+        "웃긴대학"
+      ],
+      "isSensitive": false
+    },
+    {
+      "id": "36ee8bb5a63d",
+      "clusterId": "cl_36ee8bb5a63d",
+      "tag": "일상",
+      "headline": "경찰서 가서 고소한 썰",
+      "summary": "경찰서에서 고소한 경험담이 흥미를 끌고 있습니다.",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434207",
+      "communities": [
+        "웃긴대학"
+      ],
+      "isSensitive": false
+    }
+  ],
   "items": [
     {
+      "id": "0e9518ad585d",
       "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "김민석도 빨리 징계해야죠.",
-      "url": "https://www.clien.net/service/board/park/19299356",
-      "views": 1667,
-      "likes": 32,
-      "comments": 13,
-      "time_label": "2026-11-27 18:01:04"
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "일본 AV배우 20명. 한국에서 성매매 '시간당 1,000만원' [47] 답글추천 +82",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434203",
+      "views": 9284,
+      "likes": 164,
+      "comments": 47,
+      "time_label": "오늘",
+      "hotScore": 3932.0,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_0e9518ad585d",
+      "communities": [
+        "웃긴대학",
+        "보배드림"
+      ],
+      "crossCount": 2,
+      "crossScore": 4532.0,
+      "relatedItems": [
+        {
+          "id": "0e9518ad585d",
+          "category": "issue",
+          "source": "웃긴대학",
+          "source_id": "humoruniv",
+          "title": "일본 AV배우 20명. 한국에서 성매매 '시간당 1,000만원' [47] 답글추천 +82",
+          "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434203",
+          "views": 9284,
+          "likes": 164,
+          "comments": 47,
+          "time_label": "오늘",
+          "hotScore": 3932.0,
+          "mood": "politics_conflict",
+          "isSensitive": true
+        },
+        {
+          "id": "c440a58e74bc",
+          "category": "issue",
+          "source": "보배드림",
+          "source_id": "bobae",
+          "title": "일본 AV 여배우 20명 한국에서 성매매",
+          "url": "https://www.bobaedream.co.kr/view?code=best&No=1050592&vdate=",
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "time_label": "11/27",
+          "hotScore": 0.0,
+          "mood": "politics_conflict",
+          "isSensitive": true
+        }
+      ],
+      "aiSummaryTitle": "일본 AV배우 20명, 한국 성매매 시간당 1000만원",
+      "aiThreeLineSummary": [
+        "일본 AV배우 20명이 한국에서 성매매를 목적으로 입국했다는 보도.",
+        "시간당 1000만원의 고액을 받고 성매매를 알선한 혐의.",
+        "웃긴대학과 보배드림에서 동시에 화제가 되며 논란 확산."
+      ],
+      "opinionCompare": "웃긴대학은 자극적 사실에 충격, 보배드림은 사회적 일탈에 분노하는 반응."
     },
     {
+      "id": "9e5afe3dd387",
       "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희건 본격적으로 시작하네요",
-      "url": "https://www.clien.net/service/board/park/19299438",
-      "views": 3649,
-      "likes": 27,
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "당뇨갤러의 광기에 찬 분노",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434202",
+      "views": 9642,
+      "likes": 151,
+      "comments": 37,
+      "time_label": "오늘",
+      "hotScore": 3629.5,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_9e5afe3dd387",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 3629.5,
+      "relatedItems": [],
+      "aiSummaryTitle": "당뇨갤러의 광기에 찬 분노",
+      "aiThreeLineSummary": [
+        "당뇨 갤러리에서 올라온 분노 섞인 게시물이 웃긴대학으로 퍼짐.",
+        "당뇨병 환자로서의 고충과 짜증이 과장된 표현으로 드러남.",
+        "유머로 소비되지만 당뇨 환자에 대한 공감도 일부 존재."
+      ]
+    },
+    {
+      "id": "964f632b74dc",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "눈물이 많은 엄마.Manhwa [18] 답글추천 +97",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434197",
+      "views": 6929,
+      "likes": 165,
+      "comments": 18,
+      "time_label": "오늘",
+      "hotScore": 3547.7,
+      "mood": "life",
+      "isSensitive": false,
+      "clusterId": "cl_964f632b74dc",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 3547.7,
+      "relatedItems": [],
+      "aiSummaryTitle": "눈물이 많은 엄마, 감동적인 만화",
+      "aiThreeLineSummary": [
+        "눈물이 많은 엄마를 주제로 한 만화가 게시됨.",
+        "가족 간의 정서적 교감과 감동을 담은 스토리.",
+        "댓글에서 공감과 추천이 이어짐."
+      ]
+    },
+    {
+      "id": "8a93f4d34945",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "자신의 몸에 불을 붙인 청년은 죽어가며 이렇게 외쳤다",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434210",
+      "views": 4880,
+      "likes": 170,
+      "comments": 10,
+      "time_label": "오늘",
+      "hotScore": 3442.8,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_8a93f4d34945",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 3442.8,
+      "relatedItems": [],
+      "aiSummaryTitle": "자신의 몸에 불을 붙인 청년의 외침",
+      "aiThreeLineSummary": [
+        "한 청년이 분신하며 특정 메시지를 외친 사건.",
+        "게시물은 해당 사건을 다루며 사회적 메시지를 전달.",
+        "자극적이고 민감한 사건으로 논란의 여지가 있음."
+      ]
+    },
+    {
+      "id": "9cd3c5c84ffa",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "전남친 맨날 이딴거보내.jpg",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434205",
+      "views": 8208,
+      "likes": 129,
+      "comments": 25,
+      "time_label": "오늘",
+      "hotScore": 3039.5,
+      "mood": "life",
+      "isSensitive": false,
+      "clusterId": "cl_9cd3c5c84ffa",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 3039.5,
+      "relatedItems": [],
+      "aiSummaryTitle": "전남친이 보낸 이상한 메시지들",
+      "aiThreeLineSummary": [
+        "전남친이 반복적으로 보낸 메시지 스크린샷 공유.",
+        "메시지 내용이 이해하기 어렵고 기이함.",
+        "이별 후 스토킹이나 집착을 시사하는 반응."
+      ]
+    },
+    {
+      "id": "029b88b25a12",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "팀 ADHD에게 추천하는 생활방식",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434200",
+      "views": 8182,
+      "likes": 122,
       "comments": 30,
-      "time_label": "2026-11-27 20:50:23"
+      "time_label": "오늘",
+      "hotScore": 2956.9,
+      "mood": "life",
+      "isSensitive": false,
+      "clusterId": "cl_029b88b25a12",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 2956.9,
+      "relatedItems": [],
+      "aiSummaryTitle": "ADHD 팀을 위한 생활방식 추천",
+      "aiThreeLineSummary": [
+        "ADHD를 가진 팀을 위한 실용적인 생활 팁 제안.",
+        "주의력 분산을 줄이고 일상 관리를 돕는 방법들.",
+        "유머러스하지만 실제 도움이 되는 조언 포함."
+      ]
     },
     {
+      "id": "b1733e8cbf37",
       "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "지금 민주당은 국민의 힘 급이 맞습니다.",
-      "url": "https://www.clien.net/service/board/park/19299412",
-      "views": 1857,
-      "likes": 26,
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "약혐) 의외로 실존하는 빌렌도르프의 비너스.jpg",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434198",
+      "views": 10032,
+      "likes": 118,
+      "comments": 18,
+      "time_label": "오늘",
+      "hotScore": 2887.9,
+      "mood": "info",
+      "isSensitive": false,
+      "clusterId": "cl_b1733e8cbf37",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 2887.9,
+      "relatedItems": [],
+      "aiSummaryTitle": "실존하는 빌렌도르프의 비너스 조각상",
+      "aiThreeLineSummary": [
+        "빌렌도르프의 비너스로 알려진 선사시대 조각상 사진.",
+        "과장된 여성 신체 비율로 인해 약간의 혐오감을 유발할 수 있음.",
+        "고고학적 가치와 함께 외형에 대한 반응이 엇갈림."
+      ]
+    },
+    {
+      "id": "b90f849d43e7",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "중국 하이디라오에서 무전취식해버린 한국인.jpg",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434208",
+      "views": 5963,
+      "likes": 133,
+      "comments": 15,
+      "time_label": "오늘",
+      "hotScore": 2886.8,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_b90f849d43e7",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 2886.8,
+      "relatedItems": [],
+      "aiSummaryTitle": "중국 하이디라오에서 무전취식한 한국인",
+      "aiThreeLineSummary": [
+        "한국인이 중국 하이디라오에서 식사 후 계산 없이 떠난 사건.",
+        "게시물은 해당 사건을 비판적으로 다룸.",
+        "국가 간 이미지에 영향을 줄 수 있는 논란."
+      ]
+    },
+    {
+      "id": "46faab25a140",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "우울해서 귀에 발 대고 여보세요 했는데.jpg",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434201",
+      "views": 6619,
+      "likes": 112,
+      "comments": 23,
+      "time_label": "오늘",
+      "hotScore": 2620.1,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_46faab25a140",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 2620.1,
+      "relatedItems": [],
+      "aiSummaryTitle": "우울할 때 귀에 발 대고 여보세요 한 사연",
+      "aiThreeLineSummary": [
+        "우울한 기분에 귀에 발을 대고 전화를 받은 웃픈 이야기.",
+        "일상의 소소한 실수와 감정을 유머로 승화.",
+        "공감과 웃음을 유발하는 내용."
+      ]
+    },
+    {
+      "id": "36ee8bb5a63d",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "고소하러 경찰서 간 썰",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434207",
+      "views": 5348,
+      "likes": 117,
+      "comments": 15,
+      "time_label": "오늘",
+      "hotScore": 2561.9,
+      "mood": "life",
+      "isSensitive": false,
+      "clusterId": "cl_36ee8bb5a63d",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 2561.9,
+      "relatedItems": [],
+      "aiSummaryTitle": "경찰서 가서 고소한 썰",
+      "aiThreeLineSummary": [
+        "고소를 위해 경찰서를 방문한 개인 경험담.",
+        "법적 절차와 관련된 에피소드가 흥미를 유발.",
+        "실제 고소 과정의 어려움이나 허점을 드러냄."
+      ]
+    },
+    {
+      "id": "d2c788c75636",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "세계적인 철학자가 말하는 인간관계에 상처 안 받는 법",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434211",
+      "views": 4281,
+      "likes": 118,
+      "comments": 20,
+      "time_label": "오늘",
+      "hotScore": 2560.9,
+      "mood": "info",
+      "isSensitive": false,
+      "clusterId": "cl_d2c788c75636",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 2560.9,
+      "relatedItems": [],
+      "aiSummaryTitle": "철학자가 말하는 인간관계 상처 안 받는 법",
+      "aiThreeLineSummary": [
+        "세계적 철학자의 인간관계 조언을 소개.",
+        "타인의 시선에서 벗어나 상처받지 않는 방법 제시.",
+        "삶의 지혜를 전하는 정보성 콘텐츠."
+      ]
+    },
+    {
+      "id": "87bab7225649",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "백화점 근무복에 민원 넣은 고객...그 결과",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434199",
+      "views": 8839,
+      "likes": 105,
       "comments": 12,
-      "time_label": "2026-11-27 19:56:00"
+      "time_label": "오늘",
+      "hotScore": 2528.3,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_87bab7225649",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 2528.3,
+      "relatedItems": [],
+      "aiSummaryTitle": "백화점 근무복 민원 넣은 고객의 결과",
+      "aiThreeLineSummary": [
+        "백화점 직원의 근무복에 대해 민원을 제기한 고객 사연.",
+        "민원 이후 벌어진 예상치 못한 결과를 전함.",
+        "고객과 직원 간 갈등을 다룬 사회적 이슈."
+      ]
     },
     {
+      "id": "bcdcfbebcc5d",
       "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "집값이 너무 상승합니다 어떻게 해야 할까요?",
-      "url": "https://www.clien.net/service/board/park/19299105",
-      "views": 5378,
-      "likes": 26,
-      "comments": 10,
-      "time_label": "2026-11-27 08:44:47"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "조만간 김민석은 제명되겠군요.",
-      "url": "https://www.clien.net/service/board/park/19299413",
-      "views": 2331,
-      "likes": 25,
-      "comments": 10,
-      "time_label": "2026-11-27 19:57:41"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "민주당 간판만 달려있지 제가 알던 민주당이 아니네요",
-      "url": "https://www.clien.net/service/board/park/19299423",
-      "views": 1669,
-      "likes": 24,
-      "comments": 24,
-      "time_label": "2026-11-27 20:25:42"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "손연재 부부 30억 연세의료원 기부",
-      "url": "https://www.clien.net/service/board/park/19299285",
-      "views": 5636,
-      "likes": 24,
-      "comments": 11,
-      "time_label": "2026-11-27 15:03:19"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희 의원 징계에 왜 그렇게 반발하냐고요??",
-      "url": "https://www.clien.net/service/board/park/19299385",
-      "views": 2512,
-      "likes": 23,
-      "comments": 24,
-      "time_label": "2026-11-27 18:57:23"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "겸손 뉴스공장 홍사훈기자가 제대로 진국이네요",
-      "url": "https://www.clien.net/service/board/park/19299128",
-      "views": 3781,
-      "likes": 23,
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "(ㅇㅎ?) 옷의 중요성",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434204",
+      "views": 9899,
+      "likes": 97,
       "comments": 16,
-      "time_label": "2026-11-27 09:34:10"
+      "time_label": "오늘",
+      "hotScore": 2483.9,
+      "mood": "humor",
+      "isSensitive": true,
+      "clusterId": "cl_bcdcfbebcc5d",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 2483.9,
+      "relatedItems": [],
+      "aiSummaryTitle": "옷의 중요성, 선정적일 수 있는 사진",
+      "aiThreeLineSummary": [
+        "옷차림에 따라 달라 보이는 외모를 보여주는 사진.",
+        "선정적인 요소가 포함되어 있을 수 있음.",
+        "유머와 함께 옷의 중요성을 강조."
+      ]
     },
     {
+      "id": "1a23adb8f7e0",
       "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "김민석이 사라져야 민주당이산다.",
-      "url": "https://www.clien.net/service/board/park/19299312",
-      "views": 1519,
-      "likes": 22,
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "거친 성격의 메이드와 프릴 달린 옷.manhwa",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434196",
+      "views": 6065,
+      "likes": 108,
+      "comments": 6,
+      "time_label": "오늘",
+      "hotScore": 2361.9,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_1a23adb8f7e0",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 2361.9,
+      "relatedItems": [],
+      "aiSummaryTitle": "거친 성격의 메이드와 프릴 옷 만화",
+      "aiThreeLineSummary": [
+        "거친 성격의 메이드가 프릴 달린 옷을 입은 만화.",
+        "캐릭터의 성격과 복장의 대비가 웃음을 유발.",
+        "일본 만화 스타일의 유머 콘텐츠."
+      ]
+    },
+    {
+      "id": "5c26b546050c",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "인스타보다가 발견했는데 이거 실화야…?",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434215",
+      "views": 2133,
+      "likes": 82,
+      "comments": 39,
+      "time_label": "오늘",
+      "hotScore": 1955.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_5c26b546050c",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 1955.0,
+      "relatedItems": [],
+      "aiSummaryTitle": "인스타서 발견한 충격적 장면",
+      "aiThreeLineSummary": [
+        "인스타그램에서 우연히 발견한 게시물이 실화인지 의문을 제기",
+        "놀라운 내용이나 사진에 대한 반응으로 추정",
+        "커뮤니티에서 화제성과 충격을 유발하는 유형"
+      ]
+    },
+    {
+      "id": "1ce70a50bdcf",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "실제로 존재하는 강 이름.jpg",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434209",
+      "views": 5207,
+      "likes": 80,
+      "comments": 10,
+      "time_label": "오늘",
+      "hotScore": 1842.4,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_1ce70a50bdcf",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 1842.4,
+      "relatedItems": [],
+      "aiSummaryTitle": "실제로 존재하는 강 이름",
+      "aiThreeLineSummary": [
+        "실제로 존재하는 강 이름을 소개하는 게시물",
+        "이름의 특이함이나 재미있는 의미로 웃음 유발",
+        "지리 상식과 유머를 결합한 콘텐츠"
+      ]
+    },
+    {
+      "id": "3e0d16ecd54b",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "약사 유튜버의 훈수 컨텐츠 대참사",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434212",
+      "views": 3796,
+      "likes": 83,
       "comments": 11,
-      "time_label": "2026-11-27 16:11:33"
+      "time_label": "오늘",
+      "hotScore": 1820.8,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_3e0d16ecd54b",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 1820.8,
+      "relatedItems": [],
+      "aiSummaryTitle": "약사 유튜버 훈수 콘텐츠 대참사",
+      "aiThreeLineSummary": [
+        "약사 유튜버가 훈수 콘텐츠를 만들다가 벌어진 실수",
+        "전문가의 조언이 오히려 역효과를 낸 사례",
+        "온라인 콘텐츠 제작의 주의점을 보여줌"
+      ]
     },
     {
+      "id": "a4f58b6601b4",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "신호대기중에 아빠랑 마주침.jpg",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434213",
+      "views": 3282,
+      "likes": 85,
+      "comments": 10,
+      "time_label": "오늘",
+      "hotScore": 1816.9,
+      "mood": "life",
+      "isSensitive": false,
+      "clusterId": "cl_a4f58b6601b4",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 1816.9,
+      "relatedItems": [],
+      "aiSummaryTitle": "신호대기 중 아빠와 마주친 사연",
+      "aiThreeLineSummary": [
+        "신호대기 중 우연히 아빠를 만난 상황",
+        "예상치 못한 만남에 대한 재미있는 에피소드",
+        "일상에서 발생할 수 있는 공감 가는 이야기"
+      ]
+    },
+    {
+      "id": "a1f62da700c8",
       "category": "issue",
       "source": "클리앙",
       "source_id": "clien",
-      "title": "쫄려서 취임100일 기자회견도 못하는 주제에",
-      "url": "https://www.clien.net/service/board/park/19299451",
-      "views": 2089,
-      "likes": 21,
-      "comments": 14,
-      "time_label": "2026-11-27 21:38:37"
+      "title": "망해간다는 스타벅스코리아",
+      "url": "https://www.clien.net/service/board/park/19299148",
+      "views": 8024,
+      "likes": 19,
+      "comments": 58,
+      "time_label": "2026-11-27 10:25:10",
+      "hotScore": 1345.4,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_a1f62da700c8",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 1345.4,
+      "relatedItems": [],
+      "aiSummaryTitle": "스타벅스코리아 몰락 논란",
+      "aiThreeLineSummary": [
+        "스타벅스코리아의 쇠퇴를 주장하는 게시물",
+        "최근 서비스나 가격 정책에 대한 불만 반영",
+        "브랜드 이미지 하락에 대한 우려"
+      ]
     },
     {
+      "id": "752fee254f88",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "[혐주의] 결국 자퇴한 여학생",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434216",
+      "views": 1419,
+      "likes": 58,
+      "comments": 22,
+      "time_label": "오늘",
+      "hotScore": 1327.1,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_752fee254f88",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 1327.1,
+      "relatedItems": [],
+      "aiSummaryTitle": "결국 자퇴한 여학생 사연",
+      "aiThreeLineSummary": [
+        "학교 폭력이나 괴롭힘으로 자퇴한 여학생 이야기",
+        "혐오주의 표시가 있는 민감한 사건",
+        "교육 현장의 문제점을 드러내는 사례"
+      ]
+    },
+    {
+      "id": "9474afc5ffc0",
+      "category": "issue",
+      "source": "웃긴대학",
+      "source_id": "humoruniv",
+      "title": "조선시대 공무원들의 인수인계 문화.jpg",
+      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434214",
+      "views": 1652,
+      "likes": 54,
+      "comments": 11,
+      "time_label": "오늘",
+      "hotScore": 1170.1,
+      "mood": "info",
+      "isSensitive": false,
+      "clusterId": "cl_9474afc5ffc0",
+      "communities": [
+        "웃긴대학"
+      ],
+      "crossCount": 1,
+      "crossScore": 1170.1,
+      "relatedItems": [],
+      "aiSummaryTitle": "조선시대 공무원 인수인계 문화",
+      "aiThreeLineSummary": [
+        "조선시대 공무원들의 인수인계 방식을 소개",
+        "현대와 비교되는 재미있는 역사적 사실",
+        "역사 속 직장 문화에 대한 흥미로운 접근"
+      ]
+    },
+    {
+      "id": "e99f7129cb0e",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희 당원권 2년 정지",
+      "url": "https://www.clien.net/service/board/park/19299358",
+      "views": 3777,
+      "likes": 17,
+      "comments": 59,
+      "time_label": "2026-11-27 18:06:49",
+      "hotScore": 1063.6,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_e99f7129cb0e",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 1063.6,
+      "relatedItems": [],
+      "aiSummaryTitle": "최민희 당원권 2년 정지",
+      "aiThreeLineSummary": [
+        "최민희 의원이 당원권 2년 정지 징계를 받음",
+        "정치권 내 징계 결정에 대한 논란",
+        "향후 정치적 행보에 영향 예상"
+      ]
+    },
+    {
+      "id": "150a8754a8a7",
       "category": "issue",
       "source": "클리앙",
       "source_id": "clien",
@@ -140,64 +793,639 @@
       "views": 3651,
       "likes": 21,
       "comments": 47,
-      "time_label": "2026-11-27 09:46:42"
+      "time_label": "2026-11-27 09:46:42",
+      "hotScore": 1020.1,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_150a8754a8a7",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 1020.1,
+      "relatedItems": [],
+      "aiSummaryTitle": "이재명 같은 상사 상상에 아찔",
+      "aiThreeLineSummary": [
+        "이재명을 직장 상사로 상상하면 아찔하다는 반응",
+        "정치인 리더십에 대한 부정적 인식 반영",
+        "정치적 논쟁을 유발할 수 있는 주제"
+      ]
     },
     {
+      "id": "aa1facdf07e6",
       "category": "issue",
       "source": "클리앙",
       "source_id": "clien",
-      "title": "망해간다는 스타벅스코리아",
-      "url": "https://www.clien.net/service/board/park/19299148",
-      "views": 8020,
-      "likes": 19,
-      "comments": 58,
-      "time_label": "2026-11-27 10:25:10"
+      "title": "최민희건 본격적으로 시작하네요",
+      "url": "https://www.clien.net/service/board/park/19299438",
+      "views": 3666,
+      "likes": 27,
+      "comments": 30,
+      "time_label": "2026-11-27 20:50:23",
+      "hotScore": 976.0,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_aa1facdf07e6",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 976.0,
+      "relatedItems": [],
+      "aiSummaryTitle": "최민희 징계 본격화",
+      "aiThreeLineSummary": [
+        "최민희 의원에 대한 징계 절차가 본격화됨",
+        "정치권 내 갈등이 심화될 조짐",
+        "관련 후속 보도에 대한 관심 집중"
+      ]
     },
     {
+      "id": "b84dce511e66",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "집값이 너무 상승합니다 어떻게 해야 할까요?",
+      "url": "https://www.clien.net/service/board/park/19299105",
+      "views": 5378,
+      "likes": 26,
+      "comments": 10,
+      "time_label": "2026-11-27 08:44:47",
+      "hotScore": 880.7,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_b84dce511e66",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 880.7,
+      "relatedItems": [],
+      "aiSummaryTitle": "집값 급등에 대한 고민",
+      "aiThreeLineSummary": [
+        "집값이 너무 올라 어떻게 해야 할지 고민하는 글",
+        "주거 비용 상승에 대한 사회적 불안 반영",
+        "부동산 시장에 대한 개인적 대응 논의"
+      ]
+    },
+    {
+      "id": "40940de1a129",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "손연재 부부 30억 연세의료원 기부",
+      "url": "https://www.clien.net/service/board/park/19299285",
+      "views": 5637,
+      "likes": 24,
+      "comments": 11,
+      "time_label": "2026-11-27 15:03:19",
+      "hotScore": 869.2,
+      "mood": "life",
+      "isSensitive": false,
+      "clusterId": "cl_40940de1a129",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 869.2,
+      "relatedItems": [],
+      "aiSummaryTitle": "손연재 부부 30억 기부",
+      "aiThreeLineSummary": [
+        "손연재 부부가 연세의료원에 30억 원 기부",
+        "대규모 기부 소식에 대한 긍정적 반응",
+        "공인으로서의 선행에 주목"
+      ]
+    },
+    {
+      "id": "d07d31f8213e",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희 중징계라는군요?",
+      "url": "https://www.clien.net/service/board/park/19299342",
+      "views": 3673,
+      "likes": 15,
+      "comments": 39,
+      "time_label": "2026-11-27 17:31:56",
+      "hotScore": 841.4,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_d07d31f8213e",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 841.4,
+      "relatedItems": [],
+      "aiSummaryTitle": "최민희 중징계 결정",
+      "aiThreeLineSummary": [
+        "최민희 의원이 중징계를 받았다는 소식",
+        "정치권 내 징계 수위에 대한 논의",
+        "당내 갈등과 향후 정치 일정에 영향"
+      ]
+    },
+    {
+      "id": "4dd449335bc0",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "김민석도 빨리 징계해야죠.",
+      "url": "https://www.clien.net/service/board/park/19299356",
+      "views": 1668,
+      "likes": 32,
+      "comments": 13,
+      "time_label": "2026-11-27 18:01:04",
+      "hotScore": 793.1,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_4dd449335bc0",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 793.1,
+      "relatedItems": [],
+      "aiSummaryTitle": "김민석도 징계해야 한다는 주장",
+      "aiThreeLineSummary": [
+        "김민석 의원도 징계해야 한다는 목소리",
+        "정치권 내 징계 형평성 논란",
+        "당내 갈등이 확산될 가능성"
+      ]
+    },
+    {
+      "id": "5938c4e0c7e4",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "겸손 뉴스공장 홍사훈기자가 제대로 진국이네요",
+      "url": "https://www.clien.net/service/board/park/19299128",
+      "views": 3782,
+      "likes": 23,
+      "comments": 16,
+      "time_label": "2026-11-27 09:34:10",
+      "hotScore": 784.9,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_5938c4e0c7e4",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 784.9,
+      "relatedItems": []
+    },
+    {
+      "id": "c70d9748125a",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희 의원 징계에 왜 그렇게 반발하냐고요??",
+      "url": "https://www.clien.net/service/board/park/19299385",
+      "views": 2517,
+      "likes": 23,
+      "comments": 24,
+      "time_label": "2026-11-27 18:57:23",
+      "hotScore": 781.0,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_c70d9748125a",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 781.0,
+      "relatedItems": []
+    },
+    {
+      "id": "d1fb9a592574",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "민주당 간판만 달려있지 제가 알던 민주당이 아니네요",
+      "url": "https://www.clien.net/service/board/park/19299423",
+      "views": 1678,
+      "likes": 24,
+      "comments": 24,
+      "time_label": "2026-11-27 20:25:42",
+      "hotScore": 748.7,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_d1fb9a592574",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 748.7,
+      "relatedItems": []
+    },
+    {
+      "id": "979a801d9924",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[iOS] YouPlay 평생 IAP 일시 무료",
+      "url": "https://www.clien.net/service/board/jirum/19299082",
+      "views": 8448,
+      "likes": 0,
+      "comments": 26,
+      "time_label": "2026-11-27 07:55:45",
+      "hotScore": 740.9,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_979a801d9924",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 740.9,
+      "relatedItems": []
+    },
+    {
+      "id": "24b928cee934",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희 중징계로 완전 지지층 갈라놓네요",
+      "url": "https://www.clien.net/service/board/park/19299495",
+      "views": 1501,
+      "likes": 13,
+      "comments": 41,
+      "time_label": "2026-11-27 23:09:21",
+      "hotScore": 693.1,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_24b928cee934",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 693.1,
+      "relatedItems": []
+    },
+    {
+      "id": "7d5f1012e9c3",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "지금 민주당은 국민의 힘 급이 맞습니다.",
+      "url": "https://www.clien.net/service/board/park/19299412",
+      "views": 1863,
+      "likes": 26,
+      "comments": 12,
+      "time_label": "2026-11-27 19:56:00",
+      "hotScore": 687.8,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_7d5f1012e9c3",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 687.8,
+      "relatedItems": [
+        {
+          "id": "7d5f1012e9c3",
+          "category": "issue",
+          "source": "클리앙",
+          "source_id": "clien",
+          "title": "지금 민주당은 국민의 힘 급이 맞습니다.",
+          "url": "https://www.clien.net/service/board/park/19299412",
+          "views": 1863,
+          "likes": 26,
+          "comments": 12,
+          "time_label": "2026-11-27 19:56:00",
+          "hotScore": 687.8,
+          "mood": "politics_conflict",
+          "isSensitive": true
+        },
+        {
+          "id": "6aced0bea5cd",
+          "category": "issue",
+          "source": "클리앙",
+          "source_id": "clien",
+          "title": "민주당은 폭망의 길로 결국 가네요.",
+          "url": "https://www.clien.net/service/board/park/19299433",
+          "views": 3858,
+          "likes": 13,
+          "comments": 22,
+          "time_label": "2026-11-27 20:42:38",
+          "hotScore": 663.5,
+          "mood": "politics_conflict",
+          "isSensitive": true
+        }
+      ]
+    },
+    {
+      "id": "595810e2c60e",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "조만간 김민석은 제명되겠군요.",
+      "url": "https://www.clien.net/service/board/park/19299413",
+      "views": 2336,
+      "likes": 25,
+      "comments": 10,
+      "time_label": "2026-11-27 19:57:41",
+      "hotScore": 680.2,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_595810e2c60e",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 680.2,
+      "relatedItems": []
+    },
+    {
+      "id": "6d5020b5bfec",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "도레이씨 안경닦이 안경수건 천 도레이 극세사 클리너 선물용",
+      "url": "https://www.clien.net/service/board/jirum/19297766",
+      "views": 9120,
+      "likes": 0,
+      "comments": 13,
+      "time_label": "2026-11-24 10:42:33",
+      "hotScore": 664.2,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_6d5020b5bfec",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 664.2,
+      "relatedItems": []
+    },
+    {
+      "id": "af3c803cc407",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희는 국회의원 제명감이지요",
+      "url": "https://www.clien.net/service/board/park/19299400",
+      "views": 2652,
+      "likes": 13,
+      "comments": 29,
+      "time_label": "2026-11-27 19:33:38",
+      "hotScore": 654.1,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_af3c803cc407",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 654.1,
+      "relatedItems": []
+    },
+    {
+      "id": "39ccf77df1a0",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "쫄려서 취임100일 기자회견도 못하는 주제에",
+      "url": "https://www.clien.net/service/board/park/19299451",
+      "views": 2114,
+      "likes": 21,
+      "comments": 14,
+      "time_label": "2026-11-27 21:38:37",
+      "hotScore": 630.8,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_39ccf77df1a0",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 630.8,
+      "relatedItems": []
+    },
+    {
+      "id": "6231edf60a53",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "지방의회는 없애는 것이 답일 듯 하네요",
+      "url": "https://www.clien.net/service/board/park/19299224",
+      "views": 2831,
+      "likes": 15,
+      "comments": 21,
+      "time_label": "2026-11-27 13:03:49",
+      "hotScore": 628.9,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_6231edf60a53",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 628.9,
+      "relatedItems": []
+    },
+    {
+      "id": "71132e90370f",
       "category": "issue",
       "source": "클리앙",
       "source_id": "clien",
       "title": "최민희가 2년 당원권이 정지 됐군요... 그럼 이제 김민석 징계는요?",
       "url": "https://www.clien.net/service/board/park/19299497",
-      "views": 1121,
-      "likes": 18,
+      "views": 1169,
+      "likes": 19,
       "comments": 24,
-      "time_label": "2026-11-27 23:17:05"
+      "time_label": "2026-11-27 23:17:05",
+      "hotScore": 628.1,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_71132e90370f",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 628.1,
+      "relatedItems": []
     },
     {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희 중징계를 내린 윤리심판원에 문진석이 있네요 ㅎㅎㅎㅎ",
-      "url": "https://www.clien.net/service/board/park/19299472",
-      "views": 1659,
-      "likes": 17,
-      "comments": 16,
-      "time_label": "2026-11-27 22:21:00"
+      "id": "8dd115c91a71",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[WearOS] HW Terramaster Mk III Hybrid 일시 무료",
+      "url": "https://www.clien.net/service/board/jirum/19296755",
+      "views": 9380,
+      "likes": 0,
+      "comments": 6,
+      "time_label": "2026-11-22 09:28:58",
+      "hotScore": 616.8,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_8dd115c91a71",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 616.8,
+      "relatedItems": []
     },
     {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희 당원권 2년 정지",
-      "url": "https://www.clien.net/service/board/park/19299358",
-      "views": 3771,
-      "likes": 17,
-      "comments": 59,
-      "time_label": "2026-11-27 18:06:49"
-    },
-    {
+      "id": "b9d02d096b3e",
       "category": "issue",
       "source": "클리앙",
       "source_id": "clien",
       "title": "최민희 의원님 걱정말아요... 무소속으로 나와도 뽑아드립니다.",
       "url": "https://www.clien.net/service/board/park/19299455",
-      "views": 1930,
+      "views": 1947,
       "likes": 16,
       "comments": 21,
-      "time_label": "2026-11-27 21:40:37"
+      "time_label": "2026-11-27 21:40:37",
+      "hotScore": 593.8,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_b9d02d096b3e",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 593.8,
+      "relatedItems": []
     },
     {
+      "id": "99badc0f90d6",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "김민석이 사라져야 민주당이산다.",
+      "url": "https://www.clien.net/service/board/park/19299312",
+      "views": 1520,
+      "likes": 22,
+      "comments": 11,
+      "time_label": "2026-11-27 16:11:33",
+      "hotScore": 586.2,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_99badc0f90d6",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 586.2,
+      "relatedItems": []
+    },
+    {
+      "id": "dffc5923aac4",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[WearOS] Zu0̸x5 Fit Digital Watch Face 일시 무료",
+      "url": "https://www.clien.net/service/board/jirum/19296066",
+      "views": 8675,
+      "likes": 0,
+      "comments": 6,
+      "time_label": "2026-11-20 16:16:20",
+      "hotScore": 574.5,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_dffc5923aac4",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 574.5,
+      "relatedItems": [
+        {
+          "id": "dffc5923aac4",
+          "category": "deal",
+          "source": "클리앙 알뜰",
+          "source_id": "clien_deal",
+          "title": "[WearOS] Zu0̸x5 Fit Digital Watch Face 일시 무료",
+          "url": "https://www.clien.net/service/board/jirum/19296066",
+          "views": 8675,
+          "likes": 0,
+          "comments": 6,
+          "time_label": "2026-11-20 16:16:20",
+          "hotScore": 574.5,
+          "mood": "it_econ",
+          "isSensitive": false
+        },
+        {
+          "id": "b5a145ffd6a1",
+          "category": "deal",
+          "source": "클리앙 알뜰",
+          "source_id": "clien_deal",
+          "title": "[WearOS] SamWatch Digital Shu 2 2025 일시 무료",
+          "url": "https://www.clien.net/service/board/jirum/19298282",
+          "views": 5183,
+          "likes": 0,
+          "comments": 7,
+          "time_label": "2026-11-25 11:58:47",
+          "hotScore": 374.0,
+          "mood": "it_econ",
+          "isSensitive": false
+        },
+        {
+          "id": "3cad9c0948c2",
+          "category": "deal",
+          "source": "클리앙 알뜰",
+          "source_id": "clien_deal",
+          "title": "[WearOS] SamWatch Digital Harmony I 일시 무료",
+          "url": "https://www.clien.net/service/board/jirum/19294728",
+          "views": 11,
+          "likes": 0,
+          "comments": 1,
+          "time_label": "2026-11-18 18:08:32",
+          "hotScore": 9.7,
+          "mood": "it_econ",
+          "isSensitive": false
+        }
+      ]
+    },
+    {
+      "id": "6516e0cc71f8",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "최민희 중징계를 내린 윤리심판원에 문진석이 있네요 ㅎㅎㅎㅎ",
+      "url": "https://www.clien.net/service/board/park/19299472",
+      "views": 1675,
+      "likes": 17,
+      "comments": 16,
+      "time_label": "2026-11-27 22:21:00",
+      "hotScore": 550.5,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_6516e0cc71f8",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 550.5,
+      "relatedItems": []
+    },
+    {
+      "id": "2520e55f7f61",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "부동산 문제로 그냥 웃음만 나오네요",
+      "url": "https://www.clien.net/service/board/park/19299344",
+      "views": 2644,
+      "likes": 14,
+      "comments": 15,
+      "time_label": "2026-11-27 17:40:36",
+      "hotScore": 545.6,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_2520e55f7f61",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 545.6,
+      "relatedItems": []
+    },
+    {
+      "id": "9d04dde92e63",
       "category": "issue",
       "source": "클리앙",
       "source_id": "clien",
@@ -206,801 +1434,218 @@
       "views": 1123,
       "likes": 16,
       "comments": 16,
-      "time_label": "2026-11-27 18:42:20"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희 중징계라는군요?",
-      "url": "https://www.clien.net/service/board/park/19299342",
-      "views": 3670,
-      "likes": 15,
-      "comments": 39,
-      "time_label": "2026-11-27 17:31:56"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "지방의회는 없애는 것이 답일 듯 하네요",
-      "url": "https://www.clien.net/service/board/park/19299224",
-      "views": 2826,
-      "likes": 15,
-      "comments": 21,
-      "time_label": "2026-11-27 13:03:49"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "민주당이나 국힘이나...",
-      "url": "https://www.clien.net/service/board/park/19299408",
-      "views": 992,
-      "likes": 14,
-      "comments": 9,
-      "time_label": "2026-11-27 19:43:57"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "부동산 문제로 그냥 웃음만 나오네요",
-      "url": "https://www.clien.net/service/board/park/19299344",
-      "views": 2640,
-      "likes": 14,
-      "comments": 14,
-      "time_label": "2026-11-27 17:40:36"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희 중징계로 완전 지지층 갈라놓네요",
-      "url": "https://www.clien.net/service/board/park/19299495",
-      "views": 1446,
-      "likes": 13,
-      "comments": 39,
-      "time_label": "2026-11-27 23:09:21"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "민주당은 폭망의 길로 결국 가네요.",
-      "url": "https://www.clien.net/service/board/park/19299433",
-      "views": 3838,
-      "likes": 13,
-      "comments": 22,
-      "time_label": "2026-11-27 20:42:38"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희는 국회의원 제명감이지요",
-      "url": "https://www.clien.net/service/board/park/19299400",
-      "views": 2645,
-      "likes": 13,
-      "comments": 29,
-      "time_label": "2026-11-27 19:33:38"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "산악회 하는 꼬라지 좀 보소 ㅉㅉㅉ",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050594&vdate=",
-      "views": 1717,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "일본 AV 여배우 20명 한국에서 성매매",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050592&vdate=",
-      "views": 4844,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "병신 짭닉 새끼가 출현 espnk3 (내용 추가)",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050588&vdate=",
-      "views": 2567,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "요즘 유럽에서 일단 한국인이냐고 묻는 이유",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050591&vdate=",
-      "views": 4542,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "퇴근길 치킨 배달하고 왔네요",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050589&vdate=",
-      "views": 3969,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "김해 고교 텀블럼 사건",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050573&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "펌)학교 운동회 승패를 갈라야하나?jpg",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050585&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "지난번에 이어 치킨 후원 한 번 더 하고 왔습니다~",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050557&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "뮤지컬판에서 대참사 난 사건",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050568&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "볼때마다 이해 안되는 사고",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050584&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "여러분들의 신고는 사랑입니다",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050576&vdate=",
-      "views": 3691,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "차문 안잠그는 캐나다 마을",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050586&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "일본 가출 청소년들 성병검사 해봄",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050572&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "신태일 2심 최종 형량입니다.",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050544&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "여성이 당한 성범죄를 고발하니 여성단체가 역으로 고발자를 비..",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050532&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "황홀했던 그해 바다",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050582&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "목숨건 장난",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050536&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "남경필 장남 출소 1년 만에 또 체포",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050590&vdate=",
-      "views": 3970,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "충격 '그 노래' 빌보드 1위 탈환 실패",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050543&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "중고거래 반말",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050524&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "청순한 그녀의 취향",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050567&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "한국 복싱 유망주 김이현 선수가 뺑소니 사고로 사망했네요",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050525&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "집 15채산 96년생",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050526&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "경찰이 실적에 미치면 생기는 일",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050570&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "게임했다고 플스 박살",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050569&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11/27"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "[혐주의] 결국 자퇴한 여학생",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434216",
-      "views": 1205,
-      "likes": 52,
-      "comments": 21,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "인스타보다가 발견했는데 이거 실화야…?",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434215",
-      "views": 1771,
-      "likes": 75,
-      "comments": 36,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "조선시대 공무원들의 인수인계 문화.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434214",
-      "views": 1386,
-      "likes": 52,
-      "comments": 8,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "신호대기중에 아빠랑 마주침.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434213",
-      "views": 3061,
-      "likes": 81,
-      "comments": 10,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "약사 유튜버의 훈수 컨텐츠 대참사",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434212",
-      "views": 3578,
-      "likes": 83,
-      "comments": 11,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "세계적인 철학자가 말하는 인간관계에 상처 안 받는 법",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434211",
-      "views": 4231,
-      "likes": 115,
-      "comments": 20,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "자신의 몸에 불을 붙인 청년은 죽어가며 이렇게 외쳤다",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434210",
-      "views": 4774,
-      "likes": 167,
-      "comments": 10,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "실제로 존재하는 강 이름.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434209",
-      "views": 5067,
-      "likes": 80,
-      "comments": 10,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "중국 하이디라오에서 무전취식해버린 한국인.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434208",
-      "views": 5802,
-      "likes": 131,
-      "comments": 15,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "고소하러 경찰서 간 썰",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434207",
-      "views": 5213,
-      "likes": 114,
-      "comments": 15,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "전남친 맨날 이딴거보내.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434205",
-      "views": 8104,
-      "likes": 127,
-      "comments": 25,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "(ㅇㅎ?) 옷의 중요성",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434204",
-      "views": 9696,
-      "likes": 96,
-      "comments": 16,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "일본 AV배우 20명. 한국에서 성매매 '시간당 1,000만원' [47] 답글추천 +80",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434203",
-      "views": 9190,
-      "likes": 161,
-      "comments": 47,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "당뇨갤러의 광기에 찬 분노",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434202",
-      "views": 9512,
-      "likes": 150,
-      "comments": 37,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "우울해서 귀에 발 대고 여보세요 했는데.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434201",
-      "views": 6556,
-      "likes": 111,
-      "comments": 23,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "팀 ADHD에게 추천하는 생활방식",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434200",
-      "views": 8076,
-      "likes": 121,
-      "comments": 29,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "백화점 근무복에 민원 넣은 고객...그 결과",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434199",
-      "views": 8733,
-      "likes": 104,
-      "comments": 12,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "약혐) 의외로 실존하는 빌렌도르프의 비너스.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434198",
-      "views": 9900,
-      "likes": 117,
-      "comments": 18,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "눈물이 많은 엄마.Manhwa [18] 답글추천 +96",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434197",
-      "views": 6848,
-      "likes": 162,
-      "comments": 18,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "거친 성격의 메이드와 프릴 달린 옷.manhwa",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434196",
-      "views": 6045,
-      "likes": 107,
-      "comments": 6,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[G마켓] 통영 제철 홍가리비 5kg 100미 내외",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752410",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 23:33"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[팔도감] 보온/보냉 접이식 롤링카트 85L (27,859원/무배)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752409",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 23:29"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[11번가] 노르웨이 생연어 딥스킨 필렛 1kg (31,020원/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752408",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 23:09"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[G마켓] AHC 메이크업핏 마스터즈 톤업 선세럼 50ml 2개 (18,170원/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752407",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:58"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[GS프레쉬]진라면 소컵6개 팝카드결제(2,980원/픽업)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752406",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:43"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[11번가] 송병장 대용량핫팩 150G 30개 (12,900원/무배)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752405",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:39"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[옥션] 샘표 토장찌개양념 등 7종 2+2개 골라담기+연두링 증정(11,990원/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752404",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:28"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[롯데온] 김해뒷고기 1+등급 1kg (11840/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752403",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:13"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[11번가] 고시히카리 상등급 10kg (32,580원/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752402",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:11"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[네이버]쑥콩떡 60g 32개+증정(초례청 약과40g 2개) (19,800원/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752401",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:04"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[네이버] 애플 피치 엔부 사과 3kg~ (15,900원/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752400",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:02"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[지마켓] 카타나스워드 포켓온 클래식 화이트 골프 반팔 폴로티셔츠 (5,380원~/무배)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752399",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 21:58"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[ssf] 브렌우드 워셔블 하프터틀넥 스웨터 (52,660원/무배)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752398",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 21:56"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[g마켓] 삼성 갤럭시 버즈4 프로 SM-R640 블루투스 무선 이어폰 화이트 블랙 (당일출고)(208,500원/무료배송)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752397",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 21:56"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[무신사] 블랙야크키즈 롱 구스다운 패딩 (120,680원/무배)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752396",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 21:56"
-    },
-    {
+      "time_label": "2026-11-27 18:42:20",
+      "hotScore": 499.4,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_9d04dde92e63",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 499.4,
+      "relatedItems": []
+    },
+    {
+      "id": "b69c58aa5854",
       "category": "deal",
       "source": "클리앙 알뜰",
       "source_id": "clien_deal",
-      "title": "(11/27 신규 할인코드 공개) [알리익스프레스] 블랙프라이데이 정보 안내 (클리앙 전용",
-      "url": "https://www.clien.net/service/board/jirum/19294482",
-      "views": 17,
+      "title": "[WearOS] AD TimeBar 일시 무료",
+      "url": "https://www.clien.net/service/board/jirum/19297426",
+      "views": 7441,
       "likes": 0,
-      "comments": 0,
-      "time_label": "2026-11-18 10:57:51"
+      "comments": 5,
+      "time_label": "2026-11-23 17:08:44",
+      "hotScore": 491.5,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_b69c58aa5854",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 491.5,
+      "relatedItems": []
     },
     {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[iOS] YouPlay 평생 IAP 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19299082",
-      "views": 8432,
-      "likes": 0,
-      "comments": 26,
-      "time_label": "2026-11-27 07:55:45"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[MacOS] HTML to App 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19298977",
-      "views": 4159,
-      "likes": 0,
-      "comments": 2,
-      "time_label": "2026-11-26 20:26:16"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[하이마트] 앤커 파워뱅크 20000mAh 87와트 A1118 43,610원/무배",
-      "url": "https://www.clien.net/service/board/jirum/19298969",
-      "views": 6226,
-      "likes": 0,
-      "comments": 3,
-      "time_label": "2026-11-26 20:01:32"
-    },
-    {
+      "id": "f1e3976b5ef9",
       "category": "deal",
       "source": "클리앙 알뜰",
       "source_id": "clien_deal",
       "title": "[플레이스토어] 스타듀밸리 50% 할인 2,950원",
       "url": "https://www.clien.net/service/board/jirum/19298613",
-      "views": 7360,
+      "views": 7364,
       "likes": 0,
       "comments": 1,
-      "time_label": "2026-11-25 22:59:57"
+      "time_label": "2026-11-25 22:59:57",
+      "hotScore": 450.8,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_f1e3976b5ef9",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 450.8,
+      "relatedItems": []
     },
     {
+      "id": "646faef1bef7",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[카카오] 진주햄 천하장사 오리지날+콰트로치즈 28gX총48개 12,560원",
+      "url": "https://www.clien.net/service/board/jirum/19298007",
+      "views": 6785,
+      "likes": 0,
+      "comments": 2,
+      "time_label": "2026-11-24 19:28:33",
+      "hotScore": 425.1,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_646faef1bef7",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 425.1,
+      "relatedItems": []
+    },
+    {
+      "id": "1c98e82ad712",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[하이마트] 앤커 파워뱅크 20000mAh 87와트 A1118 43,610원/무배",
+      "url": "https://www.clien.net/service/board/jirum/19298969",
+      "views": 6233,
+      "likes": 0,
+      "comments": 3,
+      "time_label": "2026-11-26 20:01:32",
+      "hotScore": 401.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_1c98e82ad712",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 401.0,
+      "relatedItems": []
+    },
+    {
+      "id": "44250d35e5f8",
+      "category": "issue",
+      "source": "클리앙",
+      "source_id": "clien",
+      "title": "민주당이나 국힘이나...",
+      "url": "https://www.clien.net/service/board/park/19299408",
+      "views": 996,
+      "likes": 14,
+      "comments": 9,
+      "time_label": "2026-11-27 19:43:57",
+      "hotScore": 392.8,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_44250d35e5f8",
+      "communities": [
+        "클리앙"
+      ],
+      "crossCount": 1,
+      "crossScore": 392.8,
+      "relatedItems": []
+    },
+    {
+      "id": "801f8ca84158",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "요즘 유럽에서 일단 한국인이냐고 묻는 이유",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050591&vdate=",
+      "views": 4676,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 280.6,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_801f8ca84158",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 280.6,
+      "relatedItems": []
+    },
+    {
+      "id": "b36d1b8ca05b",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[MacOS] HTML to App 일시 무료",
+      "url": "https://www.clien.net/service/board/jirum/19298977",
+      "views": 4163,
+      "likes": 0,
+      "comments": 2,
+      "time_label": "2026-11-26 20:26:16",
+      "hotScore": 267.8,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_b36d1b8ca05b",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 267.8,
+      "relatedItems": []
+    },
+    {
+      "id": "6d01c037e92d",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "퇴근길 치킨 배달하고 왔네요",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050589&vdate=",
+      "views": 4047,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 242.8,
+      "mood": "life",
+      "isSensitive": false,
+      "clusterId": "cl_6d01c037e92d",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 242.8,
+      "relatedItems": []
+    },
+    {
+      "id": "5123e41b03c6",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "남경필 장남 출소 1년 만에 또 체포",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050590&vdate=",
+      "views": 4019,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 241.1,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_5123e41b03c6",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 241.1,
+      "relatedItems": []
+    },
+    {
+      "id": "7d59508895d4",
       "category": "deal",
       "source": "클리앙 알뜰",
       "source_id": "clien_deal",
@@ -1009,119 +1654,42 @@
       "views": 18,
       "likes": 0,
       "comments": 25,
-      "time_label": "2026-11-25 19:19:15"
+      "time_label": "2026-11-25 19:19:15",
+      "hotScore": 226.1,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_7d59508895d4",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 226.1,
+      "relatedItems": []
     },
     {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[WearOS] SamWatch Digital Shu 2 2025 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19298282",
-      "views": 5181,
+      "id": "ed178c8be16c",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "여러분들의 신고는 사랑입니다",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050576&vdate=",
+      "views": 3706,
       "likes": 0,
-      "comments": 7,
-      "time_label": "2026-11-25 11:58:47"
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 222.4,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_ed178c8be16c",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 222.4,
+      "relatedItems": []
     },
     {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[네이버페이+삼성페이] SK주유소 5만원 이상 주유시 3천포인트 지급(~12.31)",
-      "url": "https://www.clien.net/service/board/jirum/19298277",
-      "views": 13,
-      "likes": 0,
-      "comments": 3,
-      "time_label": "2026-11-25 11:51:15"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[카카오] 진주햄 천하장사 오리지날+콰트로치즈 28gX총48개 12,560원",
-      "url": "https://www.clien.net/service/board/jirum/19298007",
-      "views": 6783,
-      "likes": 0,
-      "comments": 2,
-      "time_label": "2026-11-24 19:28:33"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "도레이씨 안경닦이 안경수건 천 도레이 극세사 클리너 선물용",
-      "url": "https://www.clien.net/service/board/jirum/19297766",
-      "views": 9118,
-      "likes": 0,
-      "comments": 13,
-      "time_label": "2026-11-24 10:42:33"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[아미존] 2026 맥북에어 M5, 16GB / 512GB, MDHE4LL/A",
-      "url": "https://www.clien.net/service/board/jirum/19297493",
-      "views": 15,
-      "likes": 0,
-      "comments": 16,
-      "time_label": "2026-11-23 20:27:32"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[WearOS] AD TimeBar 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19297426",
-      "views": 7439,
-      "likes": 0,
-      "comments": 5,
-      "time_label": "2026-11-23 17:08:44"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "프로스펙스 메타 넥워머 4,830원 (무배)",
-      "url": "https://www.clien.net/service/board/jirum/19296785",
-      "views": 15,
-      "likes": 0,
-      "comments": 1,
-      "time_label": "2026-11-22 10:35:46"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[네이버] 오디오테크니카 AT-SB727 휴대용 무선 블루투스 턴테이블 (139,000원)",
-      "url": "https://www.clien.net/service/board/jirum/19296761",
-      "views": 29,
-      "likes": 0,
-      "comments": 4,
-      "time_label": "2026-11-22 09:47:53"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[WearOS] HW Terramaster Mk III Hybrid 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19296755",
-      "views": 9378,
-      "likes": 0,
-      "comments": 6,
-      "time_label": "2026-11-22 09:28:58"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[아마존] 필립스 소닉케어 파워플로서 5000 (=워터픽, $59.96/무배)",
-      "url": "https://www.clien.net/service/board/jirum/19296664",
-      "views": 12,
-      "likes": 0,
-      "comments": 18,
-      "time_label": "2026-11-21 22:36:27"
-    },
-    {
+      "id": "3ee0bb178db0",
       "category": "deal",
       "source": "클리앙 알뜰",
       "source_id": "clien_deal",
@@ -1130,9 +1698,86 @@
       "views": 12,
       "likes": 0,
       "comments": 19,
-      "time_label": "2026-11-21 18:22:51"
+      "time_label": "2026-11-21 18:22:51",
+      "hotScore": 171.7,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_3ee0bb178db0",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 171.7,
+      "relatedItems": []
     },
     {
+      "id": "7203a49f3fa6",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[아마존] 필립스 소닉케어 파워플로서 5000 (=워터픽, $59.96/무배)",
+      "url": "https://www.clien.net/service/board/jirum/19296664",
+      "views": 12,
+      "likes": 0,
+      "comments": 18,
+      "time_label": "2026-11-21 22:36:27",
+      "hotScore": 162.7,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_7203a49f3fa6",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 162.7,
+      "relatedItems": []
+    },
+    {
+      "id": "1acc55edcab7",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "병신 짭닉 새끼가 출현 espnk3 (내용 추가)",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050588&vdate=",
+      "views": 2616,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 157.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_1acc55edcab7",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 157.0,
+      "relatedItems": []
+    },
+    {
+      "id": "bfec8c943d6e",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[아미존] 2026 맥북에어 M5, 16GB / 512GB, MDHE4LL/A",
+      "url": "https://www.clien.net/service/board/jirum/19297493",
+      "views": 15,
+      "likes": 0,
+      "comments": 16,
+      "time_label": "2026-11-23 20:27:32",
+      "hotScore": 144.9,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_bfec8c943d6e",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 144.9,
+      "relatedItems": []
+    },
+    {
+      "id": "4361011ab8d8",
       "category": "deal",
       "source": "클리앙 알뜰",
       "source_id": "clien_deal",
@@ -1141,64 +1786,42 @@
       "views": 16,
       "likes": 0,
       "comments": 14,
-      "time_label": "2026-11-20 19:50:06"
+      "time_label": "2026-11-20 19:50:06",
+      "hotScore": 127.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_4361011ab8d8",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 127.0,
+      "relatedItems": []
     },
     {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[하이마트] 아이폰 17 & 에어팟 프로 3 세일",
-      "url": "https://www.clien.net/service/board/jirum/19296168",
-      "views": 16,
+      "id": "066019f04ff5",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "산악회 하는 꼬라지 좀 보소 ㅉㅉㅉ",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050594&vdate=",
+      "views": 1918,
       "likes": 0,
-      "comments": 1,
-      "time_label": "2026-11-20 19:19:46"
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 115.1,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_066019f04ff5",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 115.1,
+      "relatedItems": []
     },
     {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[WearOS] Zu0̸x5 Fit Digital Watch Face 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19296066",
-      "views": 8673,
-      "likes": 0,
-      "comments": 6,
-      "time_label": "2026-11-20 16:16:20"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[에픽게임즈] Mark of the Deep 무료 외",
-      "url": "https://www.clien.net/service/board/jirum/19295737",
-      "views": 13,
-      "likes": 0,
-      "comments": 2,
-      "time_label": "2026-11-20 01:28:58"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[애플티비] 반지의 제왕, 호빗 확장판 할인",
-      "url": "https://www.clien.net/service/board/jirum/19294899",
-      "views": 15,
-      "likes": 0,
-      "comments": 9,
-      "time_label": "2026-11-19 01:18:37"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[레고] 연꽃 #40647 8,360원 (배송비 3,000원)",
-      "url": "https://www.clien.net/service/board/jirum/19294820",
-      "views": 16,
-      "likes": 0,
-      "comments": 1,
-      "time_label": "2026-11-18 21:12:17"
-    },
-    {
+      "id": "e4140ca652fc",
       "category": "deal",
       "source": "클리앙 알뜰",
       "source_id": "clien_deal",
@@ -1207,20 +1830,372 @@
       "views": 16,
       "likes": 0,
       "comments": 9,
-      "time_label": "2026-11-18 19:57:04"
+      "time_label": "2026-11-18 19:57:04",
+      "hotScore": 82.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_e4140ca652fc",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 82.0,
+      "relatedItems": []
     },
     {
+      "id": "a4db8b1a1311",
       "category": "deal",
       "source": "클리앙 알뜰",
       "source_id": "clien_deal",
-      "title": "[WearOS] SamWatch Digital Harmony I 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19294728",
-      "views": 11,
+      "title": "[애플티비] 반지의 제왕, 호빗 확장판 할인",
+      "url": "https://www.clien.net/service/board/jirum/19294899",
+      "views": 15,
       "likes": 0,
-      "comments": 1,
-      "time_label": "2026-11-18 18:08:32"
+      "comments": 9,
+      "time_label": "2026-11-19 01:18:37",
+      "hotScore": 81.9,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_a4db8b1a1311",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 81.9,
+      "relatedItems": []
     },
     {
+      "id": "69cccb112b14",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[G마켓] 부산식 돼지국밥 600g 5팩+다대기 5봉 (17,920원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752411",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-28 00:05",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_69cccb112b14",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "fcf4194c2101",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[G마켓] 통영 제철 홍가리비 5kg 100미 내외",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752410",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 23:33",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_fcf4194c2101",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "492f45b659fd",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[팔도감] 보온/보냉 접이식 롤링카트 85L (27,859원/무배)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752409",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 23:29",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_492f45b659fd",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "1b4404d2ddf5",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[11번가] 노르웨이 생연어 딥스킨 필렛 1kg (31,020원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752408",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 23:09",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_1b4404d2ddf5",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "53c866f5f9db",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[G마켓] AHC 메이크업핏 마스터즈 톤업 선세럼 50ml 2개 (18,170원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752407",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:58",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_53c866f5f9db",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "880a8bc5911a",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[GS프레쉬]진라면 소컵6개 팝카드결제(2,980원/픽업)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752406",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:43",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_880a8bc5911a",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "3215d452301b",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[11번가] 송병장 대용량핫팩 150G 30개 (12,900원/무배)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752405",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:39",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_3215d452301b",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "f81d411c8a8a",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[옥션] 샘표 토장찌개양념 등 7종 2+2개 골라담기+연두링 증정(11,990원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752404",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:28",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_f81d411c8a8a",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "f83d39da0f9c",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[롯데온] 김해뒷고기 1+등급 1kg (11840/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752403",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:13",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_f83d39da0f9c",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "15b03731c7b0",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[네이버]쑥콩떡 60g 32개+증정(초례청 약과40g 2개) (19,800원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752401",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:04",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_15b03731c7b0",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "899c46b1578a",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[네이버] 애플 피치 엔부 사과 3kg~ (15,900원/무료)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752400",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 22:02",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_899c46b1578a",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "61bc70c2dabc",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[지마켓] 카타나스워드 포켓온 클래식 화이트 골프 반팔 폴로티셔츠 (5,380원~/무배)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752399",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 21:58",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_61bc70c2dabc",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "a5cf50ade596",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[ssf] 브렌우드 워셔블 하프터틀넥 스웨터 (52,660원/무배)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752398",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 21:56",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_a5cf50ade596",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "7063023c3d7e",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[g마켓] 삼성 갤럭시 버즈4 프로 SM-R640 블루투스 무선 이어폰 화이트 블랙 (당일출고)(208,500원/무료배송)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752397",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 21:56",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_7063023c3d7e",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "1bb489e47c87",
+      "category": "deal",
+      "source": "뽐뿌",
+      "source_id": "ppomppu",
+      "title": "[무신사] 블랙야크키즈 롱 구스다운 패딩 (120,680원/무배)",
+      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752396",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11-27 21:56",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_1bb489e47c87",
+      "communities": [
+        "뽐뿌"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
+    },
+    {
+      "id": "d0760ddc8b43",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1229,9 +2204,20 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_d0760ddc8b43",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "49192100f122",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1240,9 +2226,20 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_49192100f122",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "dcae9483095a",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1251,9 +2248,20 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_dcae9483095a",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "a1c98fe32d99",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1262,9 +2270,20 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_a1c98fe32d99",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "aac5852e2fa9",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1273,9 +2292,20 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_aac5852e2fa9",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "96550211ae87",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1284,9 +2314,20 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_96550211ae87",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "0a03391af835",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1295,9 +2336,51 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_0a03391af835",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": [
+        {
+          "id": "0a03391af835",
+          "category": "deal",
+          "source": "다모앙 알뜰",
+          "source_id": "damoang_deal",
+          "title": "55 네이버페이 2026-11-27 네이버페이 76원 + 랜덤 포인트",
+          "url": "https://damoang.net/economy/83562",
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "time_label": "오늘",
+          "hotScore": 50.0,
+          "mood": "it_econ",
+          "isSensitive": false
+        },
+        {
+          "id": "43cba54d3fb5",
+          "category": "deal",
+          "source": "다모앙 알뜰",
+          "source_id": "damoang_deal",
+          "title": "57 네이버페이 2026-11-26 네이버페이 75원 + 랜덤 포인트 [23] 중무장 11.26 6k 57 11.26 6k 중무장",
+          "url": "https://damoang.net/economy/83500",
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "time_label": "오늘",
+          "hotScore": 50.0,
+          "mood": "it_econ",
+          "isSensitive": false
+        }
+      ]
     },
     {
+      "id": "108fc5f3a8eb",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1306,9 +2389,20 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_108fc5f3a8eb",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "9240896c2437",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1317,9 +2411,20 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_9240896c2437",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "2eb4008e5d59",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1328,9 +2433,20 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_2eb4008e5d59",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "ea0fd1e895da",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1339,9 +2455,20 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_ea0fd1e895da",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "5798d28f08bb",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1350,9 +2477,20 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_5798d28f08bb",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "be1a9f263fb7",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1361,9 +2499,20 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_be1a9f263fb7",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "40aa03a88071",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1372,9 +2521,20 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_40aa03a88071",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "5583b254a7bb",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1383,42 +2543,81 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_5583b254a7bb",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": [
+        {
+          "id": "5583b254a7bb",
+          "category": "deal",
+          "source": "다모앙 알뜰",
+          "source_id": "damoang_deal",
+          "title": "iOS 일시무료 SketchClub aconite 11.26 1.8k 8 11.26 1.8k aconite",
+          "url": "https://damoang.net/economy/83510",
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "time_label": "오늘",
+          "hotScore": 50.0,
+          "mood": "it_econ",
+          "isSensitive": false
+        },
+        {
+          "id": "400575fae476",
+          "category": "deal",
+          "source": "다모앙 알뜰",
+          "source_id": "damoang_deal",
+          "title": "iOS 일시무료 Spatial Pro [1] aconite 11.26 1.7k 7 11.26 1.7k aconite",
+          "url": "https://damoang.net/economy/83509",
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "time_label": "오늘",
+          "hotScore": 50.0,
+          "mood": "it_econ",
+          "isSensitive": false
+        },
+        {
+          "id": "7c4615867724",
+          "category": "deal",
+          "source": "다모앙 알뜰",
+          "source_id": "damoang_deal",
+          "title": "iOS 일시무료 Cube Solver 3D [1] aconite 11.26 974 8 11.26 974 aconite",
+          "url": "https://damoang.net/economy/83508",
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "time_label": "오늘",
+          "hotScore": 50.0,
+          "mood": "it_econ",
+          "isSensitive": false
+        },
+        {
+          "id": "0f3a76401bcb",
+          "category": "deal",
+          "source": "다모앙 알뜰",
+          "source_id": "damoang_deal",
+          "title": "iOS 일시무료 Plunge [1] aconite 11.26 1.1k 8 11.26 1.1k aconite",
+          "url": "https://damoang.net/economy/83507",
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "time_label": "오늘",
+          "hotScore": 50.0,
+          "mood": "it_econ",
+          "isSensitive": false
+        }
+      ]
     },
     {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "iOS 일시무료 Spatial Pro [1] aconite 11.26 1.7k 7 11.26 1.7k aconite",
-      "url": "https://damoang.net/economy/83509",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "iOS 일시무료 Cube Solver 3D [1] aconite 11.26 974 8 11.26 974 aconite",
-      "url": "https://damoang.net/economy/83508",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "iOS 일시무료 Plunge [1] aconite 11.26 1.1k 8 11.26 1.1k aconite",
-      "url": "https://damoang.net/economy/83507",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
+      "id": "691c729bbf52",
       "category": "deal",
       "source": "다모앙 알뜰",
       "source_id": "damoang_deal",
@@ -1427,18 +2626,567 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "오늘",
+      "hotScore": 50.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_691c729bbf52",
+      "communities": [
+        "다모앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 50.0,
+      "relatedItems": []
     },
     {
+      "id": "751287ffb425",
       "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "57 네이버페이 2026-11-26 네이버페이 75원 + 랜덤 포인트 [23] 중무장 11.26 6k 57 11.26 6k 중무장",
-      "url": "https://damoang.net/economy/83500",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[네이버] 오디오테크니카 AT-SB727 휴대용 무선 블루투스 턴테이블 (139,000원)",
+      "url": "https://www.clien.net/service/board/jirum/19296761",
+      "views": 29,
+      "likes": 0,
+      "comments": 4,
+      "time_label": "2026-11-22 09:47:53",
+      "hotScore": 37.7,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_751287ffb425",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 37.7,
+      "relatedItems": []
+    },
+    {
+      "id": "0669e653d05e",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[네이버페이+삼성페이] SK주유소 5만원 이상 주유시 3천포인트 지급(~12.31)",
+      "url": "https://www.clien.net/service/board/jirum/19298277",
+      "views": 13,
+      "likes": 0,
+      "comments": 3,
+      "time_label": "2026-11-25 11:51:15",
+      "hotScore": 27.8,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_0669e653d05e",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 27.8,
+      "relatedItems": []
+    },
+    {
+      "id": "b85cc24dd8d7",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[에픽게임즈] Mark of the Deep 무료 외",
+      "url": "https://www.clien.net/service/board/jirum/19295737",
+      "views": 13,
+      "likes": 0,
+      "comments": 2,
+      "time_label": "2026-11-20 01:28:58",
+      "hotScore": 18.8,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_b85cc24dd8d7",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 18.8,
+      "relatedItems": []
+    },
+    {
+      "id": "6a710709de04",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[하이마트] 아이폰 17 & 에어팟 프로 3 세일",
+      "url": "https://www.clien.net/service/board/jirum/19296168",
+      "views": 16,
+      "likes": 0,
+      "comments": 1,
+      "time_label": "2026-11-20 19:19:46",
+      "hotScore": 10.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_6a710709de04",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 10.0,
+      "relatedItems": []
+    },
+    {
+      "id": "472c1d62fea4",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "[레고] 연꽃 #40647 8,360원 (배송비 3,000원)",
+      "url": "https://www.clien.net/service/board/jirum/19294820",
+      "views": 16,
+      "likes": 0,
+      "comments": 1,
+      "time_label": "2026-11-18 21:12:17",
+      "hotScore": 10.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_472c1d62fea4",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 10.0,
+      "relatedItems": []
+    },
+    {
+      "id": "66890b574c03",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "프로스펙스 메타 넥워머 4,830원 (무배)",
+      "url": "https://www.clien.net/service/board/jirum/19296785",
+      "views": 15,
+      "likes": 0,
+      "comments": 1,
+      "time_label": "2026-11-22 10:35:46",
+      "hotScore": 9.9,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_66890b574c03",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 9.9,
+      "relatedItems": []
+    },
+    {
+      "id": "6e9fe4b8c14b",
+      "category": "deal",
+      "source": "클리앙 알뜰",
+      "source_id": "clien_deal",
+      "title": "(11/27 신규 할인코드 공개) [알리익스프레스] 블랙프라이데이 정보 안내 (클리앙 전용",
+      "url": "https://www.clien.net/service/board/jirum/19294482",
+      "views": 17,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "2026-11-18 10:57:51",
+      "hotScore": 1.0,
+      "mood": "it_econ",
+      "isSensitive": false,
+      "clusterId": "cl_6e9fe4b8c14b",
+      "communities": [
+        "클리앙 알뜰"
+      ],
+      "crossCount": 1,
+      "crossScore": 1.0,
+      "relatedItems": []
+    },
+    {
+      "id": "6b4ca8fba09f",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "김해 고교 텀블럼 사건",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050573&vdate=",
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "time_label": "오늘"
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_6b4ca8fba09f",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "c061ac0dc56f",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "펌)학교 운동회 승패를 갈라야하나?jpg",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050585&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_c061ac0dc56f",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "0934d2b7670f",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "지난번에 이어 치킨 후원 한 번 더 하고 왔습니다~",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050557&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "life",
+      "isSensitive": false,
+      "clusterId": "cl_0934d2b7670f",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "ff0af7823af6",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "뮤지컬판에서 대참사 난 사건",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050568&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_ff0af7823af6",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "dd7d33e49098",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "볼때마다 이해 안되는 사고",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050584&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_dd7d33e49098",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "199590ae9778",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "차문 안잠그는 캐나다 마을",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050586&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_199590ae9778",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "9f83f9e3275f",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "일본 가출 청소년들 성병검사 해봄",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050572&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "info",
+      "isSensitive": false,
+      "clusterId": "cl_9f83f9e3275f",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "cdca66886bcf",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "신태일 2심 최종 형량입니다.",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050544&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_cdca66886bcf",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "3d7802141dc9",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "여성이 당한 성범죄를 고발하니 여성단체가 역으로 고발자를 비..",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050532&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_3d7802141dc9",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "8a14251680bb",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "황홀했던 그해 바다",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050582&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_8a14251680bb",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "c63e3442db98",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "목숨건 장난",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050536&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_c63e3442db98",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "10a305f8c2da",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "충격 '그 노래' 빌보드 1위 탈환 실패",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050543&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_10a305f8c2da",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "c55fa619ebef",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "중고거래 반말",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050524&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_c55fa619ebef",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "b4b315b7f4d3",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "청순한 그녀의 취향",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050567&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_b4b315b7f4d3",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "a8bad26050df",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "한국 복싱 유망주 김이현 선수가 뺑소니 사고로 사망했네요",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050525&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "politics_conflict",
+      "isSensitive": true,
+      "clusterId": "cl_a8bad26050df",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "91fb76452ecd",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "집 15채산 96년생",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050526&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_91fb76452ecd",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "4ef34406acc9",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "경찰이 실적에 미치면 생기는 일",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050570&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "humor",
+      "isSensitive": false,
+      "clusterId": "cl_4ef34406acc9",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
+    },
+    {
+      "id": "7338809f75f7",
+      "category": "issue",
+      "source": "보배드림",
+      "source_id": "bobae",
+      "title": "게임했다고 플스 박살",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050569&vdate=",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "time_label": "11/27",
+      "hotScore": 0.0,
+      "mood": "sports",
+      "isSensitive": false,
+      "clusterId": "cl_7338809f75f7",
+      "communities": [
+        "보배드림"
+      ],
+      "crossCount": 1,
+      "crossScore": 0.0,
+      "relatedItems": []
     }
   ]
 }

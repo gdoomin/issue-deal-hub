@@ -4,11 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>피나케스 | 실시간 이슈 &amp; 핫딜 모음</title>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('pinakes_theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <style>
     :root {
-      --bg: #f5f6f8;
+      --bg: #f4f5f7;
       --surface: #ffffff;
-      --surface-hover: #f9fafb;
+      --surface-sub: #f9fafb;
       --border: #e5e7eb;
       --text: #111827;
       --text-muted: #6b7280;
@@ -17,26 +28,40 @@
       --accent-soft: #fef2f2;
       --deal: #2563eb;
       --deal-soft: #eff6ff;
+      --clean: #059669;
+      --clean-soft: #ecfdf5;
+      --ai: #6d28d9;
+      --ai-soft: #f5f3ff;
+      --cross: #d97706;
+      --cross-soft: #fffbeb;
       --chip-bg: #f3f4f6;
       --chip-active-bg: #111827;
       --chip-active-text: #ffffff;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
     }
 
     html.dark {
-      --bg: #0f1115;
-      --surface: #181b21;
-      --surface-hover: #1f232b;
-      --border: #272b36;
+      --bg: #0d0f14;
+      --surface: #161922;
+      --surface-sub: #1d212d;
+      --border: #262b38;
       --text: #f3f4f6;
       --text-muted: #9ca3af;
-      --text-visited: #6b7280;
+      --text-visited: #525866;
       --accent: #f87171;
       --accent-soft: rgba(248, 113, 113, 0.14);
       --deal: #60a5fa;
       --deal-soft: rgba(96, 165, 250, 0.14);
-      --chip-bg: #232732;
+      --clean: #34d399;
+      --clean-soft: rgba(52, 211, 153, 0.14);
+      --ai: #a78bfa;
+      --ai-soft: rgba(167, 139, 250, 0.14);
+      --cross: #fbbf24;
+      --cross-soft: rgba(251, 191, 36, 0.14);
+      --chip-bg: #222633;
       --chip-active-bg: #f3f4f6;
       --chip-active-text: #111827;
+      --shadow: none;
     }
 
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -45,35 +70,36 @@
       background: var(--bg);
       color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 60;
       background: var(--surface);
       border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
     }
 
     .topbar-inner {
-      max-width: 860px;
+      max-width: 880px;
       margin: 0 auto;
-      padding: 10px 14px 8px;
+      padding: 10px 14px 10px;
     }
 
     .brand-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 8px;
       margin-bottom: 10px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       font-weight: 800;
       font-size: 18px;
       letter-spacing: -0.02em;
@@ -82,7 +108,7 @@
     .brand-badge {
       font-size: 11px;
       font-weight: 700;
-      padding: 2px 7px;
+      padding: 2px 8px;
       border-radius: 999px;
       background: var(--accent-soft);
       color: var(--accent);
@@ -91,7 +117,7 @@
     .top-actions {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .updated-at {
@@ -99,33 +125,66 @@
       color: var(--text-muted);
     }
 
+    @media (max-width: 520px) {
+      .updated-at { display: none; }
+    }
+
+    .toggle-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border: 1px solid var(--border);
+      background: var(--surface-sub);
+      color: var(--text-muted);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .toggle-pill.active-clean {
+      background: var(--clean-soft);
+      border-color: var(--clean);
+      color: var(--clean);
+    }
+
+    .toggle-pill.active-unread {
+      background: var(--deal-soft);
+      border-color: var(--deal);
+      color: var(--deal);
+    }
+
     .icon-btn {
       border: 1px solid var(--border);
       background: var(--surface);
       color: var(--text);
-      border-radius: 8px;
+      border-radius: 999px;
       padding: 5px 9px;
       font-size: 13px;
       cursor: pointer;
     }
 
     .tabs {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 6px;
       margin-bottom: 8px;
     }
 
     .tab-btn {
-      flex: 1;
       border: 1px solid var(--border);
-      background: var(--chip-bg);
-      color: var(--text);
-      padding: 8px 10px;
+      background: var(--surface-sub);
+      color: var(--text-muted);
       border-radius: 10px;
-      font-size: 14px;
+      padding: 7px 6px;
+      font-size: 13px;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.15s ease;
+      white-space: nowrap;
+      text-align: center;
     }
 
     .tab-btn.active {
@@ -134,238 +193,376 @@
       border-color: var(--chip-active-bg);
     }
 
-    .controls-row {
+    .controls {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       align-items: center;
-      flex-wrap: wrap;
+      margin-bottom: 8px;
     }
 
-    .search-box {
+    .search-input {
       flex: 1;
-      min-width: 160px;
-    }
-
-    .search-box input {
-      width: 100%;
-      padding: 7px 10px;
-      border-radius: 8px;
+      min-width: 0;
       border: 1px solid var(--border);
-      background: var(--bg);
+      background: var(--surface-sub);
       color: var(--text);
+      border-radius: 10px;
+      padding: 7px 11px;
       font-size: 13px;
       outline: none;
     }
 
+    .search-input:focus { border-color: var(--deal); }
+
     .sort-select {
-      padding: 7px 8px;
-      border-radius: 8px;
       border: 1px solid var(--border);
-      background: var(--bg);
+      background: var(--surface-sub);
       color: var(--text);
+      border-radius: 10px;
+      padding: 7px 8px;
       font-size: 12px;
       font-weight: 600;
+      outline: none;
     }
 
-    .chips {
+    .chips-row {
       display: flex;
       gap: 6px;
       overflow-x: auto;
-      padding: 8px 0 2px;
       scrollbar-width: none;
+      padding-bottom: 2px;
     }
-    .chips::-webkit-scrollbar { display: none; }
+    .chips-row + .chips-row { margin-top: 6px; }
+    .chips-row::-webkit-scrollbar { display: none; }
 
     .chip {
-      white-space: nowrap;
-      border: 1px solid var(--border);
-      background: var(--surface);
+      border: none;
+      background: var(--chip-bg);
       color: var(--text-muted);
-      padding: 4px 10px;
       border-radius: 999px;
+      padding: 4px 10px;
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .chip.active {
       background: var(--chip-active-bg);
       color: var(--chip-active-text);
-      border-color: var(--chip-active-bg);
     }
 
     .container {
-      max-width: 860px;
-      margin: 10px auto 36px;
-      padding: 0 10px;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 12px 14px 64px;
     }
 
-    .feed-card {
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      padding: 0 2px;
+    }
+
+    .reset-read-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 11px;
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .feed-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .post-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
+      border-radius: 14px;
+      padding: 13px 15px;
+      box-shadow: var(--shadow);
+      transition: border-color 0.15s ease;
     }
 
-    .post-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 11px 14px;
-      border-bottom: 1px solid var(--border);
-      transition: background 0.12s ease;
+    .post-card.is-read {
+      opacity: 0.72;
     }
 
-    .post-row:last-child { border-bottom: none; }
-    .post-row:hover { background: var(--surface-hover); }
-
-    .post-row.visited .post-title {
-      color: var(--text-visited);
-    }
-
-    .rank-num {
-      min-width: 22px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-align: right;
-      padding-top: 2px;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .post-body {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .post-title-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-
-    .post-title-line {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .src-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 1px 6px;
-      border-radius: 5px;
-      flex-shrink: 0;
-    }
-
-    .src-clien { background: #e0f2fe; color: #0369a1; }
-    .src-bobae { background: #fee2e2; color: #b91c1c; }
-    .src-humoruniv { background: #fef3c7; color: #b45309; }
-    .src-ppomppu { background: #ede9fe; color: #6d28d9; }
-    .src-clien_deal { background: #dcfce7; color: #15803d; }
-    .src-damoang_deal { background: #ffedd5; color: #c2410c; }
-
-    html.dark .src-clien { background: rgba(14, 165, 233, 0.2); color: #7dd3fc; }
-    html.dark .src-bobae { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
-    html.dark .src-humoruniv { background: rgba(245, 158, 11, 0.2); color: #fcd34d; }
-    html.dark .src-ppomppu { background: rgba(139, 92, 246, 0.2); color: #c4b5fd; }
-    html.dark .src-clien_deal { background: rgba(34, 197, 94, 0.2); color: #86efac; }
-    html.dark .src-damoang_deal { background: rgba(249, 115, 22, 0.2); color: #fdba74; }
-
-    .post-title {
-      font-size: 14.5px;
-      font-weight: 600;
-      color: var(--text);
-      word-break: break-word;
-    }
-
-    .cmt-badge {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .post-meta-row {
-      margin-top: 5px;
+    .card-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-    }
-
-    .post-meta {
-      display: flex;
-      gap: 10px;
-      font-size: 11.5px;
-      color: var(--text-muted);
-      font-variant-numeric: tabular-nums;
+      margin-bottom: 6px;
       flex-wrap: wrap;
     }
 
-    .comment-btn {
-      border: 1px solid var(--border);
+    .badges {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .rank-num {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-muted);
+      margin-right: 2px;
+    }
+
+    .src-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 6px;
       background: var(--chip-bg);
       color: var(--text);
-      border-radius: 999px;
-      padding: 3px 9px;
-      font-size: 11.5px;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-      flex-shrink: 0;
     }
 
-    .comment-btn.has-comments {
+    .src-badge.deal {
       background: var(--deal-soft);
       color: var(--deal);
-      border-color: transparent;
     }
 
-    .empty-state {
-      padding: 40px 16px;
-      text-align: center;
+    .mood-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: var(--surface-sub);
       color: var(--text-muted);
-      font-size: 14px;
+      border: 1px solid var(--border);
     }
 
-    .footer-note {
-      margin-top: 14px;
+    .cross-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--cross-soft);
+      color: var(--cross);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .read-tag {
+      font-size: 11px;
+      color: var(--text-visited);
+      font-weight: 600;
+    }
+
+    .post-title {
+      display: block;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      line-height: 1.42;
+      word-break: keep-all;
+    }
+
+    .post-card.is-read .post-title {
+      color: var(--text-visited);
+    }
+
+    .post-title:hover { text-decoration: underline; }
+
+    .reply-cnt {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      margin-left: 4px;
+    }
+
+    .ai-subtitle {
+      margin-top: 5px;
+      font-size: 13px;
+      color: var(--ai);
+      background: var(--ai-soft);
+      padding: 4px 9px;
+      border-radius: 8px;
+      display: inline-block;
+      line-height: 1.38;
+    }
+
+    .card-bottom {
+      margin-top: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .meta-line {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mini-btn {
+      border: 1px solid var(--border);
+      background: var(--surface-sub);
+      color: var(--text-muted);
+      border-radius: 8px;
+      padding: 4px 9px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .mini-btn.has-comments {
+      border-color: var(--deal);
+      color: var(--deal);
+      background: var(--deal-soft);
+    }
+
+    .drawer {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--surface-sub);
+      border: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .drawer ul {
+      margin: 4px 0 0;
+      padding-left: 18px;
+    }
+
+    .drawer li {
+      margin-bottom: 4px;
+    }
+
+    .opinion-box {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+      font-size: 12.5px;
+      color: var(--text);
+    }
+
+    .related-link {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .related-link:hover { text-decoration: underline; }
+
+    /* Briefing cards */
+    .briefing-header {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .briefing-header h2 {
+      margin: 0 0 4px;
+      font-size: 16px;
+    }
+    .briefing-header p {
+      margin: 0;
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    .briefing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px;
+    }
+
+    .brief-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .brief-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ai);
+      background: var(--ai-soft);
+      padding: 2px 8px;
+      border-radius: 999px;
+      align-self: flex-start;
+    }
+
+    .brief-headline {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+      line-height: 1.38;
+    }
+    .brief-headline:hover { text-decoration: underline; }
+
+    .brief-summary {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 46px 16px;
+      color: var(--text-muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    footer {
+      margin-top: 22px;
       text-align: center;
       font-size: 11.5px;
       color: var(--text-muted);
     }
 
-    /* Comment Modal */
+    /* Comment modal */
     .modal-backdrop {
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.55);
-      z-index: 100;
       display: none;
       align-items: flex-end;
       justify-content: center;
-      padding: 0;
+      z-index: 100;
     }
-
-    .modal-backdrop.open {
-      display: flex;
-    }
+    .modal-backdrop.open { display: flex; }
 
     @media (min-width: 640px) {
-      .modal-backdrop {
-        align-items: center;
-        padding: 16px;
-      }
+      .modal-backdrop { align-items: center; }
     }
 
     .modal-sheet {
       width: 100%;
-      max-width: 560px;
-      max-height: 85dvh;
+      max-width: 540px;
+      max-height: 82vh;
       background: var(--surface);
-      color: var(--text);
       border-radius: 16px 16px 0 0;
       border: 1px solid var(--border);
       display: flex;
@@ -374,137 +571,83 @@
     }
 
     @media (min-width: 640px) {
-      .modal-sheet {
-        border-radius: 16px;
-      }
+      .modal-sheet { border-radius: 16px; }
     }
 
     .modal-header {
       padding: 14px 16px;
       border-bottom: 1px solid var(--border);
       display: flex;
-      align-items: flex-start;
       justify-content: space-between;
+      align-items: flex-start;
       gap: 10px;
     }
 
-    .modal-title {
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.4;
-    }
+    .modal-title { font-size: 15px; font-weight: 700; margin: 0; }
+    .modal-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 
-    .modal-link {
-      display: inline-block;
-      margin-top: 4px;
-      font-size: 12px;
-      color: var(--deal);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .modal-close {
-      border: none;
-      background: var(--chip-bg);
-      color: var(--text);
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      font-size: 15px;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .comment-list {
-      flex: 1;
+    .modal-body {
+      padding: 14px 16px;
       overflow-y: auto;
-      padding: 12px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      flex: 1;
     }
 
     .comment-item {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
       padding: 9px 11px;
+      border-radius: 10px;
+      background: var(--surface-sub);
+      border: 1px solid var(--border);
+      margin-bottom: 8px;
     }
 
     .comment-head {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      font-size: 12px;
-      margin-bottom: 4px;
-    }
-
-    .comment-author {
-      font-weight: 700;
-    }
-
-    .comment-time {
+      font-size: 11.5px;
       color: var(--text-muted);
-      font-size: 11px;
+      margin-bottom: 4px;
     }
 
     .comment-del {
       border: none;
-      background: none;
+      background: transparent;
       color: var(--text-muted);
-      font-size: 11px;
       cursor: pointer;
-      margin-left: 6px;
+      font-size: 11px;
     }
 
-    .comment-text {
-      font-size: 13.5px;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-
-    .comment-form {
-      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    .modal-form {
+      padding: 12px 16px;
       border-top: 1px solid var(--border);
-      background: var(--surface);
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
 
-    .comment-form-row {
+    .modal-form-row {
       display: flex;
       gap: 8px;
     }
 
-    .comment-input {
-      padding: 8px 10px;
-      border-radius: 8px;
+    .input-sm {
       border: 1px solid var(--border);
-      background: var(--bg);
+      background: var(--surface-sub);
       color: var(--text);
+      border-radius: 8px;
+      padding: 8px 10px;
       font-size: 13px;
       outline: none;
     }
 
-    .nick-input { width: 110px; }
-    .body-input { flex: 1; }
-
-    .submit-btn {
+    .btn-primary {
       border: none;
       background: var(--deal);
-      color: #fff;
+      color: #ffffff;
       border-radius: 8px;
       padding: 8px 14px;
       font-size: 13px;
       font-weight: 700;
       cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .comment-note {
-      font-size: 11px;
-      color: var(--text-muted);
     }
   </style>
 </head>
@@ -518,1777 +661,518 @@
         </div>
         <div class="top-actions">
           <span class="updated-at" id="updatedAt">불러오는 중...</span>
-          <button class="icon-btn" id="themeToggle" type="button" title="다크모드 전환">🌙</button>
+          <button class="toggle-pill" id="cleanBtn" title="정치·갈등·혐오·선정 글 숨기기">🧹 클린 모드</button>
+          <button class="toggle-pill" id="unreadBtn" title="이미 읽은 글 숨기기">👁️ 안 읽은 글만</button>
+          <button class="icon-btn" id="themeBtn" aria-label="테마 전환">🌙</button>
         </div>
       </div>
 
       <div class="tabs">
-        <button class="tab-btn active" data-tab="issue" type="button">🔥 이슈·유머</button>
-        <button class="tab-btn" data-tab="deal" type="button">🛍️ 핫딜·쇼핑</button>
-        <button class="tab-btn" data-tab="all" type="button">📌 전체</button>
+        <button class="tab-btn active" data-tab="issue">🔥 이슈·유머</button>
+        <button class="tab-btn" data-tab="deal">🛍️ 핫딜·쇼핑</button>
+        <button class="tab-btn" data-tab="briefing">📰 3분 브리핑</button>
+        <button class="tab-btn" data-tab="all">📌 전체</button>
       </div>
 
-      <div class="controls-row">
-        <div class="search-box">
-          <input id="searchInput" type="search" placeholder="키워드 검색 (예: 코스트코, 알리, 삼성...)" />
-        </div>
-        <select class="sort-select" id="sortSelect" aria-label="정렬">
+      <div class="controls" id="controlsBar">
+        <input id="searchInput" class="search-input" type="search" placeholder="키워드 검색 (예: 코스트코, 아이폰, 꿀팁...)" />
+        <select id="sortSelect" class="sort-select" aria-label="정렬">
+          <option value="cross">🔥 교차 화제성순</option>
           <option value="default">최신/기본순</option>
           <option value="views">조회수 높은순</option>
-          <option value="comments">원글 댓글 많은순</option>
+          <option value="comments">댓글 많은순</option>
           <option value="likes">추천 많은순</option>
         </select>
       </div>
 
-      <div class="chips" id="sourceChips"></div>
+      <div class="chips-row" id="moodChips"></div>
+      <div class="chips-row" id="sourceChips"></div>
     </div>
   </header>
 
   <main class="container">
-    <section class="feed-card" id="feedList">
-      <div class="empty-state">게시글을 불러오는 중입니다...</div>
-    </section>
-    <p class="footer-note">
+    <div class="status-bar" id="statusBar">
+      <span id="statusText">피드를 불러오고 있습니다...</span>
+      <button class="reset-read-btn" id="resetReadBtn" style="display:none;">읽은 기록 초기화</button>
+    </div>
+    <div id="contentArea"></div>
+    <footer>
       각 커뮤니티의 공개 제목과 링크만 모아서 보여주며, 클릭 시 원문 페이지로 이동합니다.
-    </p>
+    </footer>
   </main>
 
-  <!-- Comment Modal -->
-  <div class="modal-backdrop" id="commentModal" aria-hidden="true">
-    <div class="modal-sheet" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" id="commentModal">
+    <div class="modal-sheet">
       <div class="modal-header">
         <div>
-          <div class="modal-title" id="modalTitle"></div>
-          <a class="modal-link" id="modalOriginLink" href="#" target="_blank" rel="noopener noreferrer">원문 글 보기 ↗</a>
+          <h3 class="modal-title" id="modalPostTitle">댓글</h3>
+          <div class="modal-sub" id="modalPostSub"></div>
         </div>
-        <button class="modal-close" id="modalCloseBtn" type="button" aria-label="닫기">✕</button>
+        <button class="icon-btn" id="closeModalBtn">✕</button>
       </div>
-      <div class="comment-list" id="commentList"></div>
-      <form class="comment-form" id="commentForm">
-        <div class="comment-form-row">
-          <input class="comment-input nick-input" id="nickInput" type="text" maxlength="16" placeholder="닉네임" />
-          <input class="comment-input body-input" id="bodyInput" type="text" maxlength="300" placeholder="여기에 댓글을 남겨보세요" required />
-          <button class="submit-btn" type="submit">등록</button>
+      <div class="modal-body" id="commentList"></div>
+      <form class="modal-form" id="commentForm">
+        <div class="modal-form-row">
+          <input class="input-sm" id="nickInput" type="text" placeholder="닉네임 (기본: 익명)" style="width: 130px;" />
+          <input class="input-sm" id="commentInput" type="text" placeholder="이 이슈에 대한 의견을 남겨보세요..." style="flex: 1;" required />
+          <button class="btn-primary" type="submit">등록</button>
         </div>
-        <div class="comment-note">현재 댓글은 이 브라우저에 저장됩니다. (공용 서버 DB 연동 시 모든 사용자와 공유 가능)</div>
       </form>
     </div>
   </div>
 
   <script>
-    const FALLBACK_DATA = {
-  "updated_at": "2026-11-27 23:48 KST",
-  "stats": {
-    "클리앙": 25,
-    "보배드림": 25,
-    "SLR클럽": 0,
-    "웃긴대학": 20,
-    "뽐뿌": 15,
-    "클리앙 알뜰": 25,
-    "다모앙 알뜰": 20
-  },
-  "items": [
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "김민석도 빨리 징계해야죠.",
-      "url": "https://www.clien.net/service/board/park/19299356",
-      "views": 1655,
-      "likes": 32,
-      "comments": 13,
-      "time_label": "2026-11-27 18:01:04"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "지금 민주당은 국민의 힘 급이 맞습니다.",
-      "url": "https://www.clien.net/service/board/park/19299412",
-      "views": 1822,
-      "likes": 26,
-      "comments": 12,
-      "time_label": "2026-11-27 19:56:00"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "집값이 너무 상승합니다 어떻게 해야 할까요?",
-      "url": "https://www.clien.net/service/board/park/19299105",
-      "views": 5373,
-      "likes": 26,
-      "comments": 10,
-      "time_label": "2026-11-27 08:44:47"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희건 본격적으로 시작하네요",
-      "url": "https://www.clien.net/service/board/park/19299438",
-      "views": 3555,
-      "likes": 26,
-      "comments": 30,
-      "time_label": "2026-11-27 20:50:23"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "조만간 김민석은 제명되겠군요.",
-      "url": "https://www.clien.net/service/board/park/19299413",
-      "views": 2299,
-      "likes": 25,
-      "comments": 10,
-      "time_label": "2026-11-27 19:57:41"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "민주당 간판만 달려있지 제가 알던 민주당이 아니네요",
-      "url": "https://www.clien.net/service/board/park/19299423",
-      "views": 1630,
-      "likes": 24,
-      "comments": 24,
-      "time_label": "2026-11-27 20:25:42"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "손연재 부부 30억 연세의료원 기부",
-      "url": "https://www.clien.net/service/board/park/19299285",
-      "views": 5618,
-      "likes": 24,
-      "comments": 11,
-      "time_label": "2026-11-27 15:03:19"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희 의원 징계에 왜 그렇게 반발하냐고요??",
-      "url": "https://www.clien.net/service/board/park/19299385",
-      "views": 2492,
-      "likes": 23,
-      "comments": 24,
-      "time_label": "2026-11-27 18:57:23"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "겸손 뉴스공장 홍사훈기자가 제대로 진국이네요",
-      "url": "https://www.clien.net/service/board/park/19299128",
-      "views": 3774,
-      "likes": 23,
-      "comments": 16,
-      "time_label": "2026-11-27 09:34:10"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "김민석이 사라져야 민주당이산다.",
-      "url": "https://www.clien.net/service/board/park/19299312",
-      "views": 1512,
-      "likes": 22,
-      "comments": 11,
-      "time_label": "2026-11-27 16:11:33"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "이재명 같은 직장상사 끼고 있다고 생각하면 아찔하기는하네요",
-      "url": "https://www.clien.net/service/board/park/19299133",
-      "views": 3642,
-      "likes": 21,
-      "comments": 47,
-      "time_label": "2026-11-27 09:46:42"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "쫄려서 취임100일 기자회견도 못하는 주제에",
-      "url": "https://www.clien.net/service/board/park/19299451",
-      "views": 1980,
-      "likes": 19,
-      "comments": 14,
-      "time_label": "2026-11-27 21:38:37"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "망해간다는 스타벅스코리아",
-      "url": "https://www.clien.net/service/board/park/19299148",
-      "views": 8001,
-      "likes": 19,
-      "comments": 58,
-      "time_label": "2026-11-27 10:25:10"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희 당원권 2년 정지",
-      "url": "https://www.clien.net/service/board/park/19299358",
-      "views": 3753,
-      "likes": 17,
-      "comments": 59,
-      "time_label": "2026-11-27 18:06:49"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "저 잣대면 김민석 박선원도 징계감 아닌가요?",
-      "url": "https://www.clien.net/service/board/park/19299375",
-      "views": 1114,
-      "likes": 16,
-      "comments": 16,
-      "time_label": "2026-11-27 18:42:20"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희 중징계를 내린 윤리심판원에 문진석이 있네요 ㅎㅎㅎㅎ",
-      "url": "https://www.clien.net/service/board/park/19299472",
-      "views": 1564,
-      "likes": 15,
-      "comments": 16,
-      "time_label": "2026-11-27 22:21:00"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희 의원님 걱정말아요... 무소속으로 나와도 뽑아드립니다.",
-      "url": "https://www.clien.net/service/board/park/19299455",
-      "views": 1835,
-      "likes": 15,
-      "comments": 20,
-      "time_label": "2026-11-27 21:40:37"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희 중징계라는군요?",
-      "url": "https://www.clien.net/service/board/park/19299342",
-      "views": 3667,
-      "likes": 15,
-      "comments": 39,
-      "time_label": "2026-11-27 17:31:56"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "지방의회는 없애는 것이 답일 듯 하네요",
-      "url": "https://www.clien.net/service/board/park/19299224",
-      "views": 2822,
-      "likes": 15,
-      "comments": 21,
-      "time_label": "2026-11-27 13:03:49"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "민주당이나 국힘이나...",
-      "url": "https://www.clien.net/service/board/park/19299408",
-      "views": 981,
-      "likes": 14,
-      "comments": 9,
-      "time_label": "2026-11-27 19:43:57"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "부동산 문제로 그냥 웃음만 나오네요",
-      "url": "https://www.clien.net/service/board/park/19299344",
-      "views": 2623,
-      "likes": 14,
-      "comments": 14,
-      "time_label": "2026-11-27 17:40:36"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희가 2년 당원권이 정지 됐군요... 그럼 이제 김민석 징계는요?",
-      "url": "https://www.clien.net/service/board/park/19299497",
-      "views": 791,
-      "likes": 13,
-      "comments": 16,
-      "time_label": "2026-11-27 23:17:05"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "민주당은 폭망의 길로 결국 가네요.",
-      "url": "https://www.clien.net/service/board/park/19299433",
-      "views": 3741,
-      "likes": 13,
-      "comments": 22,
-      "time_label": "2026-11-27 20:42:38"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "최민희는 국회의원 제명감이지요",
-      "url": "https://www.clien.net/service/board/park/19299400",
-      "views": 2615,
-      "likes": 13,
-      "comments": 29,
-      "time_label": "2026-11-27 19:33:38"
-    },
-    {
-      "category": "issue",
-      "source": "클리앙",
-      "source_id": "clien",
-      "title": "가는 길이 다르면 헤어지면 됩니다.",
-      "url": "https://www.clien.net/service/board/park/19299465",
-      "views": 2694,
-      "likes": 12,
-      "comments": 46,
-      "time_label": "2026-11-27 21:56:05"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "일본 AV 여배우 20명 한국에서 성매매",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050592&vdate=",
-      "views": 3977,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "21:02"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "병신 짭닉 새끼가 출현 espnk3 (내용 추가)",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050588&vdate=",
-      "views": 2425,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "20:49"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "요즘 유럽에서 일단 한국인이냐고 묻는 이유",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050591&vdate=",
-      "views": 3984,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "20:23"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "퇴근길 치킨 배달하고 왔네요",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050589&vdate=",
-      "views": 3669,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "18:37"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "김해 고교 텀블럼 사건",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050573&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "17:48"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "펌)학교 운동회 승패를 갈라야하나?jpg",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050585&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "17:45"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "지난번에 이어 치킨 후원 한 번 더 하고 왔습니다~",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050557&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "17:29"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "뮤지컬판에서 대참사 난 사건",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050568&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "17:24"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "볼때마다 이해 안되는 사고",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050584&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "17:24"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "여러분들의 신고는 사랑입니다",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050576&vdate=",
-      "views": 3596,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "16:55"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "차문 안잠그는 캐나다 마을",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050586&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "16:47"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "일본 가출 청소년들 성병검사 해봄",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050572&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "16:36"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "신태일 2심 최종 형량입니다.",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050544&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "16:23"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "여성이 당한 성범죄를 고발하니 여성단체가 역으로 고발자를 비..",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050532&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "16:22"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "황홀했던 그해 바다",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050582&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "16:15"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "목숨건 장난",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050536&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "16:13"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "남경필 장남 출소 1년 만에 또 체포",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050590&vdate=",
-      "views": 3775,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "16:06"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "충격 '그 노래' 빌보드 1위 탈환 실패",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050543&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "16:05"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "중고거래 반말",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050524&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "16:02"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "청순한 그녀의 취향",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050567&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "15:57"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "한국 복싱 유망주 김이현 선수가 뺑소니 사고로 사망했네요",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050525&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "15:57"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "집 15채산 96년생",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050526&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "15:56"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "경찰이 실적에 미치면 생기는 일",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050570&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "15:53"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "게임했다고 플스 박살",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050569&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "15:53"
-    },
-    {
-      "category": "issue",
-      "source": "보배드림",
-      "source_id": "bobae",
-      "title": "업소 가 본 사람들이 대부분 하는 말…",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1050533&vdate=",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "15:47"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "인스타보다가 발견했는데 이거 실화야…?",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434215",
-      "views": 177,
-      "likes": 44,
-      "comments": 34,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "조선시대 공무원들의 인수인계 문화.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434214",
-      "views": 161,
-      "likes": 42,
-      "comments": 6,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "신호대기중에 아빠랑 마주침.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434213",
-      "views": 2084,
-      "likes": 68,
-      "comments": 9,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "약사 유튜버의 훈수 컨텐츠 대참사",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434212",
-      "views": 2728,
-      "likes": 75,
-      "comments": 10,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "세계적인 철학자가 말하는 인간관계에 상처 안 받는 법",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434211",
-      "views": 3595,
-      "likes": 101,
-      "comments": 20,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "자신의 몸에 불을 붙인 청년은 죽어가며 이렇게 외쳤다",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434210",
-      "views": 4068,
-      "likes": 146,
-      "comments": 9,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "실제로 존재하는 강 이름.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434209",
-      "views": 4464,
-      "likes": 77,
-      "comments": 9,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "중국 하이디라오에서 무전취식해버린 한국인.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434208",
-      "views": 5109,
-      "likes": 112,
-      "comments": 15,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "고소하러 경찰서 간 썰",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434207",
-      "views": 4691,
-      "likes": 108,
-      "comments": 15,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "전남친 맨날 이딴거보내.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434205",
-      "views": 7220,
-      "likes": 114,
-      "comments": 25,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "(ㅇㅎ?) 옷의 중요성",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434204",
-      "views": 8861,
-      "likes": 91,
-      "comments": 16,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "일본 AV배우 20명. 한국에서 성매매 '시간당 1,000만원' [46] 답글추천 +75",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434203",
-      "views": 8409,
-      "likes": 151,
-      "comments": 46,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "당뇨갤러의 광기에 찬 분노",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434202",
-      "views": 9056,
-      "likes": 143,
-      "comments": 35,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "우울해서 귀에 발 대고 여보세요 했는데.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434201",
-      "views": 6268,
-      "likes": 105,
-      "comments": 22,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "팀 ADHD에게 추천하는 생활방식",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434200",
-      "views": 7643,
-      "likes": 114,
-      "comments": 29,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "백화점 근무복에 민원 넣은 고객...그 결과",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434199",
-      "views": 8329,
-      "likes": 101,
-      "comments": 12,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "약혐) 의외로 실존하는 빌렌도르프의 비너스.jpg",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434198",
-      "views": 9386,
-      "likes": 114,
-      "comments": 18,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "눈물이 많은 엄마.Manhwa [18] 답글추천 +94",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434197",
-      "views": 6520,
-      "likes": 155,
-      "comments": 18,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "거친 성격의 메이드와 프릴 달린 옷.manhwa",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434196",
-      "views": 5791,
-      "likes": 101,
-      "comments": 6,
-      "time_label": "오늘"
-    },
-    {
-      "category": "issue",
-      "source": "웃긴대학",
-      "source_id": "humoruniv",
-      "title": "P=NP 문제를 증명하는 개발자.insta",
-      "url": "https://web.humoruniv.com/board/humor/read.html?table=pds&number=1434195",
-      "views": 9191,
-      "likes": 148,
-      "comments": 17,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[G마켓] 통영 제철 홍가리비 5kg 100미 내외",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752410",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 23:33"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[팔도감] 보온/보냉 접이식 롤링카트 85L (27,859원/무배)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752409",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 23:29"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[11번가] 노르웨이 생연어 딥스킨 필렛 1kg (31,020원/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752408",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 23:09"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[G마켓] AHC 메이크업핏 마스터즈 톤업 선세럼 50ml 2개 (18,170원/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752407",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:58"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[GS프레쉬]진라면 소컵6개 팝카드결제(2,980원/픽업)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752406",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:43"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[11번가] 송병장 대용량핫팩 150G 30개 (12,900원/무배)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752405",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:39"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[옥션] 샘표 토장찌개양념 등 7종 2+2개 골라담기+연두링 증정(11,990원/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752404",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:28"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[롯데온] 김해뒷고기 1+등급 1kg (11840/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752403",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:13"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[11번가] 고시히카리 상등급 10kg (32,580원/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752402",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:11"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[네이버]쑥콩떡 60g 32개+증정(초례청 약과40g 2개) (19,800원/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752401",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:04"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[네이버] 애플 피치 엔부 사과 3kg~ (15,900원/무료)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752400",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 22:02"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[지마켓] 카타나스워드 포켓온 클래식 화이트 골프 반팔 폴로티셔츠 (5,380원~/무배)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752399",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 21:58"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[ssf] 브렌우드 워셔블 하프터틀넥 스웨터 (52,660원/무배)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752398",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 21:56"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[g마켓] 삼성 갤럭시 버즈4 프로 SM-R640 블루투스 무선 이어폰 화이트 블랙 (당일출고)(208,500원/무료배송)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752397",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 21:56"
-    },
-    {
-      "category": "deal",
-      "source": "뽐뿌",
-      "source_id": "ppomppu",
-      "title": "[무신사] 블랙야크키즈 롱 구스다운 패딩 (120,680원/무배)",
-      "url": "http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=752396",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "11-27 21:56"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "(11/27 신규 할인코드 공개) [알리익스프레스] 블랙프라이데이 정보 안내 (클리앙 전용",
-      "url": "https://www.clien.net/service/board/jirum/19294482",
-      "views": 17,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "2026-11-18 10:57:51"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[iOS] YouPlay 평생 IAP 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19299082",
-      "views": 8351,
-      "likes": 0,
-      "comments": 26,
-      "time_label": "2026-11-27 07:55:45"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[MacOS] HTML to App 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19298977",
-      "views": 4143,
-      "likes": 0,
-      "comments": 2,
-      "time_label": "2026-11-26 20:26:16"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[하이마트] 앤커 파워뱅크 20000mAh 87와트 A1118 43,610원/무배",
-      "url": "https://www.clien.net/service/board/jirum/19298969",
-      "views": 6185,
-      "likes": 0,
-      "comments": 3,
-      "time_label": "2026-11-26 20:01:32"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[플레이스토어] 스타듀밸리 50% 할인 2,950원",
-      "url": "https://www.clien.net/service/board/jirum/19298613",
-      "views": 7335,
-      "likes": 0,
-      "comments": 1,
-      "time_label": "2026-11-25 22:59:57"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[네이버] 인케이스 외 할인",
-      "url": "https://www.clien.net/service/board/jirum/19298517",
-      "views": 18,
-      "likes": 0,
-      "comments": 25,
-      "time_label": "2026-11-25 19:19:15"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[WearOS] SamWatch Digital Shu 2 2025 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19298282",
-      "views": 5171,
-      "likes": 0,
-      "comments": 7,
-      "time_label": "2026-11-25 11:58:47"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[네이버페이+삼성페이] SK주유소 5만원 이상 주유시 3천포인트 지급(~12.31)",
-      "url": "https://www.clien.net/service/board/jirum/19298277",
-      "views": 13,
-      "likes": 0,
-      "comments": 3,
-      "time_label": "2026-11-25 11:51:15"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[카카오] 진주햄 천하장사 오리지날+콰트로치즈 28gX총48개 12,560원",
-      "url": "https://www.clien.net/service/board/jirum/19298007",
-      "views": 6768,
-      "likes": 0,
-      "comments": 2,
-      "time_label": "2026-11-24 19:28:33"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "도레이씨 안경닦이 안경수건 천 도레이 극세사 클리너 선물용",
-      "url": "https://www.clien.net/service/board/jirum/19297766",
-      "views": 9107,
-      "likes": 0,
-      "comments": 13,
-      "time_label": "2026-11-24 10:42:33"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[아미존] 2026 맥북에어 M5, 16GB / 512GB, MDHE4LL/A",
-      "url": "https://www.clien.net/service/board/jirum/19297493",
-      "views": 15,
-      "likes": 0,
-      "comments": 16,
-      "time_label": "2026-11-23 20:27:32"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[WearOS] AD TimeBar 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19297426",
-      "views": 7428,
-      "likes": 0,
-      "comments": 5,
-      "time_label": "2026-11-23 17:08:44"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "프로스펙스 메타 넥워머 4,830원 (무배)",
-      "url": "https://www.clien.net/service/board/jirum/19296785",
-      "views": 15,
-      "likes": 0,
-      "comments": 1,
-      "time_label": "2026-11-22 10:35:46"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[네이버] 오디오테크니카 AT-SB727 휴대용 무선 블루투스 턴테이블 (139,000원)",
-      "url": "https://www.clien.net/service/board/jirum/19296761",
-      "views": 29,
-      "likes": 0,
-      "comments": 4,
-      "time_label": "2026-11-22 09:47:53"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[WearOS] HW Terramaster Mk III Hybrid 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19296755",
-      "views": 9367,
-      "likes": 0,
-      "comments": 6,
-      "time_label": "2026-11-22 09:28:58"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[아마존] 필립스 소닉케어 파워플로서 5000 (=워터픽, $59.96/무배)",
-      "url": "https://www.clien.net/service/board/jirum/19296664",
-      "views": 12,
-      "likes": 0,
-      "comments": 18,
-      "time_label": "2026-11-21 22:36:27"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[아마존] Koss Porta Pro LE ($34.99)",
-      "url": "https://www.clien.net/service/board/jirum/19296583",
-      "views": 12,
-      "likes": 0,
-      "comments": 19,
-      "time_label": "2026-11-21 18:22:51"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "apple TV+ 6개월간 월 2900원씩 프로모션",
-      "url": "https://www.clien.net/service/board/jirum/19296182",
-      "views": 16,
-      "likes": 0,
-      "comments": 14,
-      "time_label": "2026-11-20 19:50:06"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[하이마트] 아이폰 17 & 에어팟 프로 3 세일",
-      "url": "https://www.clien.net/service/board/jirum/19296168",
-      "views": 16,
-      "likes": 0,
-      "comments": 1,
-      "time_label": "2026-11-20 19:19:46"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[WearOS] Zu0̸x5 Fit Digital Watch Face 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19296066",
-      "views": 8663,
-      "likes": 0,
-      "comments": 6,
-      "time_label": "2026-11-20 16:16:20"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[에픽게임즈] Mark of the Deep 무료 외",
-      "url": "https://www.clien.net/service/board/jirum/19295737",
-      "views": 13,
-      "likes": 0,
-      "comments": 2,
-      "time_label": "2026-11-20 01:28:58"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[애플티비] 반지의 제왕, 호빗 확장판 할인",
-      "url": "https://www.clien.net/service/board/jirum/19294899",
-      "views": 15,
-      "likes": 0,
-      "comments": 9,
-      "time_label": "2026-11-19 01:18:37"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[레고] 연꽃 #40647 8,360원 (배송비 3,000원)",
-      "url": "https://www.clien.net/service/board/jirum/19294820",
-      "views": 16,
-      "likes": 0,
-      "comments": 1,
-      "time_label": "2026-11-18 21:12:17"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[아마존] Bowers & Wilkins Pi6 ($89.99)",
-      "url": "https://www.clien.net/service/board/jirum/19294762",
-      "views": 16,
-      "likes": 0,
-      "comments": 9,
-      "time_label": "2026-11-18 19:57:04"
-    },
-    {
-      "category": "deal",
-      "source": "클리앙 알뜰",
-      "source_id": "clien_deal",
-      "title": "[WearOS] SamWatch Digital Harmony I 일시 무료",
-      "url": "https://www.clien.net/service/board/jirum/19294728",
-      "views": 11,
-      "likes": 0,
-      "comments": 1,
-      "time_label": "2026-11-18 18:08:32"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "[에픽게임즈] Bread & Fred, 파이어스톤 무료배포",
-      "url": "https://damoang.net/economy/83594",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "[네이버] 순대국밥 순댓국, 순대내장 1kg 찰순대 모둠 부속",
-      "url": "https://damoang.net/economy/83585",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "[네이버] 떡국떡 1kg(국산쌀), 떡국떡 2kg(외국산쌀)",
-      "url": "https://damoang.net/economy/83584",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "[네이버] 국산 생강가루 100% 생강분말 200g",
-      "url": "https://damoang.net/economy/83582",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "[네이버] 8켤레 42g 톡톡한 남자 무지 발냄새 소취 양말 M L 빅사이즈 중목 장목 정장 N배송, 8켤레 남자 발냄새소취 기능성 면양말 무지 골지 중목 흰 검정 양말 N배송",
-      "url": "https://damoang.net/economy/83581",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "자동네이버 유혜광돈까스 국내산 수제 통등심돈까스 260g (30%↓, 무료배송)",
-      "url": "https://damoang.net/economy/83577",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "55 네이버페이 2026-11-27 네이버페이 76원 + 랜덤 포인트",
-      "url": "https://damoang.net/economy/83562",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "[네이버] 비비고 만두세트 10봉(왕교자3,김치왕교자3,청양고기2,진한김치2) [10] 다모앙 11.26 1.9k 6 11.26 1.9k 다모앙",
-      "url": "https://damoang.net/economy/83548",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "[네이버] 김장비닐 절임 대형 두꺼운 비닐봉투 10매 다모앙 11.26 1.6k 1 11.26 1.6k 다모앙",
-      "url": "https://damoang.net/economy/83540",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "5 알뜰폰 [프리티 U+ 5G망] 15G+1M/300분/300건/ 평생 7,700원 [1] 주변인74 11.26 1.9k 5 11.26 1.9k 주변인74",
-      "url": "https://damoang.net/economy/83539",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "[네이버] 액상 알룰로스 설탕대용 대체재 천연 감미료 스테비아 나한과 1.3kg, 1개 다모앙 11.26 1.6k 2 11.26 1.6k 다모앙",
-      "url": "https://damoang.net/economy/83538",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "[네이버] 육개장 밀키트 소고기 국밥 건더기 폭탄 가마솥 우사골 1인분 혼밥 야식 간편식 다모앙 11.26 1.7k 2 11.26 1.7k 다모앙",
-      "url": "https://damoang.net/economy/83520",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "29 네이버페이 네이버페이 추가 [10] Hello_JK 11.26 3.9k 29 11.26 3.9k Hello_JK",
-      "url": "https://damoang.net/economy/83519",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "[네이버] 1등급 한우 국거리 (200g×2ea) 대구축산농협 [1] 다모앙 11.26 1.6k 3 11.26 1.6k 다모앙",
-      "url": "https://damoang.net/economy/83514",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "iOS 일시무료 SketchClub aconite 11.26 1.8k 8 11.26 1.8k aconite",
-      "url": "https://damoang.net/economy/83510",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "iOS 일시무료 Spatial Pro [1] aconite 11.26 1.7k 7 11.26 1.7k aconite",
-      "url": "https://damoang.net/economy/83509",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "iOS 일시무료 Cube Solver 3D [1] aconite 11.26 971 8 11.26 971 aconite",
-      "url": "https://damoang.net/economy/83508",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "iOS 일시무료 Plunge [1] aconite 11.26 1.1k 8 11.26 1.1k aconite",
-      "url": "https://damoang.net/economy/83507",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "costco 애플 제품들 블프 할인 풍차 11.26 2.7k 2 11.26 2.7k 풍차",
-      "url": "https://damoang.net/economy/83501",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    },
-    {
-      "category": "deal",
-      "source": "다모앙 알뜰",
-      "source_id": "damoang_deal",
-      "title": "57 네이버페이 2026-11-26 네이버페이 75원 + 랜덤 포인트 [23] 중무장 11.26 6k 57 11.26 6k 중무장",
-      "url": "https://damoang.net/economy/83500",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "time_label": "오늘"
-    }
-  ]
-};
-
-    let state = {
-      items: [],
-      updatedAt: "",
-      tab: "issue",
-      source: "all",
-      query: "",
-      sort: "default",
-      visited: new Set(JSON.parse(localStorage.getItem("visited_urls") || "[]")),
-      comments: JSON.parse(localStorage.getItem("post_comments_v1") || "{}"),
-      activePostUrl: null,
+    const MOOD_LABELS = {
+      all: '전체 주제',
+      humor: '😂 순수 유머',
+      info: '💡 정보·꿀팁',
+      it_econ: '💻 IT·경제',
+      sports: '⚽ 스포츠·게임',
+      life: '💛 일상·감동',
+      politics_conflict: '🏛️ 정치·이슈'
     };
 
-    const themeBtn = document.getElementById("themeToggle");
-    if (localStorage.getItem("theme") === "dark") {
-      document.documentElement.classList.add("dark");
-      themeBtn.textContent = "☀️";
-    }
-    themeBtn.addEventListener("click", () => {
-      const isDark = document.documentElement.classList.toggle("dark");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-      themeBtn.textContent = isDark ? "☀️" : "🌙";
-    });
+    const state = {
+      items: [],
+      briefing: [],
+      updatedAt: '',
+      aiEnabled: false,
+      tab: 'issue',
+      mood: 'all',
+      source: 'all',
+      search: '',
+      sort: 'cross',
+      cleanMode: loadBool('pinakes_clean', true),
+      unreadOnly: loadBool('pinakes_unread_only', false),
+      readIds: loadSet('pinakes_read_ids'),
+      comments: loadObj('pinakes_comments'),
+      expandedClusters: new Set(),
+      expandedSummaries: new Set(),
+      activePost: null
+    };
 
-    function formatNum(n) {
-      if (!n) return "0";
-      if (n >= 10000) return (n / 10000).toFixed(1).replace(/\.0$/, "") + "만";
-      return n.toLocaleString("ko-KR");
+    function loadBool(k, def) {
+      try {
+        const v = localStorage.getItem(k);
+        return v === null ? def : v === '1';
+      } catch { return def; }
+    }
+    function loadSet(k) {
+      try {
+        return new Set(JSON.parse(localStorage.getItem(k) || '[]'));
+      } catch { return new Set(); }
+    }
+    function loadObj(k) {
+      try {
+        return JSON.parse(localStorage.getItem(k) || '{}');
+      } catch { return {}; }
+    }
+    function saveReadIds() {
+      try {
+        localStorage.setItem('pinakes_read_ids', JSON.stringify(Array.from(state.readIds).slice(-500)));
+      } catch {}
+    }
+    function markAsRead(id) {
+      if (!id) return;
+      state.readIds.add(id);
+      saveReadIds();
+      render();
     }
 
     function escapeHtml(str) {
-      return String(str)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;");
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
     }
 
-    function saveComments() {
-      localStorage.setItem("post_comments_v1", JSON.stringify(state.comments));
+    function fmtNum(n) {
+      return n ? Number(n).toLocaleString('ko-KR') : '0';
+    }
+
+    function syncTopToggles() {
+      const cleanBtn = document.getElementById('cleanBtn');
+      const unreadBtn = document.getElementById('unreadBtn');
+      cleanBtn.classList.toggle('active-clean', state.cleanMode);
+      cleanBtn.textContent = state.cleanMode ? '🧹 클린 ON' : '🧹 클린 OFF';
+      unreadBtn.classList.toggle('active-unread', state.unreadOnly);
+      const isDark = document.documentElement.classList.contains('dark');
+      document.getElementById('themeBtn').textContent = isDark ? '☀️' : '🌙';
+    }
+
+    function getBaseItems() {
+      let list = state.items.slice();
+      if (state.tab === 'issue') list = list.filter(x => x.category === 'issue');
+      else if (state.tab === 'deal') list = list.filter(x => x.category === 'deal');
+      if (state.cleanMode) list = list.filter(x => !x.isSensitive);
+      return list;
     }
 
     function getFilteredItems() {
-      let list = state.items.filter((it) => {
-        if (state.tab !== "all" && it.category !== state.tab) return false;
-        if (state.source !== "all" && it.source_id !== state.source) return false;
-        if (state.query) {
-          const q = state.query.toLowerCase();
-          if (!it.title.toLowerCase().includes(q) && !it.source.toLowerCase().includes(q)) return false;
-        }
-        return true;
-      });
+      let list = getBaseItems();
+      if (state.unreadOnly) list = list.filter(x => !state.readIds.has(x.id));
+      if (state.mood !== 'all' && state.tab !== 'deal') list = list.filter(x => x.mood === state.mood);
+      if (state.source !== 'all') {
+        list = list.filter(x => x.source === state.source || (x.communities && x.communities.includes(state.source)));
+      }
+      if (state.search.trim()) {
+        const q = state.search.trim().toLowerCase();
+        list = list.filter(x =>
+          x.title.toLowerCase().includes(q) ||
+          (x.aiSummaryTitle && x.aiSummaryTitle.toLowerCase().includes(q)) ||
+          x.source.toLowerCase().includes(q)
+        );
+      }
 
-      if (state.sort === "views") {
-        list = [...list].sort((a, b) => (b.views || 0) - (a.views || 0));
-      } else if (state.sort === "comments") {
-        list = [...list].sort((a, b) => (b.comments || 0) - (a.comments || 0));
-      } else if (state.sort === "likes") {
-        list = [...list].sort((a, b) => (b.likes || 0) - (a.likes || 0));
+      if (state.sort === 'cross') {
+        list.sort((a, b) => (b.crossScore || 0) - (a.crossScore || 0));
+      } else if (state.sort === 'views') {
+        list.sort((a, b) => (b.views || 0) - (a.views || 0));
+      } else if (state.sort === 'comments') {
+        list.sort((a, b) => (b.comments || 0) - (a.comments || 0));
+      } else if (state.sort === 'likes') {
+        list.sort((a, b) => (b.likes || 0) - (a.likes || 0));
       }
       return list;
     }
 
     function renderChips() {
-      const box = document.getElementById("sourceChips");
-      const base = state.items.filter((it) => state.tab === "all" || it.category === state.tab);
-      const map = new Map();
-      for (const it of base) {
-        if (!map.has(it.source_id)) map.set(it.source_id, { id: it.source_id, name: it.source, count: 0 });
-        map.get(it.source_id).count++;
-      }
+      const moodRow = document.getElementById('moodChips');
+      const sourceRow = document.getElementById('sourceChips');
+      const controlsBar = document.getElementById('controlsBar');
 
-      const chips = [{ id: "all", name: "전체", count: base.length }, ...map.values()];
-      box.innerHTML = chips
-        .map(
-          (c) =>
-            `<button class="chip ${state.source === c.id ? "active" : ""}" data-src="${c.id}" type="button">${escapeHtml(c.name)} (${c.count})</button>`
-        )
-        .join("");
-
-      box.querySelectorAll(".chip").forEach((el) => {
-        el.addEventListener("click", () => {
-          state.source = el.dataset.src;
-          render();
-        });
-      });
-    }
-
-    function renderList() {
-      const container = document.getElementById("feedList");
-      const list = getFilteredItems();
-      document.getElementById("totalBadge").textContent = `${list.length}건`;
-
-      if (!list.length) {
-        container.innerHTML = `<div class="empty-state">조건에 맞는 게시글이 없습니다.</div>`;
+      if (state.tab === 'briefing') {
+        moodRow.style.display = 'none';
+        sourceRow.style.display = 'none';
+        controlsBar.style.display = 'none';
         return;
       }
 
-      container.innerHTML = list
-        .map((it, idx) => {
-          const visited = state.visited.has(it.url) ? "visited" : "";
-          const metaParts = [];
-          if (it.views) metaParts.push(`조회 ${formatNum(it.views)}`);
-          if (it.likes) metaParts.push(`추천 ${formatNum(it.likes)}`);
-          if (it.time_label) metaParts.push(escapeHtml(it.time_label));
-          const cmtHtml = it.comments ? `<span class="cmt-badge">[${it.comments}]</span>` : "";
-          const localCmts = (state.comments[it.url] || []).length;
+      controlsBar.style.display = 'flex';
+      sourceRow.style.display = 'flex';
 
-          return `
-            <div class="post-row ${visited}" data-url="${escapeHtml(it.url)}">
-              <div class="rank-num">${idx + 1}</div>
-              <div class="post-body">
-                <a class="post-title-link" href="${escapeHtml(it.url)}" target="_blank" rel="noopener noreferrer">
-                  <div class="post-title-line">
-                    <span class="src-tag src-${escapeHtml(it.source_id)}">${escapeHtml(it.source)}</span>
-                    <span class="post-title">${escapeHtml(it.title)}</span>
-                    ${cmtHtml}
-                  </div>
-                </a>
-                <div class="post-meta-row">
-                  <div class="post-meta">${metaParts.join(" · ")}</div>
-                  <button class="comment-btn ${localCmts ? "has-comments" : ""}" type="button" data-open-comment="${escapeHtml(it.url)}">
-                    💬 댓글${localCmts ? ` ${localCmts}` : ""}
-                  </button>
+      if (state.tab === 'deal') {
+        moodRow.style.display = 'none';
+      } else {
+        moodRow.style.display = 'flex';
+        const keys = ['all', 'humor', 'info', 'it_econ', 'sports', 'life'];
+        if (!state.cleanMode) keys.push('politics_conflict');
+        if (state.cleanMode && state.mood === 'politics_conflict') state.mood = 'all';
+
+        moodRow.innerHTML = keys.map(k =>
+          `<button class="chip ${state.mood === k ? 'active' : ''}" data-mood="${k}">${MOOD_LABELS[k]}</button>`
+        ).join('');
+      }
+
+      const base = getBaseItems();
+      const counts = {};
+      base.forEach(x => { counts[x.source] = (counts[x.source] || 0) + 1; });
+      const sources = ['all', ...Object.keys(counts)];
+      sourceRow.innerHTML = sources.map(s => {
+        const label = s === 'all' ? `전체 (${base.length})` : `${s} (${counts[s]})`;
+        return `<button class="chip ${state.source === s ? 'active' : ''}" data-src="${escapeHtml(s)}">${escapeHtml(label)}</button>`;
+      }).join('');
+    }
+
+    function renderBriefing() {
+      const area = document.getElementById('contentArea');
+      const items = state.cleanMode ? state.briefing.filter(b => !b.isSensitive) : state.briefing;
+
+      document.getElementById('totalBadge').textContent = `${items.length}건`;
+      document.getElementById('statusText').textContent = `출퇴근 3분 브리핑 · ${state.updatedAt}`;
+
+      if (!items.length) {
+        area.innerHTML = `<div class="empty">표시할 브리핑이 없습니다. 클린 모드를 해제하거나 잠시 후 다시 확인해 주세요.</div>`;
+        return;
+      }
+
+      area.innerHTML = `
+        <div class="briefing-header">
+          <h2>📰 지금 꼭 봐야 할 핵심 이슈 Top ${items.length}</h2>
+          <p>${state.updatedAt} 기준 · ${state.aiEnabled ? 'AI 요약 적용됨' : '실시간 화제글 기준'}${state.cleanMode ? ' · 클린 모드 필터링 중' : ''}</p>
+        </div>
+        <div class="briefing-grid">
+          ${items.map((b, i) => `
+            <div class="brief-card">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                  <span class="brief-tag">#${i + 1} ${escapeHtml(b.tag)}</span>
+                  <span style="font-size:11px; color:var(--text-muted);">${escapeHtml((b.communities || []).join('·'))}</span>
                 </div>
+                <a class="brief-headline" href="${escapeHtml(b.url)}" target="_blank" rel="noopener" data-read-id="${escapeHtml(b.id)}">
+                  ${escapeHtml(b.headline)}
+                </a>
+                <p class="brief-summary" style="margin-top:6px;">${escapeHtml(b.summary)}</p>
+              </div>
+              <div style="display:flex; justify-content:flex-end;">
+                <a class="mini-btn" style="text-decoration:none;" href="${escapeHtml(b.url)}" target="_blank" rel="noopener" data-read-id="${escapeHtml(b.id)}">원문 보기 ↗</a>
               </div>
             </div>
-          `;
-        })
-        .join("");
-
-      container.querySelectorAll(".post-title-link").forEach((el) => {
-        el.addEventListener("click", () => {
-          const row = el.closest(".post-row");
-          const u = row.dataset.url;
-          state.visited.add(u);
-          localStorage.setItem("visited_urls", JSON.stringify([...state.visited].slice(-300)));
-          row.classList.add("visited");
-        });
-      });
-
-      container.querySelectorAll("[data-open-comment]").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          openCommentModal(btn.dataset.openComment);
-        });
-      });
+          `).join('')}
+        </div>
+      `;
     }
 
-    function openCommentModal(url) {
-      const item = state.items.find((x) => x.url === url);
-      if (!item) return;
-      state.activePostUrl = url;
-      document.getElementById("modalTitle").textContent = `[${item.source}] ${item.title}`;
-      document.getElementById("modalOriginLink").href = item.url;
-      document.getElementById("nickInput").value = localStorage.getItem("comment_nick") || "익명";
-      renderModalComments();
-      document.getElementById("commentModal").classList.add("open");
-      document.getElementById("commentModal").setAttribute("aria-hidden", "false");
-    }
+    function renderFeed() {
+      const list = getFilteredItems();
+      const area = document.getElementById('contentArea');
+      document.getElementById('totalBadge').textContent = `${list.length}건`;
 
-    function closeCommentModal() {
-      document.getElementById("commentModal").classList.remove("open");
-      document.getElementById("commentModal").setAttribute("aria-hidden", "true");
-      state.activePostUrl = null;
-    }
+      const readCount = state.readIds.size;
+      document.getElementById('statusText').textContent =
+        `표시 ${list.length}건${state.cleanMode ? ' · 클린 모드 적용' : ''}${readCount ? ` · 읽은 글 ${readCount}건` : ''}`;
+      document.getElementById('resetReadBtn').style.display = readCount ? 'inline' : 'none';
 
-    function renderModalComments() {
-      const listEl = document.getElementById("commentList");
-      const list = state.comments[state.activePostUrl] || [];
       if (!list.length) {
-        listEl.innerHTML = `<div class="empty-state" style="padding:24px 10px;">첫 댓글을 남겨보세요!</div>`;
+        area.innerHTML = `<div class="empty">조건에 맞는 글이 없습니다. 검색어나 필터를 조정해 보세요.</div>`;
         return;
       }
-      listEl.innerHTML = list
-        .map(
-          (c, idx) => `
-          <div class="comment-item">
-            <div class="comment-head">
-              <span class="comment-author">${escapeHtml(c.nick)}</span>
-              <span>
-                <span class="comment-time">${escapeHtml(c.time)}</span>
-                <button class="comment-del" type="button" data-del-idx="${idx}">삭제</button>
-              </span>
+
+      area.innerHTML = `<div class="feed-list">${list.map((it, idx) => {
+        const isRead = state.readIds.has(it.id);
+        const cCount = (state.comments[it.id] || []).length;
+        const hasCross = (it.crossCount || 1) > 1 && it.relatedItems && it.relatedItems.length > 1;
+        const isCrossOpen = state.expandedClusters.has(it.clusterId);
+        const hasSummary = Array.isArray(it.aiThreeLineSummary) && it.aiThreeLineSummary.length > 0;
+        const isSummaryOpen = state.expandedSummaries.has(it.id);
+
+        const metaParts = [];
+        if (it.views) metaParts.push(`조회 ${fmtNum(it.views)}`);
+        if (it.likes) metaParts.push(`추천 ${fmtNum(it.likes)}`);
+        if (it.comments) metaParts.push(`원글 댓글 ${fmtNum(it.comments)}`);
+        if (it.time_label) metaParts.push(it.time_label);
+
+        const hoverTip = hasSummary ? it.aiThreeLineSummary.join(' / ') : '';
+
+        return `
+          <article class="post-card ${isRead ? 'is-read' : ''}">
+            <div class="card-top">
+              <div class="badges">
+                <span class="rank-num">${idx + 1}</span>
+                <span class="src-badge ${it.category === 'deal' ? 'deal' : ''}">${escapeHtml(it.source)}</span>
+                ${it.mood && MOOD_LABELS[it.mood] && it.category !== 'deal' ? `<span class="mood-badge">${MOOD_LABELS[it.mood]}</span>` : ''}
+                ${hasCross ? `<button class="cross-badge" data-toggle-cluster="${escapeHtml(it.clusterId)}">🔥 ${escapeHtml(it.communities.join('·'))} ${it.crossCount}곳 동시 화제 ${isCrossOpen ? '▲' : '▼'}</button>` : ''}
+              </div>
+              ${isRead ? `<span class="read-tag">✓ 읽음</span>` : ''}
             </div>
-            <div class="comment-text">${escapeHtml(c.text)}</div>
-          </div>
-        `
-        )
-        .join("");
 
-      listEl.querySelectorAll("[data-del-idx]").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const i = Number(btn.dataset.delIdx);
-          state.comments[state.activePostUrl].splice(i, 1);
-          saveComments();
-          renderModalComments();
-          renderList();
-        });
-      });
+            <a class="post-title" href="${escapeHtml(it.url)}" target="_blank" rel="noopener"
+               data-read-id="${escapeHtml(it.id)}" title="${escapeHtml(hoverTip)}">
+              ${escapeHtml(it.title)}${it.comments ? `<span class="reply-cnt">[${it.comments}]</span>` : ''}
+            </a>
+
+            ${it.aiSummaryTitle ? `<div class="ai-subtitle">✨ ${escapeHtml(it.aiSummaryTitle)}</div>` : ''}
+
+            <div class="card-bottom">
+              <span class="meta-line">${escapeHtml(metaParts.join(' · ') || '방금')}</span>
+              <div class="card-actions">
+                ${hasSummary ? `<button class="mini-btn" data-toggle-summary="${escapeHtml(it.id)}">📋 3줄 요약 ${isSummaryOpen ? '▲' : '▼'}</button>` : ''}
+                <button class="mini-btn ${cCount ? 'has-comments' : ''}" data-open-comment="${escapeHtml(it.id)}">💬 댓글${cCount ? ` ${cCount}` : ''}</button>
+              </div>
+            </div>
+
+            ${isSummaryOpen && hasSummary ? `
+              <div class="drawer">
+                <strong>📋 핵심 요약</strong>
+                <ul>${it.aiThreeLineSummary.map(s => `<li>${escapeHtml(s)}</li>`).join('')}</ul>
+              </div>
+            ` : ''}
+
+            ${isCrossOpen && hasCross ? `
+              <div class="drawer">
+                <strong>🔗 묶인 커뮤니티 글 (${it.relatedItems.length}건)</strong>
+                <ul>
+                  ${it.relatedItems.map(m => `
+                    <li>
+                      <span style="font-weight:700;">[${escapeHtml(m.source)}]</span>
+                      <a class="related-link" href="${escapeHtml(m.url)}" target="_blank" rel="noopener" data-read-id="${escapeHtml(it.id)}">${escapeHtml(m.title)}</a>
+                    </li>
+                  `).join('')}
+                </ul>
+                ${it.opinionCompare ? `<div class="opinion-box"><strong>⚖️ 여론 비교:</strong> ${escapeHtml(it.opinionCompare)}</div>` : ''}
+              </div>
+            ` : ''}
+          </article>
+        `;
+      }).join('')}</div>`;
     }
-
-    document.getElementById("modalCloseBtn").addEventListener("click", closeCommentModal);
-    document.getElementById("commentModal").addEventListener("click", (e) => {
-      if (e.target.id === "commentModal") closeCommentModal();
-    });
-
-    document.getElementById("commentForm").addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!state.activePostUrl) return;
-      const nick = document.getElementById("nickInput").value.trim() || "익명";
-      const bodyEl = document.getElementById("bodyInput");
-      const text = bodyEl.value.trim();
-      if (!text) return;
-
-      localStorage.setItem("comment_nick", nick);
-      const now = new Date();
-      const time = now.toLocaleTimeString("ko-KR", { hour: "2-digit", minute: "2-digit" });
-      if (!state.comments[state.activePostUrl]) state.comments[state.activePostUrl] = [];
-      state.comments[state.activePostUrl].push({ nick, text, time });
-      saveComments();
-      bodyEl.value = "";
-      renderModalComments();
-      renderList();
-    });
 
     function render() {
+      syncTopToggles();
       renderChips();
-      renderList();
+      if (state.tab === 'briefing') renderBriefing();
+      else renderFeed();
     }
 
-    document.querySelectorAll(".tab-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        state.tab = btn.dataset.tab;
-        state.source = "all";
+    function openCommentModal(postId) {
+      const post = state.items.find(x => x.id === postId);
+      if (!post) return;
+      state.activePost = post;
+      document.getElementById('modalPostTitle').textContent = post.title;
+      document.getElementById('modalPostSub').textContent = `${post.source} · 이 기기 브라우저에 댓글이 저장됩니다`;
+      renderComments();
+      document.getElementById('commentModal').classList.add('open');
+    }
+
+    function renderComments() {
+      const listEl = document.getElementById('commentList');
+      const post = state.activePost;
+      if (!post) return;
+      const arr = state.comments[post.id] || [];
+      if (!arr.length) {
+        listEl.innerHTML = `<div style="text-align:center; color:var(--text-muted); padding:24px 0; font-size:13px;">첫 댓글을 남겨보세요!</div>`;
+        return;
+      }
+      listEl.innerHTML = arr.map((c, idx) => `
+        <div class="comment-item">
+          <div class="comment-head">
+            <span><strong>${escapeHtml(c.nick)}</strong> · ${escapeHtml(c.time)}</span>
+            <button class="comment-del" data-del-idx="${idx}">삭제</button>
+          </div>
+          <div style="font-size:13.5px;">${escapeHtml(c.text)}</div>
+        </div>
+      `).join('');
+    }
+
+    document.addEventListener('click', (e) => {
+      const t = e.target;
+
+      const tabBtn = t.closest('[data-tab]');
+      if (tabBtn) {
+        state.tab = tabBtn.dataset.tab;
+        state.source = 'all';
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === tabBtn));
         render();
-      });
+        return;
+      }
+
+      const moodBtn = t.closest('[data-mood]');
+      if (moodBtn) {
+        state.mood = moodBtn.dataset.mood;
+        render();
+        return;
+      }
+
+      const srcBtn = t.closest('[data-src]');
+      if (srcBtn) {
+        state.source = srcBtn.dataset.src;
+        render();
+        return;
+      }
+
+      const readLink = t.closest('[data-read-id]');
+      if (readLink) {
+        markAsRead(readLink.dataset.readId);
+        return;
+      }
+
+      const clBtn = t.closest('[data-toggle-cluster]');
+      if (clBtn) {
+        const cid = clBtn.dataset.toggleCluster;
+        if (state.expandedClusters.has(cid)) state.expandedClusters.delete(cid);
+        else state.expandedClusters.add(cid);
+        render();
+        return;
+      }
+
+      const sumBtn = t.closest('[data-toggle-summary]');
+      if (sumBtn) {
+        const pid = sumBtn.dataset.toggleSummary;
+        if (state.expandedSummaries.has(pid)) state.expandedSummaries.delete(pid);
+        else state.expandedSummaries.add(pid);
+        render();
+        return;
+      }
+
+      const cmtBtn = t.closest('[data-open-comment]');
+      if (cmtBtn) {
+        openCommentModal(cmtBtn.dataset.openComment);
+        return;
+      }
+
+      const delBtn = t.closest('[data-del-idx]');
+      if (delBtn && state.activePost) {
+        const idx = Number(delBtn.dataset.delIdx);
+        const arr = state.comments[state.activePost.id] || [];
+        arr.splice(idx, 1);
+        state.comments[state.activePost.id] = arr;
+        try { localStorage.setItem('pinakes_comments', JSON.stringify(state.comments)); } catch {}
+        renderComments();
+        render();
+      }
     });
 
-    document.getElementById("searchInput").addEventListener("input", (e) => {
-      state.query = e.target.value.trim();
-      renderList();
-    });
-
-    document.getElementById("sortSelect").addEventListener("change", (e) => {
-      state.sort = e.target.value;
-      renderList();
-    });
-
-    async function init() {
-      let data = FALLBACK_DATA;
-      try {
-        const res = await fetch("./data.json", { cache: "no-store" });
-        if (res.ok) {
-          const json = await res.json();
-          if (json && Array.isArray(json.items) && json.items.length) {
-            data = json;
-          }
-        }
-      } catch (_) {}
-
-      state.items = data.items || [];
-      state.updatedAt = data.updated_at || "";
-      document.getElementById("updatedAt").textContent = state.updatedAt ? `갱신 ${state.updatedAt}` : "";
+    document.getElementById('cleanBtn').addEventListener('click', () => {
+      state.cleanMode = !state.cleanMode;
+      try { localStorage.setItem('pinakes_clean', state.cleanMode ? '1' : '0'); } catch {}
       render();
-    }
+    });
 
-    init();
+    document.getElementById('unreadBtn').addEventListener('click', () => {
+      state.unreadOnly = !state.unreadOnly;
+      try { localStorage.setItem('pinakes_unread_only', state.unreadOnly ? '1' : '0'); } catch {}
+      render();
+    });
+
+    document.getElementById('themeBtn').addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('pinakes_theme', isDark ? 'dark' : 'light'); } catch {}
+      syncTopToggles();
+    });
+
+    document.getElementById('resetReadBtn').addEventListener('click', () => {
+      state.readIds.clear();
+      saveReadIds();
+      render();
+    });
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      state.search = e.target.value;
+      render();
+    });
+
+    document.getElementById('sortSelect').addEventListener('change', (e) => {
+      state.sort = e.target.value;
+      render();
+    });
+
+    document.getElementById('closeModalBtn').addEventListener('click', () => {
+      document.getElementById('commentModal').classList.remove('open');
+    });
+    document.getElementById('commentModal').addEventListener('click', (e) => {
+      if (e.target.id === 'commentModal') document.getElementById('commentModal').classList.remove('open');
+    });
+
+    document.getElementById('commentForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!state.activePost) return;
+      const nick = document.getElementById('nickInput').value.trim() || '익명';
+      const text = document.getElementById('commentInput').value.trim();
+      if (!text) return;
+      const now = new Date();
+      const time = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+      if (!state.comments[state.activePost.id]) state.comments[state.activePost.id] = [];
+      state.comments[state.activePost.id].push({ nick, text, time });
+      try { localStorage.setItem('pinakes_comments', JSON.stringify(state.comments)); } catch {}
+      document.getElementById('commentInput').value = '';
+      renderComments();
+      render();
+    });
+
+    fetch('data.json?t=' + Date.now())
+      .then(r => r.json())
+      .then(data => {
+        state.items = data.items || [];
+        state.briefing = data.briefing || [];
+        state.updatedAt = data.updated_at || '';
+        state.aiEnabled = Boolean(data.ai_enabled);
+        document.getElementById('updatedAt').textContent = state.updatedAt ? `갱신 ${state.updatedAt}` : '';
+        render();
+      })
+      .catch(() => {
+        document.getElementById('contentArea').innerHTML = `<div class="empty">피드를 불러오지 못했습니다.</div>`;
+      });
   </script>
 </body>
 </html>

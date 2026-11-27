@@ -573,14 +573,90 @@
 
     .modal-sheet {
       width: 100%;
-      max-width: 540px;
-      max-height: 82vh;
+      max-width: 660px;
+      max-height: 90vh;
       background: var(--surface);
       border-radius: 16px 16px 0 0;
       border: 1px solid var(--border);
       display: flex;
       flex-direction: column;
       overflow: hidden;
+    }
+
+    .post-title-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      text-align: left;
+      font-family: inherit;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .ad-slot-box {
+      border: 1px dashed var(--border);
+      background: var(--surface-sub);
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-align: center;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .detail-box {
+      background: var(--surface-sub);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+    }
+
+    .detail-subtitle {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .detail-summary-list {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+
+    .detail-summary-list li + li { margin-top: 4px; }
+
+    .detail-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .origin-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 9px;
+      background: var(--text);
+      color: var(--bg);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .detail-divider {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin: 10px 0 8px;
     }
 
     @media (min-width: 640px) {
@@ -710,7 +786,7 @@
     </div>
     <div id="contentArea"></div>
     <footer>
-      각 커뮤니티의 공개 제목과 링크만 모아서 보여주며, 클릭 시 원문 페이지로 이동합니다.
+      각 커뮤니티의 공개 제목과 AI 요약·링크를 제공하며, 원문은 새 창에서 확인할 수 있습니다.
     </footer>
   </main>
 
@@ -718,12 +794,16 @@
     <div class="modal-sheet">
       <div class="modal-header">
         <div>
-          <h3 class="modal-title" id="modalPostTitle">댓글</h3>
+          <h3 class="modal-title" id="modalPostTitle">상세 보기</h3>
           <div class="modal-sub" id="modalPostSub"></div>
         </div>
         <button class="icon-btn" id="closeModalBtn">✕</button>
       </div>
-      <div class="modal-body" id="commentList"></div>
+      <div class="modal-body">
+        <div id="detailView"></div>
+        <div class="detail-divider">💬 피나케스 댓글</div>
+        <div id="commentList"></div>
+      </div>
       <form class="modal-form" id="commentForm">
         <div class="modal-form-row">
           <input class="input-sm" id="nickInput" type="text" placeholder="닉네임 (기본: 익명)" style="width: 130px;" />
@@ -970,10 +1050,10 @@
               ${isRead ? `<span class="read-tag">✓ 읽음</span>` : ''}
             </div>
 
-            <a class="post-title" href="${escapeHtml(it.url)}" target="_blank" rel="noopener"
-               data-read-id="${escapeHtml(it.id)}" title="${escapeHtml(hoverTip)}">
+            <button type="button" class="post-title post-title-btn"
+               data-open-post="${escapeHtml(it.id)}" title="${escapeHtml(hoverTip)}">
               ${escapeHtml(it.title)}${it.comments ? `<span class="reply-cnt">[${it.comments}]</span>` : ''}
-            </a>
+            </button>
 
             ${it.aiSummaryTitle ? `<div class="ai-subtitle">✨ ${escapeHtml(it.aiSummaryTitle)}</div>` : ''}
 
@@ -1022,10 +1102,50 @@
       const post = state.items.find(x => x.id === postId);
       if (!post) return;
       state.activePost = post;
+      markAsRead(post.id);
       document.getElementById('modalPostTitle').textContent = post.title;
-      document.getElementById('modalPostSub').textContent = `${post.source} · 이 기기 브라우저에 댓글이 저장됩니다`;
+
+      const meta = [post.source];
+      if (post.views) meta.push(`조회 ${fmtNum(post.views)}`);
+      if (post.likes) meta.push(`추천 ${fmtNum(post.likes)}`);
+      if (post.comments) meta.push(`원글 댓글 ${fmtNum(post.comments)}`);
+      if (post.time_label) meta.push(post.time_label);
+      document.getElementById('modalPostSub').textContent = meta.join(' · ');
+
+      const hasSummary = Array.isArray(post.aiThreeLineSummary) && post.aiThreeLineSummary.length > 0;
+      const hasCross = (post.crossCount || 1) > 1 && post.relatedItems && post.relatedItems.length > 1;
+      document.getElementById('detailView').innerHTML = `
+        <!-- 상단 광고 슬롯 (수동 광고 전환 시 ins.adsbygoogle 배치 가능) -->
+        <div class="ad-slot-box" id="detailTopAd">광고 영역 · Google AdSense (ca-pub-7599505823176898)</div>
+
+        <div class="detail-box">
+          ${post.aiSummaryTitle ? `<div class="detail-subtitle">✨ ${escapeHtml(post.aiSummaryTitle)}</div>` : ''}
+          ${hasSummary ? `
+            <ul class="detail-summary-list">
+              ${post.aiThreeLineSummary.map(s => `<li>${escapeHtml(s)}</li>`).join('')}
+            </ul>
+          ` : `<div style="font-size:13px; color:var(--text-muted);">원문 게시물에서 자세한 내용을 확인하고 아래에 자유롭게 댓글을 남겨보세요.</div>`}
+          ${post.opinionCompare ? `<div class="opinion-box"><strong>⚖️ 여론 비교:</strong> ${escapeHtml(post.opinionCompare)}</div>` : ''}
+          ${hasCross ? `
+            <div style="margin-top:10px; font-size:12.5px;">
+              <strong>🔗 함께 화제된 글 (${post.relatedItems.length}건)</strong>
+              <ul class="detail-summary-list" style="margin-top:4px;">
+                ${post.relatedItems.map(m => `<li>[${escapeHtml(m.source)}] <a class="related-link" href="${escapeHtml(m.url)}" target="_blank" rel="noopener">${escapeHtml(m.title)}</a></li>`).join('')}
+              </ul>
+            </div>
+          ` : ''}
+          <div class="detail-cta-row">
+            <a class="origin-btn" href="${escapeHtml(post.url)}" target="_blank" rel="noopener">원문 보러 가기 ↗</a>
+          </div>
+        </div>
+
+        <!-- 하단 광고 슬롯 -->
+        <div class="ad-slot-box" id="detailBottomAd">광고 영역 · Google AdSense (ca-pub-7599505823176898)</div>
+      `;
+
       renderComments();
       document.getElementById('commentModal').classList.add('open');
+      render();
     }
 
     function renderComments() {
@@ -1095,6 +1215,12 @@
         if (state.expandedSummaries.has(pid)) state.expandedSummaries.delete(pid);
         else state.expandedSummaries.add(pid);
         render();
+        return;
+      }
+
+      const postBtn = t.closest('[data-open-post]');
+      if (postBtn) {
+        openCommentModal(postBtn.dataset.openPost);
         return;
       }
 
